@@ -4,20 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-//class User {
-//  String firstName;
-//  String lastName;
-//  String email;
-//
-//  User(this.firstName, this.lastName, this.email);
-//}
-
 class OverallContainer extends StatefulWidget {
   final Widget child;
   final BuildContext context;
   final VoidCallback onTimeExpired;
-
-//  final User user;
 
   OverallContainer({
     @required this.child,
