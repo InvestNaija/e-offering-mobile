@@ -1,0 +1,4 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/chapelhilldenham/invest_naija/BuildConfig.java
+ com.chapelhilldenham.invest_naija.BuildConfig

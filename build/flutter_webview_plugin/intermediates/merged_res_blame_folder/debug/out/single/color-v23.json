@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/flutter_webview_plugin/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml",
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/d4cdd911c73bc43aa6c5797d1f135684/appcompat-1.1.0/res/color-v23/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/flutter_webview_plugin/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml",
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/d4cdd911c73bc43aa6c5797d1f135684/appcompat-1.1.0/res/color-v23/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/flutter_webview_plugin/intermediates/res/merged/debug/color-v23/abc_btn_colored_text_material.xml",
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/d4cdd911c73bc43aa6c5797d1f135684/appcompat-1.1.0/res/color-v23/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/flutter_webview_plugin/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml",
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/d4cdd911c73bc43aa6c5797d1f135684/appcompat-1.1.0/res/color-v23/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/flutter_webview_plugin/intermediates/res/merged/debug/color-v23/abc_tint_spinner.xml",
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/d4cdd911c73bc43aa6c5797d1f135684/appcompat-1.1.0/res/color-v23/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/flutter_webview_plugin/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/d4cdd911c73bc43aa6c5797d1f135684/appcompat-1.1.0/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/flutter_webview_plugin/intermediates/res/merged/debug/color-v23/abc_tint_btn_checkable.xml",
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/d4cdd911c73bc43aa6c5797d1f135684/appcompat-1.1.0/res/color-v23/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/flutter_webview_plugin/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/d4cdd911c73bc43aa6c5797d1f135684/appcompat-1.1.0/res/color-v23/abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/flutter_webview_plugin/intermediates/res/merged/debug/color-v23/abc_tint_default.xml",
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/d4cdd911c73bc43aa6c5797d1f135684/appcompat-1.1.0/res/color-v23/abc_tint_default.xml"
+    }
+]
