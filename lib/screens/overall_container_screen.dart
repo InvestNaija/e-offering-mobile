@@ -75,9 +75,6 @@ class OverallContainerState extends State<OverallContainer> {
   }
 
   void _logOutUser() {
-     return;
-     print("INACTIVITY DETECTED - LOG USER OUT");
-     print("Current Tick => ${_timer.tick}");
      widget.onTimeExpired();
      _timer?.cancel();
      _timer = null;
