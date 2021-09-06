@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     WidgetsBinding.instance
         .addPostFrameCallback((_){
-      Navigator.of(context).pushNamed(appLocalStorage.getLoggedInStatus() ?? false ? '/dashboard' : '/login');
+      Navigator.of(context).pushNamed(appLocalStorage.getLoggedInStatus() ?? false ? '/dashboard' : '/on-boarding');
     });
   }
 

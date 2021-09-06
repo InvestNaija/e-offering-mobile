@@ -11,6 +11,7 @@ import 'package:invest_naija/screens/enter_bank_information_screen.dart';
 import 'package:invest_naija/screens/expression_of_interest_screen.dart';
 import 'package:invest_naija/screens/login_screen.dart';
 import 'package:invest_naija/screens/splash_screen.dart';
+import 'package:invest_naija/screens/walkthrough_screen.dart';
 import 'package:provider/provider.dart';
 import 'business_logic/data/response/shares_response_model.dart';
 import 'business_logic/providers/bank_provider.dart';
@@ -92,6 +93,9 @@ class _MyAppState extends State<MyApp> with DialogMixins{
         onGenerateRoute: (settings) {
           if (settings.name == '/') {
             return MaterialPageRoute(builder: (_) => SplashScreen());
+          }
+          if (settings.name == '/on-boarding') {
+            return MaterialPageRoute(builder: (_) => WalkThroughScreen());
           }
           if (settings.name == '/login') {
             return MaterialPageRoute(builder: (_) => LoginScreen());
