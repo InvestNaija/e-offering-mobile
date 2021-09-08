@@ -3,7 +3,6 @@ import 'package:invest_naija/business_logic/data/response/nin_response_model.dar
 import 'package:invest_naija/business_logic/data/response/response_model.dart';
 import 'package:invest_naija/business_logic/providers/assets_provider.dart';
 import 'package:invest_naija/business_logic/providers/customer_provider.dart';
-import 'package:invest_naija/business_logic/providers/register_provider.dart';
 import 'package:invest_naija/components/custom_button.dart';
 import 'package:invest_naija/components/custom_dropdown_textfield.dart';
 import 'package:invest_naija/components/custom_lead_icon.dart';

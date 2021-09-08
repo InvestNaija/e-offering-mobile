@@ -59,13 +59,15 @@ class _SetPasswordScreenState extends State<SetPasswordScreen> with DialogMixins
   TextEditingController confirmPasswordTextEditController;
   TextEditingController placeOfBirthTextEditController;
   TextEditingController motherMaidenTextEditController;
+  FocusNode passwordFocusNode = FocusNode();
+  FocusNode confirmPasswordFocusNode = FocusNode();
   bool hasAcceptedTermsAndConditions = false;
   final _formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
     super.initState();
-    addressTextEditController = TextEditingController(text: widget.address);
+    addressTextEditController = TextEditingController(text: widget.address ?? '');
     passwordTextEditController = TextEditingController(text: "");
     bvnTextEditController = TextEditingController(text: widget.bvn);
     phoneTextEditController = TextEditingController(text: widget.phone);
@@ -165,6 +167,7 @@ class _SetPasswordScreenState extends State<SetPasswordScreen> with DialogMixins
                     label: "Your Password",
                     suffixIcon: "assets/images/show-password.png",
                     controller: passwordTextEditController,
+                    focusNode: passwordFocusNode,
                     onChange: (value){
                       setState(() {});
                     },
@@ -175,6 +178,7 @@ class _SetPasswordScreenState extends State<SetPasswordScreen> with DialogMixins
                     suffixIcon: "assets/images/show-password.png",
                     controller: confirmPasswordTextEditController,
                     matcher: passwordTextEditController.text,
+                    focusNode: confirmPasswordFocusNode,
                   ),
                 ],
               )),
