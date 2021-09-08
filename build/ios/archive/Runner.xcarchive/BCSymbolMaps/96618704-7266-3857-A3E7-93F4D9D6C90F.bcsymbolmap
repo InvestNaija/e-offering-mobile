@@ -1,0 +1,128 @@
+BCSymbolMap Version: 2.0
+Apple clang version 12.0.5 (clang-1205.0.22.11)
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk
+iPhoneOS14.5.sdk
+/Users/Oeshiett/Library/Developer/Xcode/DerivedData/Runner-bxrvgapquhwmeshhjfuspzxqdcyl/Build/Intermediates.noindex/ArchiveIntermediates/Runner/IntermediateBuildFilesPath/Pods.build/Release-iphoneos/wakelock.build/DerivedSources/wakelock_vers.c
+/Users/Oeshiett/Codehub /e-offering-mobile/ios/Pods
++[FLTToggleMessage fromMap:]
+-[FLTToggleMessage toMap]
+-[FLTToggleMessage enable]
+-[FLTToggleMessage setEnable:]
+-[FLTToggleMessage .cxx_destruct]
++[FLTIsEnabledMessage fromMap:]
+-[FLTIsEnabledMessage toMap]
+-[FLTIsEnabledMessage enabled]
+-[FLTIsEnabledMessage setEnabled:]
+-[FLTIsEnabledMessage .cxx_destruct]
+___FLTWakelockApiSetup_block_invoke
+_wrapResult
+___copy_helper_block_e4_20s
+___destroy_helper_block_e4_20s
+___FLTWakelockApiSetup_block_invoke.48
+_OBJC_CLASSLIST_REFERENCES_$_
+_OBJC_SELECTOR_REFERENCES_
+_OBJC_SELECTOR_REFERENCES_.2
+_OBJC_SELECTOR_REFERENCES_.4
+_OBJC_SELECTOR_REFERENCES_.6
+_OBJC_CLASSLIST_REFERENCES_$_.7
+_OBJC_SELECTOR_REFERENCES_.9
+_OBJC_CLASSLIST_REFERENCES_$_.10
+_OBJC_SELECTOR_REFERENCES_.12
+__OBJC_$_CLASS_METHODS_FLTToggleMessage
+__OBJC_METACLASS_RO_$_FLTToggleMessage
+__OBJC_$_INSTANCE_METHODS_FLTToggleMessage
+_OBJC_IVAR_$_FLTToggleMessage._enable
+__OBJC_$_INSTANCE_VARIABLES_FLTToggleMessage
+__OBJC_$_PROP_LIST_FLTToggleMessage
+__OBJC_CLASS_RO_$_FLTToggleMessage
+_OBJC_CLASSLIST_REFERENCES_$_.23
+_OBJC_SELECTOR_REFERENCES_.27
+_OBJC_SELECTOR_REFERENCES_.29
+__OBJC_$_CLASS_METHODS_FLTIsEnabledMessage
+__OBJC_METACLASS_RO_$_FLTIsEnabledMessage
+__OBJC_$_INSTANCE_METHODS_FLTIsEnabledMessage
+_OBJC_IVAR_$_FLTIsEnabledMessage._enabled
+__OBJC_$_INSTANCE_VARIABLES_FLTIsEnabledMessage
+__OBJC_$_PROP_LIST_FLTIsEnabledMessage
+__OBJC_CLASS_RO_$_FLTIsEnabledMessage
+_OBJC_CLASSLIST_REFERENCES_$_.35
+_OBJC_SELECTOR_REFERENCES_.39
+_OBJC_SELECTOR_REFERENCES_.40
+_OBJC_SELECTOR_REFERENCES_.42
+___block_descriptor_24_e4_20s_e17_v12?04?<v?>8l
+_OBJC_SELECTOR_REFERENCES_.45
+_OBJC_SELECTOR_REFERENCES_.50
+_OBJC_SELECTOR_REFERENCES_.51
+_OBJC_SELECTOR_REFERENCES_.53
+_OBJC_SELECTOR_REFERENCES_.57
+_OBJC_SELECTOR_REFERENCES_.61
+/Users/Oeshiett/flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/wakelock-0.4.0/ios/Classes/messages.m
+__FLTWakelockApiSetup_block_invoke.48
+flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/wakelock-0.4.0/ios/Classes/messages.m
+/Users/Oeshiett
+__destroy_helper_block_e4_20s
+__copy_helper_block_e4_20s
+wrapResult
+__FLTWakelockApiSetup_block_invoke
+FLTWakelockApiSetup
+flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/wakelock-0.4.0/ios/Classes/messages.h
+__OBJC_METACLASS_RO_$_PodsDummy_wakelock
+__OBJC_CLASS_RO_$_PodsDummy_wakelock
+/Users/Oeshiett/Codehub /e-offering-mobile/ios/Pods/Target Support Files/wakelock/wakelock-dummy.m
++[WakelockPlugin registerWithRegistrar:]
+-[WakelockPlugin toggle:error:]
+-[WakelockPlugin isEnabled:]
+-[WakelockPlugin observeValueForKeyPath:ofObject:change:context:]
+-[WakelockPlugin dealloc]
+-[WakelockPlugin enable]
+-[WakelockPlugin setEnable:]
+_OBJC_CLASSLIST_REFERENCES_$_.3
+_OBJC_SELECTOR_REFERENCES_.5
+_mKeyPathObserverContextApplicationIsIdleTimerDisabled
+_OBJC_SELECTOR_REFERENCES_.7
+_OBJC_SELECTOR_REFERENCES_.11
+_OBJC_SELECTOR_REFERENCES_.13
+_OBJC_CLASSLIST_REFERENCES_$_.14
+_OBJC_SELECTOR_REFERENCES_.16
+_OBJC_SELECTOR_REFERENCES_.18
+_OBJC_SELECTOR_REFERENCES_.20
+_OBJC_SELECTOR_REFERENCES_.22
+_OBJC_SELECTOR_REFERENCES_.25
+_OBJC_SELECTOR_REFERENCES_.31
+__OBJC_$_CLASS_METHODS_WakelockPlugin
+__OBJC_$_PROTOCOL_INSTANCE_METHODS_FLTWakelockApi
+__OBJC_$_PROTOCOL_METHOD_TYPES_FLTWakelockApi
+__OBJC_PROTOCOL_$_FLTWakelockApi
+__OBJC_LABEL_PROTOCOL_$_FLTWakelockApi
+__OBJC_$_PROTOCOL_INSTANCE_METHODS_NSObject
+__OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_NSObject
+__OBJC_$_PROP_LIST_NSObject
+__OBJC_$_PROTOCOL_METHOD_TYPES_NSObject
+__OBJC_PROTOCOL_$_NSObject
+__OBJC_LABEL_PROTOCOL_$_NSObject
+__OBJC_$_PROTOCOL_REFS_UNUserNotificationCenterDelegate
+__OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_UNUserNotificationCenterDelegate
+__OBJC_$_PROTOCOL_METHOD_TYPES_UNUserNotificationCenterDelegate
+__OBJC_PROTOCOL_$_UNUserNotificationCenterDelegate
+__OBJC_LABEL_PROTOCOL_$_UNUserNotificationCenterDelegate
+__OBJC_$_PROTOCOL_REFS_FlutterApplicationLifeCycleDelegate
+__OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_FlutterApplicationLifeCycleDelegate
+__OBJC_$_PROTOCOL_METHOD_TYPES_FlutterApplicationLifeCycleDelegate
+__OBJC_PROTOCOL_$_FlutterApplicationLifeCycleDelegate
+__OBJC_LABEL_PROTOCOL_$_FlutterApplicationLifeCycleDelegate
+__OBJC_$_PROTOCOL_REFS_FlutterPlugin
+__OBJC_$_PROTOCOL_CLASS_METHODS_FlutterPlugin
+__OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_FlutterPlugin
+__OBJC_$_PROTOCOL_CLASS_METHODS_OPT_FlutterPlugin
+__OBJC_$_PROTOCOL_METHOD_TYPES_FlutterPlugin
+__OBJC_PROTOCOL_$_FlutterPlugin
+__OBJC_LABEL_PROTOCOL_$_FlutterPlugin
+__OBJC_CLASS_PROTOCOLS_$_WakelockPlugin
+__OBJC_METACLASS_RO_$_WakelockPlugin
+__OBJC_$_INSTANCE_METHODS_WakelockPlugin
+_OBJC_IVAR_$_WakelockPlugin._enable
+__OBJC_$_INSTANCE_VARIABLES_WakelockPlugin
+__OBJC_$_PROP_LIST_WakelockPlugin
+__OBJC_CLASS_RO_$_WakelockPlugin
+/Users/Oeshiett/flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/wakelock-0.4.0/ios/Classes/WakelockPlugin.m
+flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/wakelock-0.4.0/ios/Classes/WakelockPlugin.m

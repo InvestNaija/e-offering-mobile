@@ -1,0 +1,539 @@
+BCSymbolMap Version: 2.0
+Apple clang version 12.0.5 (clang-1205.0.22.11)
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk
+iPhoneOS14.5.sdk
+/Users/Oeshiett/Library/Developer/Xcode/DerivedData/Runner-bxrvgapquhwmeshhjfuspzxqdcyl/Build/Intermediates.noindex/ArchiveIntermediates/Runner/IntermediateBuildFilesPath/Pods.build/Release-iphoneos/camera.build/DerivedSources/camera_vers.c
+/Users/Oeshiett/Codehub /e-offering-mobile/ios/Pods
+__OBJC_METACLASS_RO_$_PodsDummy_camera
+__OBJC_CLASS_RO_$_PodsDummy_camera
+/Users/Oeshiett/Codehub /e-offering-mobile/ios/Pods/Target Support Files/camera/camera-dummy.m
+-[FLTImageStreamHandler onCancelWithArguments:]
+-[FLTImageStreamHandler onListenWithArguments:eventSink:]
+-[FLTImageStreamHandler eventSink]
+-[FLTImageStreamHandler setEventSink:]
+-[FLTImageStreamHandler .cxx_destruct]
+-[FLTSavePhotoDelegate initWithPath:result:]
+-[FLTSavePhotoDelegate captureOutput:didFinishProcessingPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:]
+_getFlutterError
+-[FLTSavePhotoDelegate captureOutput:didFinishProcessingPhoto:error:]
+-[FLTSavePhotoDelegate path]
+-[FLTSavePhotoDelegate result]
+-[FLTSavePhotoDelegate .cxx_destruct]
+-[FLTCam initWithCameraName:resolutionPreset:enableAudio:orientation:dispatchQueue:error:]
+-[FLTCam start]
+-[FLTCam stop]
+-[FLTCam setDeviceOrientation:]
+-[FLTCam updateOrientation]
+-[FLTCam updateOrientation:forCaptureOutput:]
+-[FLTCam captureToFile:]
+-[FLTCam getVideoOrientationForDeviceOrientation:]
+-[FLTCam getTemporaryFilePathWithExtension:subfolder:prefix:error:]
+-[FLTCam setCaptureSessionPreset:]
+-[FLTCam captureOutput:didOutputSampleBuffer:fromConnection:]
+-[FLTCam adjustTime:by:]
+-[FLTCam newVideoSample:]
+-[FLTCam newAudioSample:]
+-[FLTCam close]
+-[FLTCam dealloc]
+-[FLTCam copyPixelBuffer]
+-[FLTCam startVideoRecordingWithResult:]
+-[FLTCam stopVideoRecordingWithResult:]
+___39-[FLTCam stopVideoRecordingWithResult:]_block_invoke
+___copy_helper_block_e8_32s40b
+___destroy_helper_block_e8_32s40s
+-[FLTCam pauseVideoRecordingWithResult:]
+-[FLTCam resumeVideoRecordingWithResult:]
+-[FLTCam lockCaptureOrientationWithResult:orientation:]
+-[FLTCam unlockCaptureOrientationWithResult:]
+-[FLTCam setFlashModeWithResult:mode:]
+-[FLTCam setExposureModeWithResult:mode:]
+-[FLTCam applyExposureMode]
+-[FLTCam setFocusModeWithResult:mode:]
+-[FLTCam applyFocusMode]
+-[FLTCam applyFocusMode:onDevice:]
+-[FLTCam pausePreviewWithResult:]
+-[FLTCam resumePreviewWithResult:]
+-[FLTCam getCGPointForCoordsWithOrientation:x:y:]
+-[FLTCam setExposurePointWithResult:x:y:]
+-[FLTCam setFocusPointWithResult:x:y:]
+-[FLTCam setExposureOffsetWithResult:offset:]
+-[FLTCam startImageStreamWithMessenger:]
+-[FLTCam stopImageStream]
+-[FLTCam getMaxZoomLevelWithResult:]
+-[FLTCam getMinZoomLevelWithResult:]
+-[FLTCam setZoomLevel:Result:]
+-[FLTCam getMinAvailableZoomFactor]
+-[FLTCam getMaxAvailableZoomFactor]
+-[FLTCam setupWriterForPath:]
+-[FLTCam setUpCaptureSessionForAudio]
+-[FLTCam textureId]
+-[FLTCam onFrameAvailable]
+-[FLTCam setOnFrameAvailable:]
+-[FLTCam enableAudio]
+-[FLTCam setEnableAudio:]
+-[FLTCam imageStreamHandler]
+-[FLTCam setImageStreamHandler:]
+-[FLTCam methodChannel]
+-[FLTCam setMethodChannel:]
+-[FLTCam captureSession]
+-[FLTCam captureDevice]
+-[FLTCam capturePhotoOutput]
+-[FLTCam captureVideoOutput]
+-[FLTCam captureVideoInput]
+-[FLTCam latestPixelBuffer]
+-[FLTCam previewSize]
+-[FLTCam captureSize]
+-[FLTCam videoWriter]
+-[FLTCam setVideoWriter:]
+-[FLTCam videoWriterInput]
+-[FLTCam setVideoWriterInput:]
+-[FLTCam audioWriterInput]
+-[FLTCam setAudioWriterInput:]
+-[FLTCam assetWriterPixelBufferAdaptor]
+-[FLTCam setAssetWriterPixelBufferAdaptor:]
+-[FLTCam videoOutput]
+-[FLTCam setVideoOutput:]
+-[FLTCam audioOutput]
+-[FLTCam setAudioOutput:]
+-[FLTCam videoRecordingPath]
+-[FLTCam setVideoRecordingPath:]
+-[FLTCam isRecording]
+-[FLTCam setIsRecording:]
+-[FLTCam isRecordingPaused]
+-[FLTCam setIsRecordingPaused:]
+-[FLTCam videoIsDisconnected]
+-[FLTCam setVideoIsDisconnected:]
+-[FLTCam audioIsDisconnected]
+-[FLTCam setAudioIsDisconnected:]
+-[FLTCam isAudioSetup]
+-[FLTCam setIsAudioSetup:]
+-[FLTCam isStreamingImages]
+-[FLTCam setIsStreamingImages:]
+-[FLTCam isPreviewPaused]
+-[FLTCam setIsPreviewPaused:]
+-[FLTCam resolutionPreset]
+-[FLTCam setResolutionPreset:]
+-[FLTCam exposureMode]
+-[FLTCam setExposureMode:]
+-[FLTCam focusMode]
+-[FLTCam setFocusMode:]
+-[FLTCam flashMode]
+-[FLTCam setFlashMode:]
+-[FLTCam lockedCaptureOrientation]
+-[FLTCam setLockedCaptureOrientation:]
+-[FLTCam lastVideoSampleTime]
+-[FLTCam setLastVideoSampleTime:]
+-[FLTCam lastAudioSampleTime]
+-[FLTCam setLastAudioSampleTime:]
+-[FLTCam videoTimeOffset]
+-[FLTCam setVideoTimeOffset:]
+-[FLTCam audioTimeOffset]
+-[FLTCam setAudioTimeOffset:]
+-[FLTCam motionManager]
+-[FLTCam setMotionManager:]
+-[FLTCam videoAdaptor]
+-[FLTCam setVideoAdaptor:]
+-[FLTCam .cxx_destruct]
++[CameraPlugin registerWithRegistrar:]
+-[CameraPlugin initWithRegistry:messenger:]
+-[CameraPlugin initDeviceEventMethodChannel]
+-[CameraPlugin startOrientationListener]
+-[CameraPlugin orientationChanged:]
+-[CameraPlugin sendDeviceOrientation:]
+-[CameraPlugin handleMethodCall:result:]
+___40-[CameraPlugin handleMethodCall:result:]_block_invoke
+___copy_helper_block_e8_32s40s48b
+___destroy_helper_block_e8_32s40s48s
+-[CameraPlugin handleMethodCallAsync:result:]
+___45-[CameraPlugin handleMethodCallAsync:result:]_block_invoke
+___copy_helper_block_e8_32w
+___destroy_helper_block_e8_32w
+-[CameraPlugin registry]
+-[CameraPlugin messenger]
+-[CameraPlugin camera]
+-[CameraPlugin deviceEventMethodChannel]
+-[CameraPlugin .cxx_destruct]
+___clang_at_available_requires_core_foundation_framework
+__OBJC_$_PROTOCOL_INSTANCE_METHODS_FlutterStreamHandler
+__OBJC_$_PROTOCOL_METHOD_TYPES_FlutterStreamHandler
+__OBJC_PROTOCOL_$_FlutterStreamHandler
+__OBJC_LABEL_PROTOCOL_$_FlutterStreamHandler
+__OBJC_CLASS_PROTOCOLS_$_FLTImageStreamHandler
+__OBJC_METACLASS_RO_$_FLTImageStreamHandler
+__OBJC_$_INSTANCE_METHODS_FLTImageStreamHandler
+_OBJC_IVAR_$_FLTImageStreamHandler._eventSink
+__OBJC_$_INSTANCE_VARIABLES_FLTImageStreamHandler
+__OBJC_$_PROP_LIST_FLTImageStreamHandler
+__OBJC_CLASS_RO_$_FLTImageStreamHandler
+_OBJC_SELECTOR_REFERENCES_
+_OBJC_CLASSLIST_REFERENCES_$_
+_OBJC_SELECTOR_REFERENCES_.18
+_OBJC_SELECTOR_REFERENCES_.20
+_OBJC_CLASSLIST_REFERENCES_$_.21
+_OBJC_SELECTOR_REFERENCES_.25
+_OBJC_SELECTOR_REFERENCES_.27
+__OBJC_$_PROTOCOL_INSTANCE_METHODS_NSObject
+__OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_NSObject
+__OBJC_$_PROP_LIST_NSObject
+__OBJC_$_PROTOCOL_METHOD_TYPES_NSObject
+__OBJC_PROTOCOL_$_NSObject
+__OBJC_LABEL_PROTOCOL_$_NSObject
+__OBJC_$_PROTOCOL_REFS_AVCapturePhotoCaptureDelegate
+__OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_AVCapturePhotoCaptureDelegate
+__OBJC_$_PROTOCOL_METHOD_TYPES_AVCapturePhotoCaptureDelegate
+__OBJC_PROTOCOL_$_AVCapturePhotoCaptureDelegate
+__OBJC_LABEL_PROTOCOL_$_AVCapturePhotoCaptureDelegate
+__OBJC_CLASS_PROTOCOLS_$_FLTSavePhotoDelegate
+__OBJC_METACLASS_RO_$_FLTSavePhotoDelegate
+__OBJC_$_INSTANCE_METHODS_FLTSavePhotoDelegate
+_OBJC_IVAR_$_FLTSavePhotoDelegate.selfReference
+_OBJC_IVAR_$_FLTSavePhotoDelegate._path
+_OBJC_IVAR_$_FLTSavePhotoDelegate._result
+__OBJC_$_INSTANCE_VARIABLES_FLTSavePhotoDelegate
+__OBJC_$_PROP_LIST_FLTSavePhotoDelegate
+__OBJC_CLASS_RO_$_FLTSavePhotoDelegate
+_OBJC_CLASSLIST_REFERENCES_$_.108
+_OBJC_CLASSLIST_REFERENCES_$_.109
+_OBJC_SELECTOR_REFERENCES_.111
+_OBJC_SELECTOR_REFERENCES_.113
+_OBJC_CLASSLIST_REFERENCES_$_.114
+_OBJC_SELECTOR_REFERENCES_.116
+_OBJC_CLASSLIST_REFERENCES_$_.117
+_OBJC_SELECTOR_REFERENCES_.119
+_OBJC_CLASSLIST_REFERENCES_$_.120
+_OBJC_SELECTOR_REFERENCES_.122
+_OBJC_CLASSLIST_REFERENCES_$_.123
+_OBJC_SELECTOR_REFERENCES_.125
+_OBJC_SELECTOR_REFERENCES_.127
+_OBJC_SELECTOR_REFERENCES_.129
+_OBJC_SELECTOR_REFERENCES_.131
+_OBJC_CLASSLIST_REFERENCES_$_.132
+_OBJC_SELECTOR_REFERENCES_.134
+_OBJC_SELECTOR_REFERENCES_.136
+_OBJC_SELECTOR_REFERENCES_.138
+_OBJC_SELECTOR_REFERENCES_.140
+_OBJC_SELECTOR_REFERENCES_.142
+_OBJC_SELECTOR_REFERENCES_.144
+_OBJC_SELECTOR_REFERENCES_.146
+_OBJC_SELECTOR_REFERENCES_.148
+_OBJC_SELECTOR_REFERENCES_.150
+_OBJC_CLASSLIST_REFERENCES_$_.151
+_OBJC_SELECTOR_REFERENCES_.153
+_OBJC_SELECTOR_REFERENCES_.155
+_OBJC_SELECTOR_REFERENCES_.157
+_OBJC_SELECTOR_REFERENCES_.159
+_OBJC_SELECTOR_REFERENCES_.161
+_OBJC_SELECTOR_REFERENCES_.163
+_OBJC_SELECTOR_REFERENCES_.165
+_OBJC_SELECTOR_REFERENCES_.167
+_OBJC_SELECTOR_REFERENCES_.169
+_OBJC_SELECTOR_REFERENCES_.171
+_OBJC_CLASSLIST_REFERENCES_$_.172
+_OBJC_SELECTOR_REFERENCES_.174
+_OBJC_SELECTOR_REFERENCES_.176
+_OBJC_SELECTOR_REFERENCES_.178
+_OBJC_SELECTOR_REFERENCES_.186
+_OBJC_CLASSLIST_REFERENCES_$_.187
+_OBJC_SELECTOR_REFERENCES_.188
+_OBJC_SELECTOR_REFERENCES_.190
+_OBJC_SELECTOR_REFERENCES_.192
+_OBJC_SELECTOR_REFERENCES_.196
+_OBJC_CLASSLIST_REFERENCES_$_.197
+_OBJC_SELECTOR_REFERENCES_.199
+_OBJC_SELECTOR_REFERENCES_.201
+_OBJC_SELECTOR_REFERENCES_.203
+_OBJC_SELECTOR_REFERENCES_.205
+_OBJC_CLASSLIST_REFERENCES_$_.206
+_OBJC_SELECTOR_REFERENCES_.208
+_OBJC_SELECTOR_REFERENCES_.210
+_OBJC_SELECTOR_REFERENCES_.212
+_OBJC_SELECTOR_REFERENCES_.214
+_OBJC_SELECTOR_REFERENCES_.216
+_OBJC_SELECTOR_REFERENCES_.218
+_OBJC_SELECTOR_REFERENCES_.220
+_OBJC_CLASSLIST_REFERENCES_$_.221
+_OBJC_SELECTOR_REFERENCES_.225
+_OBJC_SELECTOR_REFERENCES_.229
+_OBJC_SELECTOR_REFERENCES_.230
+_OBJC_CLASSLIST_REFERENCES_$_.231
+_OBJC_SELECTOR_REFERENCES_.233
+_OBJC_SELECTOR_REFERENCES_.235
+_OBJC_CLASSLIST_REFERENCES_$_.236
+_OBJC_SELECTOR_REFERENCES_.238
+_OBJC_SELECTOR_REFERENCES_.240
+_OBJC_CLASSLIST_REFERENCES_$_.241
+_OBJC_SELECTOR_REFERENCES_.243
+_OBJC_SELECTOR_REFERENCES_.247
+_OBJC_CLASSLIST_REFERENCES_$_.252
+_OBJC_SELECTOR_REFERENCES_.254
+_OBJC_SELECTOR_REFERENCES_.258
+_OBJC_SELECTOR_REFERENCES_.264
+_OBJC_SELECTOR_REFERENCES_.266
+_OBJC_SELECTOR_REFERENCES_.270
+_OBJC_SELECTOR_REFERENCES_.272
+_OBJC_SELECTOR_REFERENCES_.276
+_OBJC_SELECTOR_REFERENCES_.280
+_OBJC_CLASSLIST_REFERENCES_$_.281
+_OBJC_SELECTOR_REFERENCES_.285
+_OBJC_SELECTOR_REFERENCES_.287
+_OBJC_SELECTOR_REFERENCES_.289
+_OBJC_SELECTOR_REFERENCES_.291
+_OBJC_SELECTOR_REFERENCES_.293
+_OBJC_SELECTOR_REFERENCES_.295
+_OBJC_SELECTOR_REFERENCES_.297
+_OBJC_SELECTOR_REFERENCES_.299
+_OBJC_SELECTOR_REFERENCES_.301
+_OBJC_SELECTOR_REFERENCES_.307
+_OBJC_SELECTOR_REFERENCES_.309
+_OBJC_SELECTOR_REFERENCES_.311
+_OBJC_SELECTOR_REFERENCES_.313
+_OBJC_SELECTOR_REFERENCES_.315
+_OBJC_SELECTOR_REFERENCES_.317
+_OBJC_SELECTOR_REFERENCES_.319
+_OBJC_SELECTOR_REFERENCES_.327
+___block_descriptor_48_e8_32s40bs_e5_v8?0l
+_OBJC_SELECTOR_REFERENCES_.338
+_OBJC_SELECTOR_REFERENCES_.342
+_OBJC_SELECTOR_REFERENCES_.348
+_OBJC_SELECTOR_REFERENCES_.352
+_OBJC_SELECTOR_REFERENCES_.354
+_OBJC_SELECTOR_REFERENCES_.356
+_OBJC_SELECTOR_REFERENCES_.358
+_OBJC_SELECTOR_REFERENCES_.362
+_OBJC_SELECTOR_REFERENCES_.364
+_OBJC_SELECTOR_REFERENCES_.368
+_OBJC_SELECTOR_REFERENCES_.370
+_OBJC_SELECTOR_REFERENCES_.372
+_OBJC_SELECTOR_REFERENCES_.374
+_OBJC_SELECTOR_REFERENCES_.376
+_OBJC_SELECTOR_REFERENCES_.378
+_OBJC_SELECTOR_REFERENCES_.380
+_OBJC_SELECTOR_REFERENCES_.382
+_OBJC_CLASSLIST_REFERENCES_$_.387
+_OBJC_SELECTOR_REFERENCES_.389
+_OBJC_SELECTOR_REFERENCES_.391
+_OBJC_SELECTOR_REFERENCES_.393
+_OBJC_SELECTOR_REFERENCES_.395
+_OBJC_SELECTOR_REFERENCES_.397
+_OBJC_SELECTOR_REFERENCES_.403
+_OBJC_SELECTOR_REFERENCES_.405
+_OBJC_SELECTOR_REFERENCES_.407
+_OBJC_CLASSLIST_REFERENCES_$_.408
+_OBJC_SELECTOR_REFERENCES_.412
+_OBJC_CLASSLIST_REFERENCES_$_.413
+_OBJC_SELECTOR_REFERENCES_.415
+_OBJC_SELECTOR_REFERENCES_.421
+_OBJC_SELECTOR_REFERENCES_.423
+_OBJC_SELECTOR_REFERENCES_.429
+_OBJC_SELECTOR_REFERENCES_.431
+_OBJC_SELECTOR_REFERENCES_.433
+_OBJC_SELECTOR_REFERENCES_.435
+_OBJC_CLASSLIST_REFERENCES_$_.436
+_OBJC_SELECTOR_REFERENCES_.438
+_OBJC_SELECTOR_REFERENCES_.440
+_OBJC_CLASSLIST_REFERENCES_$_.441
+_OBJC_SELECTOR_REFERENCES_.443
+_OBJC_SELECTOR_REFERENCES_.444
+_OBJC_SELECTOR_REFERENCES_.446
+_OBJC_CLASSLIST_REFERENCES_$_.447
+_OBJC_SELECTOR_REFERENCES_.449
+_OBJC_CLASSLIST_REFERENCES_$_.450
+_OBJC_SELECTOR_REFERENCES_.452
+_OBJC_SELECTOR_REFERENCES_.454
+_OBJC_SELECTOR_REFERENCES_.456
+_OBJC_SELECTOR_REFERENCES_.458
+_OBJC_SELECTOR_REFERENCES_.460
+_OBJC_CLASSLIST_REFERENCES_$_.461
+_OBJC_SELECTOR_REFERENCES_.463
+_OBJC_SELECTOR_REFERENCES_.465
+__OBJC_$_PROTOCOL_REFS_FlutterTexture
+__OBJC_$_PROTOCOL_INSTANCE_METHODS_FlutterTexture
+__OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_FlutterTexture
+__OBJC_$_PROTOCOL_METHOD_TYPES_FlutterTexture
+__OBJC_PROTOCOL_$_FlutterTexture
+__OBJC_LABEL_PROTOCOL_$_FlutterTexture
+__OBJC_$_PROTOCOL_REFS_AVCaptureVideoDataOutputSampleBufferDelegate
+__OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_AVCaptureVideoDataOutputSampleBufferDelegate
+__OBJC_$_PROTOCOL_METHOD_TYPES_AVCaptureVideoDataOutputSampleBufferDelegate
+__OBJC_PROTOCOL_$_AVCaptureVideoDataOutputSampleBufferDelegate
+__OBJC_LABEL_PROTOCOL_$_AVCaptureVideoDataOutputSampleBufferDelegate
+__OBJC_$_PROTOCOL_REFS_AVCaptureAudioDataOutputSampleBufferDelegate
+__OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_AVCaptureAudioDataOutputSampleBufferDelegate
+__OBJC_$_PROTOCOL_METHOD_TYPES_AVCaptureAudioDataOutputSampleBufferDelegate
+__OBJC_PROTOCOL_$_AVCaptureAudioDataOutputSampleBufferDelegate
+__OBJC_LABEL_PROTOCOL_$_AVCaptureAudioDataOutputSampleBufferDelegate
+__OBJC_CLASS_PROTOCOLS_$_FLTCam
+__OBJC_METACLASS_RO_$_FLTCam
+__OBJC_$_INSTANCE_METHODS_FLTCam
+_OBJC_IVAR_$_FLTCam._dispatchQueue
+_OBJC_IVAR_$_FLTCam._deviceOrientation
+_OBJC_IVAR_$_FLTCam._enableAudio
+_OBJC_IVAR_$_FLTCam._isRecording
+_OBJC_IVAR_$_FLTCam._isRecordingPaused
+_OBJC_IVAR_$_FLTCam._videoIsDisconnected
+_OBJC_IVAR_$_FLTCam._audioIsDisconnected
+_OBJC_IVAR_$_FLTCam._isAudioSetup
+_OBJC_IVAR_$_FLTCam._isStreamingImages
+_OBJC_IVAR_$_FLTCam._isPreviewPaused
+_OBJC_IVAR_$_FLTCam._resolutionPreset
+_OBJC_IVAR_$_FLTCam._exposureMode
+_OBJC_IVAR_$_FLTCam._focusMode
+_OBJC_IVAR_$_FLTCam._flashMode
+_OBJC_IVAR_$_FLTCam._textureId
+_OBJC_IVAR_$_FLTCam._onFrameAvailable
+_OBJC_IVAR_$_FLTCam._imageStreamHandler
+_OBJC_IVAR_$_FLTCam._methodChannel
+_OBJC_IVAR_$_FLTCam._captureSession
+_OBJC_IVAR_$_FLTCam._captureDevice
+_OBJC_IVAR_$_FLTCam._capturePhotoOutput
+_OBJC_IVAR_$_FLTCam._captureVideoOutput
+_OBJC_IVAR_$_FLTCam._captureVideoInput
+_OBJC_IVAR_$_FLTCam._latestPixelBuffer
+_OBJC_IVAR_$_FLTCam._videoWriter
+_OBJC_IVAR_$_FLTCam._videoWriterInput
+_OBJC_IVAR_$_FLTCam._audioWriterInput
+_OBJC_IVAR_$_FLTCam._assetWriterPixelBufferAdaptor
+_OBJC_IVAR_$_FLTCam._videoOutput
+_OBJC_IVAR_$_FLTCam._audioOutput
+_OBJC_IVAR_$_FLTCam._videoRecordingPath
+_OBJC_IVAR_$_FLTCam._lockedCaptureOrientation
+_OBJC_IVAR_$_FLTCam._motionManager
+_OBJC_IVAR_$_FLTCam._videoAdaptor
+_OBJC_IVAR_$_FLTCam._previewSize
+_OBJC_IVAR_$_FLTCam._captureSize
+_OBJC_IVAR_$_FLTCam._lastVideoSampleTime
+_OBJC_IVAR_$_FLTCam._lastAudioSampleTime
+_OBJC_IVAR_$_FLTCam._videoTimeOffset
+_OBJC_IVAR_$_FLTCam._audioTimeOffset
+__OBJC_$_INSTANCE_VARIABLES_FLTCam
+__OBJC_$_PROP_LIST_FLTCam
+__OBJC_CLASS_RO_$_FLTCam
+_OBJC_CLASSLIST_REFERENCES_$_.727
+_OBJC_SELECTOR_REFERENCES_.731
+_OBJC_SELECTOR_REFERENCES_.733
+_OBJC_CLASSLIST_REFERENCES_$_.734
+_OBJC_SELECTOR_REFERENCES_.736
+_OBJC_SELECTOR_REFERENCES_.738
+_OBJC_SELECTOR_REFERENCES_.740
+_OBJC_SELECTOR_REFERENCES_.743
+_OBJC_SELECTOR_REFERENCES_.745
+_OBJC_SELECTOR_REFERENCES_.749
+_OBJC_CLASSLIST_REFERENCES_$_.750
+_OBJC_SELECTOR_REFERENCES_.752
+_OBJC_SELECTOR_REFERENCES_.754
+_OBJC_SELECTOR_REFERENCES_.756
+_OBJC_SELECTOR_REFERENCES_.758
+_OBJC_SELECTOR_REFERENCES_.759
+_OBJC_SELECTOR_REFERENCES_.761
+_OBJC_SELECTOR_REFERENCES_.768
+___block_descriptor_56_e8_32s40s48bs_e5_v8?0l
+_OBJC_SELECTOR_REFERENCES_.772
+_OBJC_SELECTOR_REFERENCES_.774
+_OBJC_CLASSLIST_REFERENCES_$_.775
+_OBJC_CLASSLIST_REFERENCES_$_.776
+_OBJC_SELECTOR_REFERENCES_.778
+_OBJC_SELECTOR_REFERENCES_.780
+_OBJC_SELECTOR_REFERENCES_.782
+_OBJC_SELECTOR_REFERENCES_.784
+_OBJC_SELECTOR_REFERENCES_.786
+_OBJC_SELECTOR_REFERENCES_.796
+_OBJC_SELECTOR_REFERENCES_.804
+_OBJC_SELECTOR_REFERENCES_.808
+_OBJC_CLASSLIST_REFERENCES_$_.813
+_OBJC_SELECTOR_REFERENCES_.815
+_OBJC_SELECTOR_REFERENCES_.816
+_OBJC_SELECTOR_REFERENCES_.817
+_OBJC_SELECTOR_REFERENCES_.819
+_OBJC_SELECTOR_REFERENCES_.823
+_OBJC_SELECTOR_REFERENCES_.826
+_OBJC_SELECTOR_REFERENCES_.829
+_OBJC_SELECTOR_REFERENCES_.835
+_OBJC_SELECTOR_REFERENCES_.836
+_OBJC_SELECTOR_REFERENCES_.838
+_OBJC_SELECTOR_REFERENCES_.840
+___block_descriptor_48_e8_32w_e5_v8?0l
+_OBJC_SELECTOR_REFERENCES_.841
+_OBJC_SELECTOR_REFERENCES_.844
+_OBJC_SELECTOR_REFERENCES_.849
+_OBJC_SELECTOR_REFERENCES_.854
+_OBJC_SELECTOR_REFERENCES_.857
+_OBJC_SELECTOR_REFERENCES_.861
+_OBJC_SELECTOR_REFERENCES_.864
+_OBJC_SELECTOR_REFERENCES_.867
+_OBJC_SELECTOR_REFERENCES_.871
+_OBJC_SELECTOR_REFERENCES_.876
+_OBJC_SELECTOR_REFERENCES_.879
+_OBJC_SELECTOR_REFERENCES_.882
+_OBJC_SELECTOR_REFERENCES_.885
+_OBJC_SELECTOR_REFERENCES_.888
+_OBJC_SELECTOR_REFERENCES_.891
+_OBJC_SELECTOR_REFERENCES_.897
+_OBJC_SELECTOR_REFERENCES_.898
+_OBJC_SELECTOR_REFERENCES_.903
+_OBJC_SELECTOR_REFERENCES_.906
+_OBJC_SELECTOR_REFERENCES_.914
+_OBJC_SELECTOR_REFERENCES_.917
+_OBJC_SELECTOR_REFERENCES_.921
+_OBJC_SELECTOR_REFERENCES_.925
+_OBJC_SELECTOR_REFERENCES_.932
+_OBJC_SELECTOR_REFERENCES_.935
+_OBJC_SELECTOR_REFERENCES_.938
+_OBJC_SELECTOR_REFERENCES_.941
+_OBJC_SELECTOR_REFERENCES_.944
+_OBJC_SELECTOR_REFERENCES_.947
+_OBJC_SELECTOR_REFERENCES_.950
+__OBJC_$_CLASS_METHODS_CameraPlugin
+__OBJC_$_PROTOCOL_REFS_UNUserNotificationCenterDelegate
+__OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_UNUserNotificationCenterDelegate
+__OBJC_$_PROTOCOL_METHOD_TYPES_UNUserNotificationCenterDelegate
+__OBJC_PROTOCOL_$_UNUserNotificationCenterDelegate
+__OBJC_LABEL_PROTOCOL_$_UNUserNotificationCenterDelegate
+__OBJC_$_PROTOCOL_REFS_FlutterApplicationLifeCycleDelegate
+__OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_FlutterApplicationLifeCycleDelegate
+__OBJC_$_PROTOCOL_METHOD_TYPES_FlutterApplicationLifeCycleDelegate
+__OBJC_PROTOCOL_$_FlutterApplicationLifeCycleDelegate
+__OBJC_LABEL_PROTOCOL_$_FlutterApplicationLifeCycleDelegate
+__OBJC_$_PROTOCOL_REFS_FlutterPlugin
+__OBJC_$_PROTOCOL_CLASS_METHODS_FlutterPlugin
+__OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_FlutterPlugin
+__OBJC_$_PROTOCOL_CLASS_METHODS_OPT_FlutterPlugin
+__OBJC_$_PROTOCOL_METHOD_TYPES_FlutterPlugin
+__OBJC_PROTOCOL_$_FlutterPlugin
+__OBJC_LABEL_PROTOCOL_$_FlutterPlugin
+__OBJC_CLASS_PROTOCOLS_$_CameraPlugin
+__OBJC_METACLASS_RO_$_CameraPlugin
+__OBJC_$_INSTANCE_METHODS_CameraPlugin
+_OBJC_IVAR_$_CameraPlugin._dispatchQueue
+_OBJC_IVAR_$_CameraPlugin._registry
+_OBJC_IVAR_$_CameraPlugin._messenger
+_OBJC_IVAR_$_CameraPlugin._camera
+_OBJC_IVAR_$_CameraPlugin._deviceEventMethodChannel
+__OBJC_$_INSTANCE_VARIABLES_CameraPlugin
+__OBJC_$_PROP_LIST_CameraPlugin
+__OBJC_CLASS_RO_$_CameraPlugin
+_OBJC_SELECTOR_REFERENCES_.1027
+_OBJC_SELECTOR_REFERENCES_.1029
+_OBJC_SELECTOR_REFERENCES_.1031
+/Users/Oeshiett/flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.9.2+2/ios/Classes/CameraPlugin.m
+flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.9.2+2/ios/Classes/CameraPlugin.m
+/Users/Oeshiett
+__destroy_helper_block_e8_32w
+__copy_helper_block_e8_32w
+__45-[CameraPlugin handleMethodCallAsync:result:]_block_invoke
+getStringForFocusMode
+getStringForExposureMode
+getVideoFormatFromString
+__destroy_helper_block_e8_32s40s48s
+__copy_helper_block_e8_32s40s48b
+__40-[CameraPlugin handleMethodCall:result:]_block_invoke
+getStringForUIDeviceOrientation
+getFocusModeForString
+getExposureModeForString
+getAVCaptureFlashModeForFlashMode
+getFlashModeForString
+getUIDeviceOrientationForString
+__destroy_helper_block_e8_32s40s
+__copy_helper_block_e8_32s40b
+__39-[FLTCam stopVideoRecordingWithResult:]_block_invoke
+getResolutionPresetForString
+getFlutterError
