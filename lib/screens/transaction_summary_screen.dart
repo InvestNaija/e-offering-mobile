@@ -160,13 +160,9 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen> {
                   textColor: Constants.whiteColor,
                   color: Constants.primaryColor,
                   onPressed: () async {
-                    //await customerProvider.getCustomerDetails();
                     PaymentUrlResponse response = await paymentProvider.getPaymentUrl(reservationId: widget.transaction.id, gateway: 'flutterwave');
                     if(response.error == null){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
-                        return PaymentWebScreen(response.data.authorizationUrl);
-                        }
-                      ));
+                      Navigator.pushNamed(context, '/payment-web', arguments: response.data.authorizationUrl);
                     }else{
                       final snackBar = SnackBar(
                           content: Container(
