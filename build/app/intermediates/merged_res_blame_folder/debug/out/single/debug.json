@@ -40,12 +40,12 @@
         "source": "/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/res/mipmap-xhdpi/ic_logo.png"
     },
     {
-        "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/debug/mipmap-xxhdpi_ic_logo.png.flat",
-        "source": "/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/res/mipmap-xxhdpi/ic_logo.png"
-    },
-    {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/debug/mipmap-xxhdpi_ic_logo.png.flat",
+        "source": "/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/res/mipmap-xxhdpi/ic_logo.png"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",

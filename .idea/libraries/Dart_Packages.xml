@@ -184,13 +184,6 @@
             </list>
           </value>
         </entry>
-        <entry key="flutter_webview_plugin">
-          <value>
-            <list>
-              <option value="$USER_HOME$/flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_webview_plugin-0.4.0/lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="html">
           <value>
             <list>
@@ -623,7 +616,6 @@
       <root url="file://$USER_HOME$/flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_math_fork-0.4.0+1/lib" />
       <root url="file://$USER_HOME$/flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.3/lib" />
       <root url="file://$USER_HOME$/flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-0.22.0/lib" />
-      <root url="file://$USER_HOME$/flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_webview_plugin-0.4.0/lib" />
       <root url="file://$USER_HOME$/flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/html-0.15.0/lib" />
       <root url="file://$USER_HOME$/flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.3/lib" />
       <root url="file://$USER_HOME$/flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0/lib" />

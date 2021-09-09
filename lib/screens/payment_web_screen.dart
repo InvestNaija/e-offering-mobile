@@ -1,8 +1,9 @@
+import 'dart:async';
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:invest_naija/constants.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class PaymentWebScreen extends StatefulWidget {
   final String uri;
@@ -15,130 +16,53 @@ class PaymentWebScreen extends StatefulWidget {
 }
 
 class _PaymentWebScreenState extends State<PaymentWebScreen> {
-  String pleaseText = 'Loading...';
-
-  String callbackUrl = '';
-  String cancelCallbackUrl = '/cancel';
-  final flutterWebviewPlugin = FlutterWebviewPlugin();
+  final Completer<WebViewController> _controller =
+  Completer<WebViewController>();
+  bool isLoading = false;
 
   @override
   void initState() {
     super.initState();
-
-    flutterWebviewPlugin.onUrlChanged.listen((String url) {
-      if(url.contains('cancelled') || url.contains('success?status=successful')) {
-        print('entered');
-        flutterWebviewPlugin.close();
-        flutterWebviewPlugin.dispose();
-        //Navigator.pushNamed(context, '/dashboard');
-      }else{
-        print('didnt enter');
-      }
-    });
   }
 
-  @override
-  void dispose() {
-    flutterWebviewPlugin.close();
-    flutterWebviewPlugin.dispose();
-    super.dispose();
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-  }
 
   @override
   Widget build(BuildContext context) {
-    return WebviewScaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: Constants.primaryColor,
-        leading: InkWell(
-          onTap: () {
-            Navigator.pop(
-              context,
-            );
-          },
-          child: Container(
-            width: 20,
-            height: 40,
-            child: Platform.isAndroid
-                ? Icon(
-              Icons.arrow_back,
-              color: Colors.white,
-            )
-                : Icon(
-              Icons.arrow_back_ios,
-              color: Colors.white,
-            ),
-          ),
-        ),
-        title: Text(
-          "InvestNaija Online Payment",
-          style: TextStyle(
-              color: Colors.white,),
-        ),
-      ),
-      url: widget.uri,
-      hidden: true,
-      initialChild: Dialog(elevation: 0.0, child: _buildDialogChild(context)),
-    );
-  }
+    return Scaffold(
+      appBar: AppBar(),
+      body: Stack(
+        children: [
+          WebView(
+            initialUrl: widget.uri,
+            javascriptMode: JavascriptMode.unrestricted,
+            onPageFinished: (response) {
+              setState(() {isLoading = false;});
+            },
+            onWebViewCreated: (WebViewController webViewController) {
+              //_controller.complete(webViewController);
+            },
+            onProgress: (int progress) {
+              print("WebView is loading (progress : $progress%)");
+            },
 
-  _buildDialogChild(BuildContext context) {
-    return Center(
-      child: Card(
-        color: Colors.white,
-        elevation: 12,
-        child: Container(
-          padding: EdgeInsets.all(24.0),
-          height: 100,
-          child: Row(
-            children: <Widget>[
-              kCircularProgressIndicator(),
-              SizedBox(
-                width: 24.0,
-              ),
-              Expanded(
-                child: Text(
-                  pleaseText,
-                  style: TextStyle(
-                    //fontSize: singleTextUnit(context, 18.0),
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-            ],
+            navigationDelegate: (NavigationRequest request) {
+              if (request.url.contains('cancelled') || request.url.contains('success?status=successful')) {
+                Navigator.pop(context);
+              }
+              print('allowing navigation to $request');
+              return NavigationDecision.navigate;
+            },
+            onPageStarted: (String url) {
+              print('Page started loading: $url');
+            },
+            gestureNavigationEnabled: true,
           ),
-        ),
+          Center(
+            child: CircularProgressIndicator(color: Constants.primaryColor,),
+          )
+        ],
       ),
     );
   }
 
-  Widget kCircularProgressIndicator({
-    Key key,
-//  Android Values
-    double value,
-    Color backgroundColor,
-    Animation<Color> valueColor,
-    double strokeWidth = 4.0,
-
-//  IOS values
-    bool animating = true,
-    double radius = 14,
-  }) {
-    return Platform.isAndroid
-        ? CircularProgressIndicator(
-      value: value,
-      backgroundColor: backgroundColor,
-      valueColor: valueColor,
-      strokeWidth: strokeWidth,
-    )
-        : CupertinoActivityIndicator(
-      animating: animating,
-      radius: radius,
-    );
-  }
 }

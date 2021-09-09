@@ -113,23 +113,6 @@
 73                android:resource="@xml/flutter_image_picker_file_paths" />
 73-->[:image_picker] /Users/Oeshiett/Codehub /e-offering-mobile/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-72
 74        </provider>
-75        <provider
-75-->[:flutter_webview_plugin] /Users/Oeshiett/Codehub /e-offering-mobile/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:9:9-18:20
-76            android:name="androidx.core.content.FileProvider"
-76-->[:flutter_webview_plugin] /Users/Oeshiett/Codehub /e-offering-mobile/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-62
-77            android:authorities="com.chapelhilldenham.invest_naija.fileprovider"
-77-->[:flutter_webview_plugin] /Users/Oeshiett/Codehub /e-offering-mobile/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-64
-78            android:exported="false"
-78-->[:flutter_webview_plugin] /Users/Oeshiett/Codehub /e-offering-mobile/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-37
-79            android:grantUriPermissions="true" >
-79-->[:flutter_webview_plugin] /Users/Oeshiett/Codehub /e-offering-mobile/build/flutter_webview_plugin/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-47
-80            <meta-data
-80-->[:image_picker] /Users/Oeshiett/Codehub /e-offering-mobile/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-15:75
-81                android:name="android.support.FILE_PROVIDER_PATHS"
-81-->[:image_picker] /Users/Oeshiett/Codehub /e-offering-mobile/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:14:17-67
-82                android:resource="@xml/filepaths" />
-82-->[:image_picker] /Users/Oeshiett/Codehub /e-offering-mobile/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-72
-83        </provider>
-84    </application>
-85
-86</manifest>
+75    </application>
+76
+77</manifest>

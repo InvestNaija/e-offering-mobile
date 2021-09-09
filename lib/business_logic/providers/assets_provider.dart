@@ -49,7 +49,11 @@ class AssetsProvider extends ChangeNotifier{
 
   void getEIpoAssets() async{
     SharesListResponseModel assets = await InvestmentRepository().getEIpoShares();
-    eIpoAssets = assets.data.where((asset) => asset.type == 'ipo').toList();
+    if(assets.status.toLowerCase() == 'success') {
+      eIpoAssets = assets.data.where((asset) => asset.type == 'ipo').toList();
+    }else{
+      eIpoAssets = [];
+    }
     isLoadingEIpoAssets = false;
     notifyListeners();
   }
