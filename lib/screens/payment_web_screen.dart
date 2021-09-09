@@ -18,7 +18,7 @@ class PaymentWebScreen extends StatefulWidget {
 class _PaymentWebScreenState extends State<PaymentWebScreen> {
   final Completer<WebViewController> _controller =
   Completer<WebViewController>();
-  bool isLoading = false;
+  bool isLoading = true;
 
   @override
   void initState() {
@@ -58,7 +58,9 @@ class _PaymentWebScreenState extends State<PaymentWebScreen> {
             gestureNavigationEnabled: true,
           ),
           Center(
-            child: CircularProgressIndicator(color: Constants.primaryColor,),
+            child: Offstage(
+                offstage: !isLoading,
+                child: CircularProgressIndicator(color: Constants.primaryColor,)),
           )
         ],
       ),
