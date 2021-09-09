@@ -28,7 +28,8 @@ class _PaymentWebScreenState extends State<PaymentWebScreen> {
     flutterWebviewPlugin.onUrlChanged.listen((String url) {
       if(url.contains('cancelled') || url.contains('success?status=successful')) {
         print('entered');
-        this.dispose();
+        flutterWebviewPlugin.close();
+        flutterWebviewPlugin.dispose();
         //Navigator.pushNamed(context, '/dashboard');
       }else{
         print('didnt enter');
