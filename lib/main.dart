@@ -154,7 +154,7 @@ class _MyAppState extends State<MyApp> with DialogMixins{
                     onPressed: () async{
                       bool hasClearedCache = await Provider.of<LoginProvider>(context, listen: false).logout();
                       if(hasClearedCache){
-                        Navigator.popUntil(context, ModalRoute.withName('/login'));
+                        Navigator.pushNamedAndRemoveUntil(context, '/login', (route) => false);
                       }
                     },
                     child: Text("OK"),
