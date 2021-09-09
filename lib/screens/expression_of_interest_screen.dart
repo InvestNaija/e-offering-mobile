@@ -119,7 +119,7 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                   builder: (context, assetsProvider, customerProvider, paymentProvider, child) {
                     return CustomButton(
                       data: "Proceed to make payment",
-                      isLoading: assetsProvider.isMakingReservation  ,
+                      isLoading: assetsProvider.isMakingReservation || paymentProvider.isFetchingPaymentLink,
                       textColor: Constants.whiteColor,
                       color: Constants.primaryColor,
                       onPressed: () async{
@@ -138,29 +138,17 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                         String assetId = widget.asset.id;
                         int unit = int.parse(unitQuantityTextEditingController.text);
                         double amount = double.parse(estimatedAmountTextEditingController.text);
-                        var expressInterestResponse = await Provider.of<AssetsProvider>(context, listen: false).payNow(assetId : assetId, units : unit, amount: amount);
-                        var response = await paymentProvider.getPaymentUrl(reservationId: expressInterestResponse.data.reservation.id, gateway: 'flutterwave');
-                        if(response.error == null){
-                          Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
-                            return PaymentWebScreen(response.data.authorizationUrl);
-                          }
-                          ));
-                        }else{
-                          final snackBar = SnackBar(
-                            content: Container(
-                              height: 70,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('Payment Error', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
-                                  SizedBox(height: 15,),
-                                  Text(response.error.message),
-                                ],
-                              ),
-                            ),);
-                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        var expressInterestResponse = await assetsProvider.payNow(assetId : assetId, units : unit, amount: amount);
+                        if(expressInterestResponse.error != null){
+                          showSnackBar('Unable to express interest', expressInterestResponse.error.message);
+                          return;
                         }
-                        // showCssBottomSheet(context);
+                        var response = await paymentProvider.getPaymentUrl(reservationId: expressInterestResponse.data.reservation.id, gateway: 'flutterwave');
+                        if(response.error != null){
+                          showSnackBar('Payment Error', response.error.message);
+                          return;
+                        }
+                        Navigator.pushNamed(context, '/payment-web', arguments: response.data.authorizationUrl);
                       },
                     );
                   },
@@ -302,5 +290,20 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
         );
       },
     );
+  }
+  void showSnackBar(String title, String msg){
+    final snackBar = SnackBar(
+      content: Container(
+        height: 70,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(title, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
+            SizedBox(height: 15,),
+            Text(msg),
+          ],
+        ),
+      ),);
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

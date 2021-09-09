@@ -5,6 +5,7 @@ import 'package:invest_naija/business_logic/providers/payment_provider.dart';
 import 'package:invest_naija/business_logic/providers/wallet_provider.dart';
 import 'package:invest_naija/business_logic/repository/local/local_storage.dart';
 import 'package:invest_naija/constants.dart';
+import 'package:invest_naija/mixins/application_mixin.dart';
 import 'package:invest_naija/mixins/dialog_mixin.dart';
 import 'package:invest_naija/screens/dashboard_screen.dart';
 import 'package:invest_naija/screens/enter_bank_information_screen.dart';
@@ -26,6 +27,7 @@ import 'business_logic/providers/assets_provider.dart';
 import 'screens/create_cscs_account_screen.dart';
 import 'screens/enter_cscs_number.dart';
 import 'screens/overall_container_screen.dart';
+import 'screens/payment_web_screen.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -64,7 +66,7 @@ class MyApp extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> with DialogMixins{
+class _MyAppState extends State<MyApp> with DialogMixins, ApplicationMixin{
 
   @override
   void initState() {
@@ -79,7 +81,6 @@ class _MyAppState extends State<MyApp> with DialogMixins{
         if (userIsInsideApp) {
           showInactivityAlert(this.context);
         }
-        // Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => LogoutScreen()));
       },
       child: MaterialApp(
         navigatorKey:navigatorKey,
@@ -116,6 +117,10 @@ class _MyAppState extends State<MyApp> with DialogMixins{
           }
           if (settings.name == '/create-cscs') {
             return MaterialPageRoute(builder: (_) => CreateCscsAccountScreen());
+          }
+          if (settings.name == '/payment-web') {
+            String paymentUrl = settings.arguments as String;
+            return MaterialPageRoute(builder: (_) => PaymentWebScreen(paymentUrl));
           }
           return null; // Let `onUnknownRoute` handle this behavior.
         },
@@ -154,6 +159,7 @@ class _MyAppState extends State<MyApp> with DialogMixins{
                     onPressed: () async{
                       bool hasClearedCache = await Provider.of<LoginProvider>(context, listen: false).logout();
                       if(hasClearedCache){
+                        changePage(context,0);
                         Navigator.pushNamedAndRemoveUntil(context, '/login', (route) => false);
                       }
                     },

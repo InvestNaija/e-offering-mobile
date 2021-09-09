@@ -33,6 +33,11 @@ class AssetsProvider extends ChangeNotifier{
     getPopularAssets();
   }
 
+  void cancelReservation(){
+    isMakingReservation = false;
+    notifyListeners();
+  }
+
   void getPopularAssets() async{
    SharesListResponseModel assets = await InvestmentRepository().getPopularAssets();
    if(assets.error == null && assets.status.toLowerCase() == 'success'){
@@ -118,10 +123,6 @@ class AssetsProvider extends ChangeNotifier{
       country: country,
       maidenName: maidenName
     );
-
-    if(responseModel.status.toLowerCase() == 'success'){
-
-    }
 
     isCreatingCscs = false;
     notifyListeners();

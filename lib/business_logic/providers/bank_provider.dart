@@ -20,7 +20,11 @@ class BankProvider extends ChangeNotifier{
 
   void getListOfBanks() async{
     BanksResponseModel banksResponseModel = await UtilityRepository().getBanks();
-    banks = banksResponseModel.data;
+    if(banksResponseModel.status.toLowerCase() == 'success') {
+      banks = banksResponseModel.data;
+    }else{
+      banks = [];
+    }
     notifyListeners();
   }
 

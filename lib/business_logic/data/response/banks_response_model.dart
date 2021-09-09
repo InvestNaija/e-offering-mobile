@@ -1,6 +1,9 @@
 import 'package:invest_naija/business_logic/data/response/response_model.dart';
 
 class BanksResponseModel extends ResponseModel{
+
+  BanksResponseModel();
+
   List<BankResponseModel> data;
   BanksResponseModel.fromJson(Map<String, dynamic> json) : super.fromJson(json) {
     var list = json['data'] as List;

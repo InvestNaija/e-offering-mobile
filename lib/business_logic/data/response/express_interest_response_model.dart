@@ -6,6 +6,8 @@ class ExpressInterestResponseModel extends ResponseModel{
 
   ExpressInterestData data;
 
+  ExpressInterestResponseModel();
+
   ExpressInterestResponseModel.fromJson(Map<String, dynamic> json) :
         data = ExpressInterestData.fromJson(json['data']),
         super.fromJson(json);

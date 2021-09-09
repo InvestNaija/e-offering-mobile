@@ -24,7 +24,8 @@ class UtilityRepository{
       String response = exception is IOException
           ? "You are not connected to internet"
           : 'The connection has timed out, Please try again!';
-      return ResponseModel()..error = ErrorResponse(message: response);
+      return BanksResponseModel()..error = ErrorResponse(message: response)
+      ..status = 'Failed';
     }
   }
 
