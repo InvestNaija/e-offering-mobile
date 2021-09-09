@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:invest_naija/business_logic/data/request/register_request_model.dart';
-import 'package:invest_naija/business_logic/data/response/nin_response_model.dart';
 import 'package:invest_naija/business_logic/data/response/register_response_model.dart';
 import 'package:invest_naija/business_logic/providers/register_provider.dart';
 import 'package:invest_naija/components/custom_button.dart';

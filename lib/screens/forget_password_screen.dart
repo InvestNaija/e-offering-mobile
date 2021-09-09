@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:invest_naija/business_logic/data/response/login_response_model.dart';
-import 'package:invest_naija/business_logic/providers/customer_provider.dart';
 import 'package:invest_naija/business_logic/providers/login_provider.dart';
 import 'package:invest_naija/components/custom_button.dart';
 import 'package:invest_naija/components/custom_lead_icon.dart';
-import 'package:invest_naija/components/custom_password_field.dart';
 import 'package:invest_naija/components/custom_textfield.dart';
 import 'package:invest_naija/mixins/dialog_mixin.dart';
 import 'package:invest_naija/screens/dashboard_screen.dart';
-import 'package:invest_naija/screens/forgot_password_screen.dart';
 import 'package:provider/provider.dart';
 
 import '../constants.dart';
