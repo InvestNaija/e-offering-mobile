@@ -20,6 +20,7 @@ class _EnterBvnScreenState extends State<EnterBvnScreen> with DialogMixins{
 
   TextEditingController bvnTextEditingController = TextEditingController();
   TextEditingController dobTextEditingController = TextEditingController();
+  String formattedDate = '';
 
   @override
   Widget build(BuildContext context) {
@@ -59,14 +60,15 @@ class _EnterBvnScreenState extends State<EnterBvnScreen> with DialogMixins{
               ),
               const SizedBox(height: 25,),
               CustomTextField(
-                label: "Date Of Birth",
+                label: "Date Of Birth (DD/MM/YYYY)",
                 controller: dobTextEditingController,
                 readOnly: true,
                 onTap: (){
                   selectDate(context: context, onSelected: (DateTime selectedDate){
                      String month = selectedDate.month > 9 ? selectedDate.month.toString() : '0${selectedDate.month}';
                      String day = selectedDate.day > 9 ? selectedDate.day.toString() : '0${selectedDate.day}';
-                     dobTextEditingController.text = '$month-$day-${selectedDate.year}';
+                     dobTextEditingController.text = '$day-$month-${selectedDate.year}';
+                     formattedDate = '$month-$day-${selectedDate.year}';
                    });
                  },
               ),
@@ -82,7 +84,7 @@ class _EnterBvnScreenState extends State<EnterBvnScreen> with DialogMixins{
 
                       BvnResponseModel bvnResponseModel =  await Provider.of<RegisterProvider>(context, listen: false).checkBvn(
                         bvn: bvnTextEditingController.text,
-                        dob: dobTextEditingController.text,
+                        dob: formattedDate,
                       );
 
                       if(bvnResponseModel.error == null){
