@@ -8,6 +8,7 @@ import 'package:invest_naija/components/custom_textfield.dart';
 import 'package:invest_naija/mixins/dialog_mixin.dart';
 import 'package:invest_naija/screens/forgot_password_screen.dart';
 import 'package:invest_naija/screens/otp_screen.dart';
+import 'package:invest_naija/utils/formatter_util.dart';
 import 'package:provider/provider.dart';
 import '../constants.dart';
 import 'enter_bvn_screen.dart';
@@ -54,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins {
                       builder: (context, customerProvider, child) {
                         return  Text(
                             customerProvider.user != null && customerProvider.user.firstName != null?
-                            "Welcome back ${customerProvider.user.firstName.toLowerCase()}!" : "Welcome to InvestNaija",
+                            "Welcome back ${FormatterUtil.formatName(customerProvider.user.firstName.toLowerCase())}!" : "Welcome to InvestNaija",
                             textAlign: TextAlign.center,
                             style: const TextStyle(
                                 fontSize: 12,

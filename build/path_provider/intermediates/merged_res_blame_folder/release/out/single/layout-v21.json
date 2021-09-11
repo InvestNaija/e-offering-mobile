@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/path_provider/intermediates/res/merged/release/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/path_provider/intermediates/res/merged/release/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/path_provider/intermediates/res/merged/release/layout-v21/notification_action.xml",
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/path_provider/intermediates/res/merged/release/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/layout-v21/notification_template_icon_group.xml"
+    }
+]

@@ -3,8 +3,8 @@ class SharesResponseModel {
  String description;
  String name;
  String type;
- int anticipatedMaxPrice;
- int anticipatedMinPrice;
+ double anticipatedMaxPrice;
+ double anticipatedMinPrice;
  double sharePrice;
  int availableShares;
  bool openForPurchase;
@@ -20,8 +20,8 @@ class SharesResponseModel {
   description = json["description"];
   name = json["name"];
   type = json["type"];
-  anticipatedMaxPrice = json["anticipatedMaxPrice"];
-  anticipatedMinPrice = json["anticipatedMinPrice"];
+  anticipatedMaxPrice = json["anticipatedMaxPrice"] == null ? null : json["anticipatedMaxPrice"] * 1.0;
+  anticipatedMinPrice = json["anticipatedMinPrice"] == null ? null : json["anticipatedMinPrice"] * 1.0;
   sharePrice = json["sharePrice"] * 1.0;
   availableShares = json["availableShares"];
   openForPurchase = json["openForPurchase"];

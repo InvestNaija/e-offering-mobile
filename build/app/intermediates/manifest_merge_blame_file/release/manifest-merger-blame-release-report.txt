@@ -1,50 +1,50 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.chapelhilldenham.invest_naija"
-4    android:versionCode="2"
+4    android:versionCode="4002"
 5    android:versionName="1.0.0" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml
+8-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="30" />
-9-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml
+9-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:3:5-66
-11-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:3:22-64
+11-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:3:5-66
+11-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:3:22-64
 12    <uses-permission android:name="android.permission.CAMERA" />
-12-->[:camera] /Users/Oeshiett/Codehub /InvestNaija/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:7:5-65
-12-->[:camera] /Users/Oeshiett/Codehub /InvestNaija/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:7:22-62
+12-->[:camera] /Users/Oeshiett/Codehub /e-offering-mobile/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:7:5-65
+12-->[:camera] /Users/Oeshiett/Codehub /e-offering-mobile/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:7:22-62
 13    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-13-->[:camera] /Users/Oeshiett/Codehub /InvestNaija/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:8:5-71
-13-->[:camera] /Users/Oeshiett/Codehub /InvestNaija/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:8:22-68
+13-->[:camera] /Users/Oeshiett/Codehub /e-offering-mobile/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:8:5-71
+13-->[:camera] /Users/Oeshiett/Codehub /e-offering-mobile/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:8:22-68
 14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 14-->[com.google.android.exoplayer:exoplayer-core:2.14.1] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/7ba8580a5dc5328fe787a86cb85d8be3/jetified-exoplayer-core-2.14.1/AndroidManifest.xml:24:5-79
 14-->[com.google.android.exoplayer:exoplayer-core:2.14.1] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/7ba8580a5dc5328fe787a86cb85d8be3/jetified-exoplayer-core-2.14.1/AndroidManifest.xml:24:22-76
 15
 16    <application
-16-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:4:4-41:19
+16-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:4:4-41:19
 17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 17-->[androidx.core:core:1.6.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/AndroidManifest.xml:24:18-86
 18        android:icon="@mipmap/ic_logo"
-18-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:6:9-39
-19        android:label="Invest Naija" >
-19-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:5:9-37
+18-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:6:9-39
+19        android:label="Invest Naija e-Offerings" >
+19-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:5:9-49
 20        <activity
-20-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:7:9-35:20
+20-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:7:9-35:20
 21            android:name="com.chapelhilldenham.invest_naija.MainActivity"
-21-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:8:13-41
+21-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:8:13-41
 22            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-22-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:11:13-163
+22-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:11:13-163
 23            android:hardwareAccelerated="true"
-23-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:12:13-47
+23-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:12:13-47
 24            android:launchMode="singleTop"
-24-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:9:13-43
+24-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:9:13-43
 25            android:theme="@style/LaunchTheme"
-25-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:10:13-47
+25-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:10:13-47
 26            android:windowSoftInputMode="adjustResize" >
-26-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:13:13-55
+26-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:13:13-55
 27
 28            <!--
 29                 Specifies an Android theme to apply to this Activity as soon as
@@ -53,11 +53,11 @@
 32                 to determine the Window background behind the Flutter UI.
 33            -->
 34            <meta-data
-34-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:18:13-21:17
+34-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:18:13-21:17
 35                android:name="io.flutter.embedding.android.NormalTheme"
-35-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:19:15-70
+35-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:19:15-70
 36                android:resource="@style/NormalTheme" />
-36-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:20:15-52
+36-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:20:15-52
 37            <!--
 38                 Displays an Android View that continues showing the launch screen
 39                 Drawable until Flutter paints its first frame, then this splash
@@ -66,21 +66,21 @@
 42                 Flutter's first frame.
 43            -->
 44            <meta-data
-44-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:27:13-30:17
+44-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:27:13-30:17
 45                android:name="io.flutter.embedding.android.SplashScreenDrawable"
-45-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:28:15-79
+45-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:28:15-79
 46                android:resource="@drawable/launch_background" />
-46-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:29:15-61
+46-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:29:15-61
 47
 48            <intent-filter>
-48-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:31:13-34:29
+48-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:31:13-34:29
 49                <action android:name="android.intent.action.MAIN" />
-49-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:32:17-68
-49-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:32:25-66
+49-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:32:17-68
+49-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:32:25-66
 50
 51                <category android:name="android.intent.category.LAUNCHER" />
-51-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:33:17-76
-51-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:33:27-74
+51-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:33:17-76
+51-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:33:27-74
 52            </intent-filter>
 53        </activity>
 54        <!--
@@ -88,46 +88,29 @@
 56             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
 57        -->
 58        <meta-data
-58-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:38:9-40:33
+58-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:38:9-40:33
 59            android:name="flutterEmbedding"
-59-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:39:13-44
+59-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:39:13-44
 60            android:value="2" />
-60-->/Users/Oeshiett/Codehub /InvestNaija/android/app/src/main/AndroidManifest.xml:40:13-30
+60-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:40:13-30
 61
 62        <provider
-62-->[:image_picker] /Users/Oeshiett/Codehub /InvestNaija/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:8:9-16:20
+62-->[:image_picker] /Users/Oeshiett/Codehub /e-offering-mobile/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:8:9-16:20
 63            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-63-->[:image_picker] /Users/Oeshiett/Codehub /InvestNaija/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:9:13-82
+63-->[:image_picker] /Users/Oeshiett/Codehub /e-offering-mobile/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:9:13-82
 64            android:authorities="com.chapelhilldenham.invest_naija.flutter.image_provider"
-64-->[:image_picker] /Users/Oeshiett/Codehub /InvestNaija/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:10:13-74
+64-->[:image_picker] /Users/Oeshiett/Codehub /e-offering-mobile/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:10:13-74
 65            android:exported="false"
-65-->[:image_picker] /Users/Oeshiett/Codehub /InvestNaija/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:11:13-37
+65-->[:image_picker] /Users/Oeshiett/Codehub /e-offering-mobile/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:11:13-37
 66            android:grantUriPermissions="true" >
-66-->[:image_picker] /Users/Oeshiett/Codehub /InvestNaija/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:12:13-47
+66-->[:image_picker] /Users/Oeshiett/Codehub /e-offering-mobile/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:12:13-47
 67            <meta-data
-67-->[:image_picker] /Users/Oeshiett/Codehub /InvestNaija/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:13:13-15:75
+67-->[:image_picker] /Users/Oeshiett/Codehub /e-offering-mobile/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:13:13-15:75
 68                android:name="android.support.FILE_PROVIDER_PATHS"
-68-->[:image_picker] /Users/Oeshiett/Codehub /InvestNaija/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:14:17-67
+68-->[:image_picker] /Users/Oeshiett/Codehub /e-offering-mobile/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:14:17-67
 69                android:resource="@xml/flutter_image_picker_file_paths" />
-69-->[:image_picker] /Users/Oeshiett/Codehub /InvestNaija/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:15:17-72
+69-->[:image_picker] /Users/Oeshiett/Codehub /e-offering-mobile/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:15:17-72
 70        </provider>
-71        <provider
-71-->[:flutter_webview_plugin] /Users/Oeshiett/Codehub /InvestNaija/build/flutter_webview_plugin/intermediates/library_manifest/release/AndroidManifest.xml:9:9-18:20
-72            android:name="androidx.core.content.FileProvider"
-72-->[:flutter_webview_plugin] /Users/Oeshiett/Codehub /InvestNaija/build/flutter_webview_plugin/intermediates/library_manifest/release/AndroidManifest.xml:10:13-62
-73            android:authorities="com.chapelhilldenham.invest_naija.fileprovider"
-73-->[:flutter_webview_plugin] /Users/Oeshiett/Codehub /InvestNaija/build/flutter_webview_plugin/intermediates/library_manifest/release/AndroidManifest.xml:11:13-64
-74            android:exported="false"
-74-->[:flutter_webview_plugin] /Users/Oeshiett/Codehub /InvestNaija/build/flutter_webview_plugin/intermediates/library_manifest/release/AndroidManifest.xml:12:13-37
-75            android:grantUriPermissions="true" >
-75-->[:flutter_webview_plugin] /Users/Oeshiett/Codehub /InvestNaija/build/flutter_webview_plugin/intermediates/library_manifest/release/AndroidManifest.xml:13:13-47
-76            <meta-data
-76-->[:image_picker] /Users/Oeshiett/Codehub /InvestNaija/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:13:13-15:75
-77                android:name="android.support.FILE_PROVIDER_PATHS"
-77-->[:image_picker] /Users/Oeshiett/Codehub /InvestNaija/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:14:17-67
-78                android:resource="@xml/filepaths" />
-78-->[:image_picker] /Users/Oeshiett/Codehub /InvestNaija/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:15:17-72
-79        </provider>
-80    </application>
-81
-82</manifest>
+71    </application>
+72
+73</manifest>
