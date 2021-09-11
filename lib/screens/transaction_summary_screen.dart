@@ -31,7 +31,7 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen> {
     super.initState();
     NumberFormat formatCurrency = NumberFormat.simpleCurrency(locale: Platform.localeName, name: widget.transaction.asset.currency);
     amount = widget.transaction.asset.sharePrice == 0 ? 'Pending price discovery' : formatCurrency.format(widget.transaction.asset.sharePrice);
-    int calcNumber = widget.transaction.asset.sharePrice == 0 ? 1 : widget.transaction.asset.sharePrice;
+    double calcNumber = widget.transaction.asset.sharePrice == 0 ? 1 : widget.transaction.asset.sharePrice;
     totalPrice =  formatCurrency.format(widget.transaction.unitsExpressed * calcNumber);
     estimatedUnits = widget.transaction.asset.sharePrice == 0 ? 'Pending price discovery' :  formatCurrency.format(widget.transaction.amount/widget.transaction.asset.sharePrice);
   }

@@ -15,6 +15,7 @@ import 'package:invest_naija/screens/splash_screen.dart';
 import 'package:invest_naija/screens/walkthrough_screen.dart';
 import 'package:provider/provider.dart';
 import 'business_logic/data/response/shares_response_model.dart';
+import 'business_logic/data/response/transaction_response_model.dart';
 import 'business_logic/providers/bank_provider.dart';
 import 'business_logic/providers/document_provider.dart';
 import 'business_logic/providers/login_provider.dart';
@@ -28,6 +29,7 @@ import 'screens/create_cscs_account_screen.dart';
 import 'screens/enter_cscs_number.dart';
 import 'screens/overall_container_screen.dart';
 import 'screens/payment_web_screen.dart';
+import 'screens/transaction_summary_screen.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -121,6 +123,10 @@ class _MyAppState extends State<MyApp> with DialogMixins, ApplicationMixin{
           if (settings.name == '/payment-web') {
             String paymentUrl = settings.arguments as String;
             return MaterialPageRoute(builder: (_) => PaymentWebScreen(paymentUrl));
+          }
+          if (settings.name == '/transaction-summary') {
+            TransactionResponseModel transaction = settings.arguments as TransactionResponseModel;
+            return MaterialPageRoute(builder: (_) => TransactionSummaryScreen(transaction: transaction,));
           }
           return null; // Let `onUnknownRoute` handle this behavior.
         },

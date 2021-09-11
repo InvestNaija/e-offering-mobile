@@ -105,45 +105,6 @@ class CustomDrawer extends StatelessWidget with ApplicationMixin{
                       fontWeight: FontWeight.w500)),
               onTap: ()=> changePage(context, 3),
             ),
-            const Spacer(),
-            Padding(
-              padding: EdgeInsets.only(right: 50, left: 20),
-              child: Container(
-                padding: EdgeInsets.only(right: 20, left: 20),
-                decoration: BoxDecoration(
-                    color: Constants.greenColor,
-                    borderRadius: BorderRadius.circular(10)),
-                height: 77,
-                child: Row(
-                  children: [
-                    Transform.translate(
-                        offset: Offset(0, -20),
-                        child: SvgPicture.asset(
-                          "assets/images/lady.svg",
-                        )),
-                    Flexible(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Align(
-                              alignment: Alignment.centerLeft,
-                              child: const Text('Go to Learning Page',
-                                  style: TextStyle(
-                                      color: Constants.whiteColor,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w800))),
-                          const Text(
-                              'Click here to see InvestNaija Learning Platform',
-                              style: const TextStyle(color: Constants.whiteColor, fontSize: 10)),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(height: 20,),
             ListTile(
               leading: SvgPicture.asset("assets/images/logout.svg", width: 25, height: 25),
               title: Text('Logout', style: TextStyle(color: Constants.whiteColor, fontSize: 15,)),
@@ -155,6 +116,45 @@ class CustomDrawer extends StatelessWidget with ApplicationMixin{
                 }
               },
             ),
+            const Spacer(),
+            // Padding(
+            //   padding: EdgeInsets.only(right: 50, left: 20),
+            //   child: Container(
+            //     padding: EdgeInsets.only(right: 20, left: 20),
+            //     decoration: BoxDecoration(
+            //         color: Constants.greenColor,
+            //         borderRadius: BorderRadius.circular(10)),
+            //     height: 77,
+            //     child: Row(
+            //       children: [
+            //         Transform.translate(
+            //             offset: Offset(0, -20),
+            //             child: SvgPicture.asset(
+            //               "assets/images/lady.svg",
+            //             )),
+            //         Flexible(
+            //           child: Column(
+            //             crossAxisAlignment: CrossAxisAlignment.center,
+            //             mainAxisAlignment: MainAxisAlignment.center,
+            //             children: [
+            //               Align(
+            //                   alignment: Alignment.centerLeft,
+            //                   child: const Text('Go to Learning Page',
+            //                       style: TextStyle(
+            //                           color: Constants.whiteColor,
+            //                           fontSize: 14,
+            //                           fontWeight: FontWeight.w800))),
+            //               const Text(
+            //                   'Click here to see InvestNaija Learning Platform',
+            //                   style: const TextStyle(color: Constants.whiteColor, fontSize: 10)),
+            //             ],
+            //           ),
+            //         )
+            //       ],
+            //     ),
+            //   ),
+            // ),
+            // const SizedBox(height: 20,),
           ],
         ),
       ),

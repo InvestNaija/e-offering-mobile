@@ -54,10 +54,7 @@ class _TransactionsFragmentState extends State<TransactionsFragment> {
                           TransactionRow(
                             transaction: transactionsProvider.recentTransactions[index],
                             onTap: (){
-                                Navigator.of(context).push(
-                                    MaterialPageRoute(builder: (context) => TransactionSummaryScreen(
-                                      transaction: transactionsProvider.recentTransactions[index],
-                                    )));
+                              Navigator.pushNamed(context, '/transaction-summary', arguments: transactionsProvider.recentTransactions[index]);
                             }
                           );
                         },),

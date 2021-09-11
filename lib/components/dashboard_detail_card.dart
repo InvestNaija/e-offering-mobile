@@ -44,67 +44,67 @@ class _DashboardDetailCardState extends State<DashboardDetailCard> {
                     child: PageView(
                       children: [
                         _walletBalance(balance: widget.walletBalance, name: 'Portfolio'),
-                        _walletBalance(balance: 0.00, name: 'InvestIN'),
-                        _walletBalance(balance: 0.00, name: 'TradeIN'),
-                        _walletBalance(balance: 0.00, name: 'SaveIN'),
+                        //_walletBalance(balance: 0.00, name: 'InvestIN'),
+                        //_walletBalance(balance: 0.00, name: 'TradeIN'),
+                        //_walletBalance(balance: 0.00, name: 'SaveIN'),
                       ],
                     ),
                   ),
-                  const Spacer(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      AnimatedContainer(
-                        width: 5,
-                        height: 5,
-                        duration: Duration(milliseconds: 200),
-                        decoration: BoxDecoration(
-                          borderRadius:
-                          BorderRadius.circular(2.5),
-                          color: Constants.whiteColor,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      AnimatedContainer(
-                        width: 5,
-                        height: 5,
-                        duration: Duration(milliseconds: 200),
-                        decoration: BoxDecoration(
-                          borderRadius:
-                          BorderRadius.circular(2.5),
-                          color: Constants.whiteColor,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      AnimatedContainer(
-                        width: 5,
-                        height: 5,
-                        duration: Duration(milliseconds: 200),
-                        decoration: BoxDecoration(
-                          borderRadius:
-                          BorderRadius.circular(2.5),
-                          color: Constants.whiteColor,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      AnimatedContainer(
-                        width: 5,
-                        height: 5,
-                        duration: Duration(milliseconds: 200),
-                        decoration: BoxDecoration(
-                          borderRadius:
-                          BorderRadius.circular(2.5),
-                          color: Constants.whiteColor,
-                        ),
-                      ),
-                    ],
-                  )
+                  // const Spacer(),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //     AnimatedContainer(
+                  //       width: 5,
+                  //       height: 5,
+                  //       duration: Duration(milliseconds: 200),
+                  //       decoration: BoxDecoration(
+                  //         borderRadius:
+                  //         BorderRadius.circular(2.5),
+                  //         color: Constants.whiteColor,
+                  //       ),
+                  //     ),
+                  //     SizedBox(
+                  //       width: 10,
+                  //     ),
+                  //     AnimatedContainer(
+                  //       width: 5,
+                  //       height: 5,
+                  //       duration: Duration(milliseconds: 200),
+                  //       decoration: BoxDecoration(
+                  //         borderRadius:
+                  //         BorderRadius.circular(2.5),
+                  //         color: Constants.whiteColor,
+                  //       ),
+                  //     ),
+                  //     SizedBox(
+                  //       width: 10,
+                  //     ),
+                  //     AnimatedContainer(
+                  //       width: 5,
+                  //       height: 5,
+                  //       duration: Duration(milliseconds: 200),
+                  //       decoration: BoxDecoration(
+                  //         borderRadius:
+                  //         BorderRadius.circular(2.5),
+                  //         color: Constants.whiteColor,
+                  //       ),
+                  //     ),
+                  //     SizedBox(
+                  //       width: 10,
+                  //     ),
+                  //     AnimatedContainer(
+                  //       width: 5,
+                  //       height: 5,
+                  //       duration: Duration(milliseconds: 200),
+                  //       decoration: BoxDecoration(
+                  //         borderRadius:
+                  //         BorderRadius.circular(2.5),
+                  //         color: Constants.whiteColor,
+                  //       ),
+                  //     ),
+                  //   ],
+                  // )
                 ],
               ),
             ),

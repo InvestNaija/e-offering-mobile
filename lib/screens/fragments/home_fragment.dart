@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:invest_naija/business_logic/data/response/transaction_response_model.dart';
 import 'package:invest_naija/business_logic/providers/bank_provider.dart';
 import 'package:invest_naija/business_logic/providers/customer_provider.dart';
 import 'package:invest_naija/business_logic/providers/transaction_provider.dart';
@@ -9,7 +8,6 @@ import 'package:invest_naija/business_logic/providers/wallet_provider.dart';
 import 'package:invest_naija/components/custom_clipping.dart';
 import 'package:invest_naija/components/dashboard_detail_card.dart';
 import 'package:invest_naija/components/no_transactions.dart';
-import 'package:invest_naija/components/option_card.dart';
 import 'package:invest_naija/components/transaction_row.dart';
 import 'package:invest_naija/components/trending_share_card.dart';
 import 'package:invest_naija/mixins/application_mixin.dart';

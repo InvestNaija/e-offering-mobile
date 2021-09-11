@@ -1,10 +1,7 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:invest_naija/business_logic/data/response/customer_response_model.dart';
 import 'package:invest_naija/business_logic/providers/customer_provider.dart';
-import 'package:invest_naija/business_logic/providers/login_provider.dart';
 import 'package:invest_naija/components/custom_drawer.dart';
 import 'package:invest_naija/constants.dart';
 import 'package:invest_naija/mixins/application_mixin.dart';
@@ -14,9 +11,7 @@ import 'package:invest_naija/screens/fragments/home_fragment.dart';
 import 'package:invest_naija/screens/fragments/transactions_fragment.dart';
 import 'package:provider/provider.dart';
 import '../main.dart';
-import 'fragments/investment_fragment.dart';
 import 'fragments/investment_plans_fragment.dart';
-import 'login_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   @override
@@ -59,9 +54,6 @@ class _DashboardScreenState extends State<DashboardScreen> with DialogMixins, Ap
                   onTap: () => Scaffold.of(context).openDrawer(),
                 ),
               ),
-              actions: customerProvider.currentPage == 0 ? [
-              SvgPicture.asset("assets/images/notification.svg", width: 43, height: 43),
-              ] : [],
             ),
             drawer: CustomDrawer(
               firstName: customerProvider?.user?.firstName ?? '',
