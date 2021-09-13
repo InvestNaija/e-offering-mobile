@@ -68,8 +68,8 @@ class _TransactionsFragmentState extends State<TransactionsFragment> {
                           LoadingTransactionRow():
                           TransactionRow(
                             transaction: transactionsProvider.transactions[index],
-                            onTap: (){
-                              Navigator.pushNamed(context, '/transaction-summary', arguments: transactionsProvider.transactions[index]);
+                            onTap: () async{
+                              await Navigator.pushNamed(context, '/transaction-summary', arguments: transactionsProvider.transactions[index]);
                             }
                           );
                         },),

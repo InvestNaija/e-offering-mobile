@@ -6,6 +6,7 @@ import 'package:invest_naija/business_logic/data/response/payment_url_response.d
 import 'package:invest_naija/business_logic/data/response/transaction_response_model.dart';
 import 'package:invest_naija/business_logic/providers/customer_provider.dart';
 import 'package:invest_naija/business_logic/providers/payment_provider.dart';
+import 'package:invest_naija/business_logic/providers/transaction_provider.dart';
 import 'package:invest_naija/components/custom_button.dart';
 import 'package:invest_naija/components/custom_lead_icon.dart';
 import 'package:provider/provider.dart';
@@ -152,8 +153,8 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen> {
                     color: Constants.blackColor),
               ),
               const SizedBox(height: 33,),
-              Consumer2<CustomerProvider, PaymentProvider>(
-               builder: (context,customerProvider, paymentProvider, cachedWidget){
+              Consumer3<CustomerProvider, PaymentProvider, TransactionProvider>(
+               builder: (context,customerProvider, paymentProvider,  transactionProvider, cachedWidget){
                 return CustomButton(
                   data: "Make Payment",
                   isLoading: customerProvider.isFetchingCustomersDetails || paymentProvider.isFetchingPaymentLink,
@@ -162,7 +163,8 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen> {
                   onPressed: () async {
                     PaymentUrlResponse response = await paymentProvider.getPaymentUrl(reservationId: widget.transaction.id, gateway: 'flutterwave');
                     if(response.error == null){
-                      Navigator.pushNamed(context, '/payment-web', arguments: response.data.authorizationUrl);
+                      await Navigator.pushNamed(context, '/payment-web', arguments: response.data.authorizationUrl);
+                      transactionProvider.refreshTransactions();
                     }else{
                       final snackBar = SnackBar(
                           content: Container(
