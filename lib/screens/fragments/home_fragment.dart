@@ -222,11 +222,9 @@ class _HomeFragmentState extends State<HomeFragment> with ApplicationMixin{
                                   (index) => transactionsProvider.loadingRecentTransaction ? LoadingTransactionRow() : TransactionRow(
                                       transaction: transactionsProvider.recentTransactions[index],
                                       onTap: (){
-                                        Navigator.of(context).push(
-                                        MaterialPageRoute(builder: (context) => TransactionSummaryScreen(
-                                          transaction: transactionsProvider.recentTransactions[index],
-                                        )));
-                                  })
+                                        Navigator.pushNamed(context, '/transaction-summary', arguments: transactionsProvider.recentTransactions[index]);
+                                      },
+                                  )
                           ),
                         );
                       },

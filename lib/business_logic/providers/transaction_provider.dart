@@ -9,12 +9,19 @@ class TransactionProvider extends ChangeNotifier{
 
   bool loadingRecentTransaction = true;
   List<TransactionResponseModel> recentTransactions = [];
+  List<TransactionResponseModel> transactions = [];
+  List<TransactionResponseModel> reservoir = [];
 
   Future<bool> refreshTransactions() async{
     loadingRecentTransaction = true;
     notifyListeners();
     getRecentTransactions();
     return true;
+  }
+
+  void filterTransactionByStatus(String status){
+
+      notifyListeners();
   }
 
   void refreshRecentTransactions() async{
@@ -26,7 +33,9 @@ class TransactionProvider extends ChangeNotifier{
   void getRecentTransactions() async{
     TransactionListResponseModel transactionsResponse = await TransactionRepository().getTransactions();
     if(transactionsResponse.error == null){
-      recentTransactions = transactionsResponse.data;
+      recentTransactions = transactionsResponse.data.getRange(0, 5).toList();
+      transactions = transactionsResponse.data;
+      reservoir = transactionsResponse.data;
       calculateCumulativeEIpoInvestmentAmount(transactionsResponse.data);
     }
     loadingRecentTransaction = false;
