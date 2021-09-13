@@ -39,6 +39,7 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen> {
 
   @override
   Widget build(BuildContext context) {
+    const TextStyle moneyStyle = TextStyle(fontFamily: 'RobotoMono', fontSize: 14, fontWeight: FontWeight.w700, color: Constants.blackColor);
     return Scaffold(
       backgroundColor: Constants.dashboardBackgroundColor,
       appBar: PreferredSize(
@@ -105,7 +106,7 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text("Price Per Share", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.neutralColor),),
-                          Text(amount ?? '', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Constants.blackColor),),
+                          Text(amount ?? '', style: moneyStyle,),
                         ],
                       ),
                       SizedBox(height: 14,),
@@ -113,7 +114,7 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Text("Estimated Units", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.neutralColor),),
-                          Text(estimatedUnits, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Constants.blackColor),),
+                          Text(estimatedUnits, style: moneyStyle,),
                         ],
                       ),
                       const SizedBox(height: 14,),
@@ -121,7 +122,7 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text("Total", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.neutralColor),),
-                          Text(totalPrice, style: TextStyle(fontFamily: 'RobotoMono', fontSize: 14, fontWeight: FontWeight.w700, color: Constants.blackColor),),
+                          Text(totalPrice, style: moneyStyle,),
                         ],
                       ),
                       SizedBox(height: 14,),
