@@ -18,8 +18,6 @@ class TransactionRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final formatCurrency = NumberFormat.simpleCurrency(locale: Platform.localeName, name: transaction.asset.currency);
     String amount = formatCurrency.format(transaction.amount);
-    print(amount);
-
     return GestureDetector(
       onTap: ()=> onTap(),
       child: Container(

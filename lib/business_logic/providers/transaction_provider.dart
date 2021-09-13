@@ -20,7 +20,7 @@ class TransactionProvider extends ChangeNotifier{
   }
 
   void filterTransactionByStatus(String status){
-
+      transactions = reservoir.where((trnx) => trnx.status == status.toLowerCase()).toList();
       notifyListeners();
   }
 

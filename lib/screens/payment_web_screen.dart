@@ -41,20 +41,14 @@ class _PaymentWebScreenState extends State<PaymentWebScreen> {
             onWebViewCreated: (WebViewController webViewController) {
               //_controller.complete(webViewController);
             },
-            onProgress: (int progress) {
-              print("WebView is loading (progress : $progress%)");
-            },
-
+            onProgress: (int progress) {},
             navigationDelegate: (NavigationRequest request) {
               if (request.url.contains('cancelled') || request.url.contains('success?status=successful')) {
                 Navigator.pop(context);
               }
-              print('allowing navigation to $request');
               return NavigationDecision.navigate;
             },
-            onPageStarted: (String url) {
-              print('Page started loading: $url');
-            },
+            onPageStarted: (String url) {},
             gestureNavigationEnabled: true,
           ),
           Center(
