@@ -123,9 +123,9 @@ class _EnterCscsNumberState extends State<EnterCscsNumber> with DialogMixins {
 
   @override
   void dispose() {
-    super.dispose();
     _cscsNumberTextEditingController.clear();
     _assetsProvider.verifiedName = '';
     _assetsProvider.cscsVerified = false;
+    super.dispose();
   }
 }
