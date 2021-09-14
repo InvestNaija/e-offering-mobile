@@ -26,6 +26,7 @@ import 'business_logic/providers/register_provider.dart';
 import 'business_logic/providers/transaction_provider.dart';
 import 'business_logic/providers/assets_provider.dart';
 import 'screens/create_cscs_account_screen.dart';
+import 'screens/e-ipo_details_screen.dart';
 import 'screens/enter_cscs_number.dart';
 import 'screens/overall_container_screen.dart';
 import 'screens/payment_web_screen.dart';
@@ -127,6 +128,10 @@ class _MyAppState extends State<MyApp> with DialogMixins, ApplicationMixin{
           if (settings.name == '/transaction-summary') {
             TransactionResponseModel transaction = settings.arguments as TransactionResponseModel;
             return MaterialPageRoute(builder: (_) => TransactionSummaryScreen(transaction: transaction,));
+          }
+          if (settings.name == '/ipo-detail') {
+            SharesResponseModel asset = settings.arguments as SharesResponseModel;
+            return MaterialPageRoute(builder: (_) => EIpoDetailsScreen(asset: asset,));
           }
           return null; // Let `onUnknownRoute` handle this behavior.
         },

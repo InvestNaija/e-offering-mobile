@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:invest_naija/business_logic/data/response/shares_response_model.dart';
 import 'package:invest_naija/business_logic/providers/bank_provider.dart';
 import 'package:invest_naija/business_logic/providers/customer_provider.dart';
 import 'package:invest_naija/business_logic/providers/transaction_provider.dart';
@@ -165,8 +166,14 @@ class _HomeFragmentState extends State<HomeFragment> with ApplicationMixin{
                           itemCount: trendingShares.isLoadingTrendingShares ? 5 : trendingShares.trendingAssets?.length ?? 0,
                           itemBuilder: (context, index){
                             return trendingShares.isLoadingTrendingShares ? LoadingTrendingShareCard() :
-                            TrendingShareCard(asset: trendingShares.trendingAssets[index],);
-                          });
+                            TrendingShareCard(
+                              asset: trendingShares.trendingAssets[index],
+                              onTapped: (SharesResponseModel asset){
+                                Navigator.pushNamed(context, '/ipo-detail', arguments: asset);
+                              },
+                            );
+                          },
+                      );
                     },
                   ),
                 ),

@@ -6,63 +6,67 @@ import '../constants.dart';
 
 class TrendingShareCard extends StatelessWidget {
   final SharesResponseModel asset;
+  final Function(SharesResponseModel asset) onTapped;
 
-  const TrendingShareCard({Key key, this.asset}) : super(key: key);
+  const TrendingShareCard({Key key,this.asset,this.onTapped}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: SizedBox(
-        height: 113,
-        width: 150,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.network(
-                asset.image,
-                width: 30,
-                height: 30,
-              ),
-              SizedBox(
-                height: 14,
-              ),
-              Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    this.asset.name,
-                    style: TextStyle(
-                        color: Constants.blackColor,
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold),
-                  )),
-              SizedBox(height: 5,),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //   children: [
-              //     Text(
-              //       'MTN',
-              //       style: TextStyle(
-              //         color: Constants.blackColor,
-              //         fontSize: 10,),
-              //     ),
-              //     Container(
-              //       child: Row(
-              //         mainAxisAlignment: MainAxisAlignment.start,
-              //         children: [
-              //           //Icon(Icons.arrow_drop_up_rounded, color: Constants.successColor,),
-              //           // Text(
-              //           //   '(19.25%)',
-              //           //   style: TextStyle(
-              //           //     color: Constants.successColor,
-              //           //     fontSize: 10,),
-              //           // ),
-              //         ],
-              //       ),
-              //     )
-              //   ],
-              // )
-            ],
+    return GestureDetector(
+      onTap:()=> onTapped(this.asset),
+      child: Card(
+        child: SizedBox(
+          height: 113,
+          width: 150,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.network(
+                  asset.image,
+                  width: 30,
+                  height: 30,
+                ),
+                SizedBox(
+                  height: 14,
+                ),
+                Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      this.asset.name,
+                      style: TextStyle(
+                          color: Constants.blackColor,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold),
+                    )),
+                SizedBox(height: 5,),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: [
+                //     Text(
+                //       'MTN',
+                //       style: TextStyle(
+                //         color: Constants.blackColor,
+                //         fontSize: 10,),
+                //     ),
+                //     Container(
+                //       child: Row(
+                //         mainAxisAlignment: MainAxisAlignment.start,
+                //         children: [
+                //           //Icon(Icons.arrow_drop_up_rounded, color: Constants.successColor,),
+                //           // Text(
+                //           //   '(19.25%)',
+                //           //   style: TextStyle(
+                //           //     color: Constants.successColor,
+                //           //     fontSize: 10,),
+                //           // ),
+                //         ],
+                //       ),
+                //     )
+                //   ],
+                // )
+              ],
+            ),
           ),
         ),
       ),

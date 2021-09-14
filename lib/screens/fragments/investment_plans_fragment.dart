@@ -59,8 +59,7 @@ class _InvestmentPlansFragmentState extends State<InvestmentPlansFragment> {
                       InvestmentProductCard(
                         asset: assetsProvider.eIpoAssets[index],
                         onTap: (){
-                          Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) => EIpoDetailsScreen(asset: assetsProvider.eIpoAssets[index],)));
+                          Navigator.pushNamed(context, '/ipo-detail', arguments: assetsProvider.eIpoAssets[index]);
                         },
                       );
                     }),
