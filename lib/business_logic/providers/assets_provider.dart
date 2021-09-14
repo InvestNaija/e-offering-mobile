@@ -39,10 +39,12 @@ class AssetsProvider extends ChangeNotifier{
   }
 
   void getPopularAssets() async{
-   SharesListResponseModel assets = await InvestmentRepository().getPopularAssets();
-   if(assets.error == null && assets.status.toLowerCase() == 'success'){
-     trendingAssets = assets.data.where((asset) => asset.type == 'ipo').toList();
-   }
+   try{
+     SharesListResponseModel assets = await InvestmentRepository().getPopularAssets();
+     if(assets.error == null && assets.status.toLowerCase() == 'success'){
+       trendingAssets = assets.data.where((asset) => asset.type == 'ipo').toList();
+     }
+   }catch(exception){}
    isLoadingTrendingShares = false;
    notifyListeners();
   }

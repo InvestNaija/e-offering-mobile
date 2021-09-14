@@ -35,13 +35,15 @@ class TransactionProvider extends ChangeNotifier{
   }
 
   void getRecentTransactions() async{
-    TransactionListResponseModel transactionsResponse = await TransactionRepository().getTransactions();
-    if(transactionsResponse.error == null){
-      recentTransactions = transactionsResponse.data.getRange(0, 5).toList();
-      transactions = transactionsResponse.data;
-      reservoir = transactionsResponse.data;
-      calculateCumulativeEIpoInvestmentAmount(transactionsResponse.data);
-    }
+    try{
+      TransactionListResponseModel transactionsResponse = await TransactionRepository().getTransactions();
+      if(transactionsResponse.error == null){
+        recentTransactions = transactionsResponse.data.getRange(0, 5).toList();
+        transactions = transactionsResponse.data;
+        reservoir = transactionsResponse.data;
+        calculateCumulativeEIpoInvestmentAmount(transactionsResponse.data);
+      }
+    }catch(exception){}
     loadingRecentTransaction = false;
     notifyListeners();
   }
