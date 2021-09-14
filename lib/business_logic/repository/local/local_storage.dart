@@ -27,7 +27,7 @@ class LocalStorage implements LocalStorageRepository{
 
   @override
   Future<bool> saveCustomer(CustomerResponseModel customer) async{
-    return await localStorage.setString("customer", json.encode(customer));
+    return await localStorage.setString("customer", json.encode(customer.toJson()));
   }
 
   @override

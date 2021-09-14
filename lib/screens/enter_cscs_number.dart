@@ -18,7 +18,15 @@ class EnterCscsNumber extends StatefulWidget {
 
 class _EnterCscsNumberState extends State<EnterCscsNumber> with DialogMixins {
 
-  TextEditingController _cscsNumberTextEditingController = TextEditingController();
+  TextEditingController _cscsNumberTextEditingController;
+  AssetsProvider _assetsProvider;
+
+  @override
+  void initState() {
+    super.initState();
+    _cscsNumberTextEditingController = TextEditingController();
+    _assetsProvider = Provider.of<AssetsProvider>(context, listen: false);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +76,11 @@ class _EnterCscsNumberState extends State<EnterCscsNumber> with DialogMixins {
                   controller: _cscsNumberTextEditingController,
                   counterText: assetProvider.verifiedName,
                   onChange: (value) async{
-                    await assetProvider.verifyCscs(cscsNo: _cscsNumberTextEditingController.text);
+                    var response = await assetProvider.verifyCscs(cscsNo: _cscsNumberTextEditingController.text);
+                    if(response.status.toLowerCase() != 'success'){
+                      SnackBar snackBar = SnackBar(content: Text(response.error.message));
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    }
                   },
                 );
               },
@@ -112,8 +124,8 @@ class _EnterCscsNumberState extends State<EnterCscsNumber> with DialogMixins {
   @override
   void dispose() {
     super.dispose();
-    _cscsNumberTextEditingController.dispose();
-    Provider.of<AssetsProvider>(context).verifiedName = '';
-    Provider.of<AssetsProvider>(context).cscsVerified = false;
+    _cscsNumberTextEditingController.clear();
+    _assetsProvider.verifiedName = '';
+    _assetsProvider.cscsVerified = false;
   }
 }

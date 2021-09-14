@@ -117,7 +117,8 @@ class InvestmentRepository{
       String response = exception is IOException
           ? "You are not connected to internet"
           : 'The connection has timed out, Please try again!';
-      return CscsVerificationResponseModel()..error = ErrorResponse(message: response);
+      return CscsVerificationResponseModel()..error = ErrorResponse(message: response)
+      ..status = 'Failed';
     }
   }
 
