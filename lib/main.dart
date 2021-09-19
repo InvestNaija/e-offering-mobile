@@ -82,7 +82,7 @@ class _MyAppState extends State<MyApp> with DialogMixins, ApplicationMixin{
       context: context,
       onTimeExpired: () {
         if (userIsInsideApp) {
-          //showInactivityAlert(this.context);
+          showInactivityAlert(this.context);
         }
       },
       child: MaterialApp(
