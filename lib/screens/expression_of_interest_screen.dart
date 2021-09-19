@@ -165,9 +165,11 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                         if(!formKey.currentState.validate()){
                           return;
                         }
+                        double amount = double.parse(estimatedAmountTextEditingController.text);
                         ExpressInterestResponseModel response = await Provider.of<AssetsProvider>(context, listen: false).payLater(
                           assetId : widget.asset.id,
                           units :  int.parse(unitQuantityTextEditingController.text),
+                          amount : amount
                         );
                         if(response.error == null){
                           showSimpleModalDialog(

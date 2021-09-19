@@ -84,6 +84,7 @@ class InvestmentRepository{
           'The connection has timed out, Please try again!');
     });
     var jsonResponse = convert.jsonDecode(response.body);
+    print(jsonResponse);
     return ExpressInterestResponseModel.fromJson(jsonResponse);
     } on Exception catch (exception) {
       String response = exception is IOException

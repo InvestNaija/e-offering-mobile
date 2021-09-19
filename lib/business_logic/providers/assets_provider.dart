@@ -60,10 +60,10 @@ class AssetsProvider extends ChangeNotifier{
     notifyListeners();
   }
 
-  Future<ExpressInterestResponseModel> payLater({String assetId, int units}) async{
+  Future<ExpressInterestResponseModel> payLater({String assetId, int units, double amount}) async{
     isSavingReservation = true;
     notifyListeners();
-    var response = await expressInterest(assetId: assetId, units: units);
+    var response = await expressInterest(assetId: assetId, units: units, amount: amount);
     isSavingReservation = false;
     notifyListeners();
     return response;
