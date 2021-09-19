@@ -117,44 +117,37 @@ class CustomDrawer extends StatelessWidget with ApplicationMixin{
               },
             ),
             const Spacer(),
-            // Padding(
-            //   padding: EdgeInsets.only(right: 50, left: 20),
-            //   child: Container(
-            //     padding: EdgeInsets.only(right: 20, left: 20),
-            //     decoration: BoxDecoration(
-            //         color: Constants.greenColor,
-            //         borderRadius: BorderRadius.circular(10)),
-            //     height: 77,
-            //     child: Row(
-            //       children: [
-            //         Transform.translate(
-            //             offset: Offset(0, -20),
-            //             child: SvgPicture.asset(
-            //               "assets/images/lady.svg",
-            //             )),
-            //         Flexible(
-            //           child: Column(
-            //             crossAxisAlignment: CrossAxisAlignment.center,
-            //             mainAxisAlignment: MainAxisAlignment.center,
-            //             children: [
-            //               Align(
-            //                   alignment: Alignment.centerLeft,
-            //                   child: const Text('Go to Learning Page',
-            //                       style: TextStyle(
-            //                           color: Constants.whiteColor,
-            //                           fontSize: 14,
-            //                           fontWeight: FontWeight.w800))),
-            //               const Text(
-            //                   'Click here to see InvestNaija Learning Platform',
-            //                   style: const TextStyle(color: Constants.whiteColor, fontSize: 10)),
-            //             ],
-            //           ),
-            //         )
-            //       ],
-            //     ),
-            //   ),
-            // ),
-            // const SizedBox(height: 20,),
+            Padding(
+              padding: EdgeInsets.only(right: 50, left: 20),
+              child: Container(
+                padding: EdgeInsets.only(right: 20, left: 20, top: 10, bottom: 10),
+                decoration: BoxDecoration(
+                    color: Constants.greenColor,
+                    borderRadius: BorderRadius.circular(10)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Expert support available to you 24/7', style: TextStyle(color: Constants.whiteColor),),
+                    SizedBox(height: 5,),
+                    Text('via mail', style: TextStyle(color: Constants.navyBlueColor),),
+                    SizedBox(height: 5,),
+                    RichText(text: TextSpan(
+                        text: 'or call',
+                        children: [
+                          TextSpan(text: '0700-INVESTNAIJA\n'),
+                          TextSpan(text: '(070046837862452)\n', style: TextStyle(fontSize: 12)),
+                          TextSpan(text: '\n'),
+                          TextSpan(text: 'OR\n'),
+                          TextSpan(text: '\n'),
+                          TextSpan(text: '0700-CHAPELHILL\n'),
+                          TextSpan(text: '(07002427354455)', style: TextStyle(fontSize: 12)),
+                        ]
+                    ),
+                    )
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
