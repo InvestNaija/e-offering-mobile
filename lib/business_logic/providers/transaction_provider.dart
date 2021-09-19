@@ -38,9 +38,10 @@ class TransactionProvider extends ChangeNotifier{
     try{
       TransactionListResponseModel transactionsResponse = await TransactionRepository().getTransactions();
       if(transactionsResponse.error == null){
-        recentTransactions = transactionsResponse.data.reversed.toList().getRange(0, 5).toList();
-        transactions = transactionsResponse.data.reversed.toList();
-        reservoir = transactionsResponse.data.reversed.toList();
+        var filteredAssets = transactionsResponse.data.where((element) => element.asset.type == 'ipo').toList();
+        recentTransactions = filteredAssets.reversed.toList().getRange(0, 5).toList();
+        transactions = filteredAssets.reversed.toList();
+        reservoir = filteredAssets.reversed.toList();
         calculateCumulativeEIpoInvestmentAmount(transactionsResponse.data);
       }
     }catch(exception){}
