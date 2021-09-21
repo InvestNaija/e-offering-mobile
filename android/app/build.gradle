@@ -43,7 +43,7 @@ android {
         applicationId "com.chapelhilldenham.invest_naija"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 2
+        versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
 
