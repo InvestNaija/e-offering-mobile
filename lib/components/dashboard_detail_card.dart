@@ -1,9 +1,13 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:invest_naija/business_logic/repository/local/local_storage.dart';
 
 import '../constants.dart';
 
 class DashboardDetailCard extends StatefulWidget {
-  final double walletBalance;
+  final Map<String, double> walletBalance;
 
   const DashboardDetailCard({Key key, this.walletBalance}) : super(key: key);
   @override
@@ -11,6 +15,15 @@ class DashboardDetailCard extends StatefulWidget {
 }
 
 class _DashboardDetailCardState extends State<DashboardDetailCard> {
+
+  bool shouldHideBalance;
+
+  @override
+  void initState() {
+    super.initState();
+    shouldHideBalance = appLocalStorage.getHideBalance();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,85 +56,80 @@ class _DashboardDetailCardState extends State<DashboardDetailCard> {
                     height: 75,
                     child: PageView(
                       children: [
-                        _walletBalance(balance: widget.walletBalance, name: 'Portfolio'),
-                        //_walletBalance(balance: 0.00, name: 'InvestIN'),
-                        //_walletBalance(balance: 0.00, name: 'TradeIN'),
-                        //_walletBalance(balance: 0.00, name: 'SaveIN'),
+                        _walletBalance(balance: widget.walletBalance['NGN'] ?? 0.0, name: 'Portfolio (NGN)', currency: 'NGN'),
+                        _walletBalance(balance: widget.walletBalance['USD'] ?? 0.0, name: 'Portfolio (USD)', currency: 'USD'),
+                        _walletBalance(balance: widget.walletBalance['EUR'] ?? 0.0, name: 'Portfolio (EUR)', currency: 'EUR'),
                       ],
                     ),
                   ),
-                  // const Spacer(),
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.center,
-                  //   children: [
-                  //     AnimatedContainer(
-                  //       width: 5,
-                  //       height: 5,
-                  //       duration: Duration(milliseconds: 200),
-                  //       decoration: BoxDecoration(
-                  //         borderRadius:
-                  //         BorderRadius.circular(2.5),
-                  //         color: Constants.whiteColor,
-                  //       ),
-                  //     ),
-                  //     SizedBox(
-                  //       width: 10,
-                  //     ),
-                  //     AnimatedContainer(
-                  //       width: 5,
-                  //       height: 5,
-                  //       duration: Duration(milliseconds: 200),
-                  //       decoration: BoxDecoration(
-                  //         borderRadius:
-                  //         BorderRadius.circular(2.5),
-                  //         color: Constants.whiteColor,
-                  //       ),
-                  //     ),
-                  //     SizedBox(
-                  //       width: 10,
-                  //     ),
-                  //     AnimatedContainer(
-                  //       width: 5,
-                  //       height: 5,
-                  //       duration: Duration(milliseconds: 200),
-                  //       decoration: BoxDecoration(
-                  //         borderRadius:
-                  //         BorderRadius.circular(2.5),
-                  //         color: Constants.whiteColor,
-                  //       ),
-                  //     ),
-                  //     SizedBox(
-                  //       width: 10,
-                  //     ),
-                  //     AnimatedContainer(
-                  //       width: 5,
-                  //       height: 5,
-                  //       duration: Duration(milliseconds: 200),
-                  //       decoration: BoxDecoration(
-                  //         borderRadius:
-                  //         BorderRadius.circular(2.5),
-                  //         color: Constants.whiteColor,
-                  //       ),
-                  //     ),
-                  //   ],
-                  // )
+                  const Spacer(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      AnimatedContainer(
+                        width: 5,
+                        height: 5,
+                        duration: Duration(milliseconds: 200),
+                        decoration: BoxDecoration(
+                          borderRadius:
+                          BorderRadius.circular(2.5),
+                          color: Constants.whiteColor,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      AnimatedContainer(
+                        width: 5,
+                        height: 5,
+                        duration: Duration(milliseconds: 200),
+                        decoration: BoxDecoration(
+                          borderRadius:
+                          BorderRadius.circular(2.5),
+                          color: Constants.whiteColor,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      AnimatedContainer(
+                        width: 5,
+                        height: 5,
+                        duration: Duration(milliseconds: 200),
+                        decoration: BoxDecoration(
+                          borderRadius:
+                          BorderRadius.circular(2.5),
+                          color: Constants.whiteColor,
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
             Positioned(
               bottom: 15,
               right: 15,
-              child: Text(
-                "Hide Balance",
-                style: TextStyle(
-                    color: Constants.gray6Color, fontSize: 12),
+              child: GestureDetector(
+                onTap: (){
+                  appLocalStorage.setHideBalance(!shouldHideBalance);
+                  shouldHideBalance = !shouldHideBalance;
+                  setState(() {});
+                },
+                child: Text(
+                  "Hide Balance",
+                  style: TextStyle(
+                      color: Constants.gray6Color, fontSize: 12),
+                ),
               ),
             ),
           ],
         ));
   }
 
-  Widget _walletBalance({double balance, String name}){
+  Widget _walletBalance({String currency, double balance, String name}){
+    final formatCurrency = NumberFormat.simpleCurrency(locale: Platform.localeName, name: currency);
+    String amount = formatCurrency.format(balance);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -136,7 +144,7 @@ class _DashboardDetailCardState extends State<DashboardDetailCard> {
           height: 10,
         ),
         Text(
-          "₦$balance",
+          shouldHideBalance ? '***' : amount,
           style: TextStyle(
               fontFamily: 'Roboto',
               color: Constants.whiteColor,

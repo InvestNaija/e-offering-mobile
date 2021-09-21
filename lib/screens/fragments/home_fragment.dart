@@ -106,9 +106,9 @@ class _HomeFragmentState extends State<HomeFragment> with ApplicationMixin{
                               fontWeight: FontWeight.w600),
                         ),
                         const SizedBox(height: 35,),
-                        Consumer<WalletProvider>(
-                          builder: (context, walletProvider, child) {
-                            return DashboardDetailCard(walletBalance: walletProvider.walletBalance?.toDouble() ?? 0.0,);
+                        Consumer<TransactionProvider>(
+                          builder: (context, transactionProvider, child) {
+                            return DashboardDetailCard(walletBalance: transactionProvider.portfolioAmount);
                           },
                         ),
                       ],

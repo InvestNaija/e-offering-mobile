@@ -8,4 +8,6 @@ abstract class LocalStorageRepository{
   bool getLoggedInStatus();
   Future<bool> clear();
   CustomerResponseModel getCustomer();
+  Future<bool> setHideBalance(bool shouldHide);
+  bool getHideBalance();
 }

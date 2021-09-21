@@ -51,4 +51,14 @@ class LocalStorage implements LocalStorageRepository{
     Map<String, dynamic> decodedMap = json.decode(jsonCustomer);
     return CustomerResponseModel.fromJson(decodedMap);
   }
+
+  @override
+  Future<bool> setHideBalance(bool shouldHide) async{
+    return await localStorage.setBool("hideBalance", shouldHide);
+  }
+
+  @override
+  bool getHideBalance() {
+    return localStorage.getBool("hideBalance") ?? false;
+  }
 }

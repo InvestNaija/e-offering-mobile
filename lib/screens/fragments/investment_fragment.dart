@@ -61,7 +61,7 @@ class _InvestmentFragmentState extends State<InvestmentFragment> {
                         Consumer<TransactionProvider>(
                           builder: (BuildContext context, transactionProvider, Widget child) {
                             return InvestmentDetailCard(
-                              cumulativeEIpoInvestmentAmount: transactionProvider.cumulativeEIpoInvestmentAmount,
+                              cumulativeEIpoInvestmentAmount: transactionProvider.portfolioAmount,
                               onTap: (){
                               Navigator.of(context).push(
                                   MaterialPageRoute(builder: (context) => InvestmentPlansFragment()));
