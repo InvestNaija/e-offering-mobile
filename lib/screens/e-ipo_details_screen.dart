@@ -104,14 +104,14 @@ class _EIpoDetailsScreenState extends State<EIpoDetailsScreen> {
                           Text(widget.asset.type == 'ipo' ? 'Public Offer' : widget.asset.type, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.blackColor),),
                         ],
                       ),
-                      const SizedBox(height: 12,),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text("Minimum Price", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.blackColor),),
-                          Text(minAmount, style: TextStyle(fontSize: 12, fontFamily: 'RobotoMono', fontWeight: FontWeight.w600, color: Constants.blackColor),),
-                        ],
-                      ),
+                      // const SizedBox(height: 12,),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //   children: [
+                      //     const Text("Minimum Price", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.blackColor),),
+                      //     Text(minAmount, style: TextStyle(fontSize: 12, fontFamily: 'RobotoMono', fontWeight: FontWeight.w600, color: Constants.blackColor),),
+                      //   ],
+                      // ),
                       SizedBox(height: 12,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

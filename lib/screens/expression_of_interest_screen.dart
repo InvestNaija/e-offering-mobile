@@ -28,7 +28,7 @@ class ExpressionOfInterestScreen extends StatefulWidget {
 
 class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen> with DialogMixins, ApplicationMixin{
   TextEditingController unitQuantityTextEditingController = TextEditingController();
-  TextEditingController estimatedAmountTextEditingController = TextEditingController();
+  TextEditingController amountTextEditingController = TextEditingController();
 
   bool makeSpecifiedUnitReadOnly = false;
   bool makeEstimatedAmountReadOnly = false;
@@ -75,7 +75,9 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                       style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.w700,
-                          color: Constants.blackColor)),
+                          color: Constants.blackColor,
+                      ),
+                  ),
                 ),
                 const SizedBox(height: 35,),
                 CustomTextField(
@@ -97,14 +99,14 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                   keyboardType : TextInputType.number,
                   onChange: (value){
                       var digit = value.isEmpty ? 0 : int.parse(value);
-                      estimatedAmountTextEditingController.text = (digit * widget.asset.sharePrice).toString();
+                      amountTextEditingController.text = (digit * widget.asset.sharePrice).toString();
                   },
                 ),
                 const SizedBox(height: 25,),
                 CustomTextField(
                   readOnly: makeEstimatedAmountReadOnly,
-                  label: "Estimated Amount",
-                  controller: estimatedAmountTextEditingController,
+                  label: "Amount",
+                  controller: amountTextEditingController,
                   keyboardType: TextInputType.number,
                   onChange: (value){
                      if(widget.asset.sharePrice != 0.0){
@@ -137,7 +139,7 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                         }
                         String assetId = widget.asset.id;
                         int unit = int.parse(unitQuantityTextEditingController.text);
-                        double amount = double.parse(estimatedAmountTextEditingController.text);
+                        double amount = double.parse(amountTextEditingController.text);
                         var expressInterestResponse = await assetsProvider.payNow(assetId : assetId, units : unit, amount: amount);
                         if(expressInterestResponse.error != null){
                           showSnackBar('Unable to express interest', expressInterestResponse.error.message);
@@ -165,7 +167,7 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                         if(!formKey.currentState.validate()){
                           return;
                         }
-                        double amount = double.parse(estimatedAmountTextEditingController.text);
+                        double amount = double.parse(amountTextEditingController.text);
                         ExpressInterestResponseModel response = await Provider.of<AssetsProvider>(context, listen: false).payLater(
                           assetId : widget.asset.id,
                           units :  int.parse(unitQuantityTextEditingController.text),

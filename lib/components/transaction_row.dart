@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:invest_naija/business_logic/data/response/transaction_response_model.dart';
@@ -10,60 +9,77 @@ import '../constants.dart';
 
 class TransactionRow extends StatelessWidget {
   final Function onTap;
+  final Function(TransactionResponseModel transaction) onEdit;
   final TransactionResponseModel transaction;
 
-  const TransactionRow({Key key, this.onTap, this.transaction}) : super(key: key);
+  const TransactionRow({Key key, this.onTap, this.onEdit, this.transaction}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final formatCurrency = NumberFormat.simpleCurrency(locale: Platform.localeName, name: transaction.asset.currency);
     String amount = formatCurrency.format(transaction.amount);
-    return GestureDetector(
-      onTap: ()=> onTap(),
-      child: Container(
-        margin: EdgeInsets.only(bottom: 11),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Image.network(transaction.asset.image, height: 26, width: 26,),
-                    SizedBox(width: 15,),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(amount,
-                          style: const TextStyle(
-                              fontFamily: 'RobotoMono',
-                              color: Constants.blackColor,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          transaction.asset.name,
-                          style: const TextStyle(
-                              color: Constants.gray4Color,
-                              fontSize: 10,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ],),
-                  ],
-                ),
-
-                Text(FormatterUtil.formatName(this.transaction.status),
-                  style: TextStyle(
-                      color: this.transaction.paid ? Constants.greenColor : Constants.primaryColor,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500),
-                ),
-              ],
-            ),
-            const SizedBox(height: 11,),
-            const Divider(color: Constants.gray4Color,)
-          ],
-        ),
+    return Container(
+      margin: EdgeInsets.only(bottom: 11),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Row(
+                children: [
+                  Image.network(transaction.asset.image, height: 26, width: 26,),
+                  SizedBox(width: 15,),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(amount,
+                        style: const TextStyle(
+                            fontFamily: 'RobotoMono',
+                            color: Constants.blackColor,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        transaction.asset.name,
+                        style: const TextStyle(
+                            color: Constants.gray4Color,
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],),
+                ],
+              ),
+              Spacer(),
+              Text(FormatterUtil.formatName(this.transaction.status),
+                style: TextStyle(
+                    color: this.transaction.paid ? Constants.greenColor : Constants.primaryColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500),
+              ),
+              PopupMenuButton(
+                  icon: Icon(Icons.more_vert_outlined),
+                  onSelected: (value){
+                    if(value == 2){
+                      onTap();
+                    }else{
+                      onEdit(transaction);
+                    }
+                  },
+                  itemBuilder: (context) => [
+                    PopupMenuItem(
+                      child: Text("Edit"),
+                      value: 1,
+                    ),
+                    PopupMenuItem(
+                      child: Text("Make Payment"),
+                      value: 2,
+                    )
+                  ]
+              )
+            ],
+          ),
+          const SizedBox(height: 11,),
+          const Divider(color: Constants.gray4Color,)
+        ],
       ),
     );
   }

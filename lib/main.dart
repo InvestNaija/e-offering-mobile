@@ -31,6 +31,7 @@ import 'screens/enter_cscs_number.dart';
 import 'screens/overall_container_screen.dart';
 import 'screens/payment_web_screen.dart';
 import 'screens/transaction_summary_screen.dart';
+import 'screens/update_interest_screen.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -82,7 +83,7 @@ class _MyAppState extends State<MyApp> with DialogMixins, ApplicationMixin{
       context: context,
       onTimeExpired: () {
         if (userIsInsideApp) {
-          showInactivityAlert(this.context);
+         // showInactivityAlert(this.context);
         }
       },
       child: MaterialApp(
@@ -117,6 +118,10 @@ class _MyAppState extends State<MyApp> with DialogMixins, ApplicationMixin{
           if (settings.name == '/express-interest') {
             SharesResponseModel asset = settings.arguments as SharesResponseModel;
             return MaterialPageRoute(builder: (_) => ExpressionOfInterestScreen(asset: asset,));
+          }
+          if (settings.name == '/update-interest') {
+            TransactionResponseModel transaction = settings.arguments as TransactionResponseModel;
+            return MaterialPageRoute(builder: (_) => UpdateInterestScreen(transaction: transaction,));
           }
           if (settings.name == '/create-cscs') {
             return MaterialPageRoute(builder: (_) => CreateCscsAccountScreen());

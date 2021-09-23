@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:invest_naija/business_logic/data/response/transaction_response_model.dart';
 import 'package:invest_naija/business_logic/providers/transaction_provider.dart';
 import 'package:invest_naija/components/custom_button.dart';
 import 'package:invest_naija/components/custom_checkbox.dart';
@@ -68,9 +69,12 @@ class _TransactionsFragmentState extends State<TransactionsFragment> {
                           LoadingTransactionRow():
                           TransactionRow(
                             transaction: transactionsProvider.transactions[index],
-                            onTap: () async{
-                              await Navigator.pushNamed(context, '/transaction-summary', arguments: transactionsProvider.transactions[index]);
-                            }
+                            onTap:(){
+                               Navigator.pushNamed(context, '/transaction-summary', arguments: transactionsProvider.transactions[index]);
+                            },
+                            onEdit:(TransactionResponseModel transaction){
+                              Navigator.pushNamed(context, '/update-interest', arguments: transaction);
+                            },
                           );
                         },),
                       );
