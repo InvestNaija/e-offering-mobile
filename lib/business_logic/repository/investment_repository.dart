@@ -70,7 +70,7 @@ class InvestmentRepository{
     }
   }
 
-  Future<ResponseModel> updateInterest({String reservationId, int units, double amount}) async {
+  Future<ResponseModel> updateInterest({String reservationId, double units, double amount}) async {
     try{
       Response response =  await http.patch(
           Uri.parse('${baseUrl}reservations/edit-reservation/$reservationId'),

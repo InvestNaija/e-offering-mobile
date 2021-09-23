@@ -78,7 +78,7 @@ class AssetsProvider extends ChangeNotifier{
     return response;
   }
 
-  Future<ResponseModel> updateReservation({String reservationId, int units, double amount}) async{
+  Future<ResponseModel> updateReservation({String reservationId, double units, double amount}) async{
     isMakingReservation = true;
     notifyListeners();
     ResponseModel response = await InvestmentRepository()

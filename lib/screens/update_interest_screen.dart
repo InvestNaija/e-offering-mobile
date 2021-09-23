@@ -7,6 +7,7 @@ import 'package:invest_naija/business_logic/data/response/transaction_response_m
 import 'package:invest_naija/business_logic/providers/assets_provider.dart';
 import 'package:invest_naija/business_logic/providers/customer_provider.dart';
 import 'package:invest_naija/business_logic/providers/payment_provider.dart';
+import 'package:invest_naija/business_logic/providers/transaction_provider.dart';
 import 'package:invest_naija/components/custom_button.dart';
 import 'package:invest_naija/components/custom_lead_icon.dart';
 import 'package:invest_naija/components/custom_textfield.dart';
@@ -128,12 +129,17 @@ class _UpdateInterestScreenState extends State<UpdateInterestScreen> with Dialog
                       color: Constants.primaryColor,
                       onPressed: () async{
                         if(!formKey.currentState.validate()) return;
-                        int unit = int.parse(unitQuantityTextEditingController.text);
+                        double unit = double.parse(unitQuantityTextEditingController.text);
                         double amount = double.parse(amountTextEditingController.text);
                         var response = await assetsProvider.updateReservation(
                             reservationId : widget.transaction.id,
                             units : unit,
                             amount: amount,
+                        );
+                        Provider.of<TransactionProvider>(context, listen: false).updateTransaction(
+                          reservationId : widget.transaction.id,
+                          units : unit,
+                          amount: amount,
                         );
                         if(response.error != null){
                           showSnackBar('Unable to express interest', response.error.message);

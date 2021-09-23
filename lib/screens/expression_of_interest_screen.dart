@@ -158,33 +158,36 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                 const SizedBox(height: 20,),
                 Consumer<AssetsProvider>(
                   builder: (context, assetsProvider, child) {
-                    return CustomButton(
-                      data: "Pay Later",
-                      isLoading: assetsProvider.isSavingReservation,
-                      textColor: Constants.whiteColor,
-                      color: Constants.innerBorderColor,
-                      onPressed: () async{
-                        if(!formKey.currentState.validate()){
-                          return;
-                        }
-                        double amount = double.parse(amountTextEditingController.text);
-                        ExpressInterestResponseModel response = await Provider.of<AssetsProvider>(context, listen: false).payLater(
-                          assetId : widget.asset.id,
-                          units :  int.parse(unitQuantityTextEditingController.text),
-                          amount : amount
-                        );
-                        if(response.error == null){
-                          showSimpleModalDialog(
-                              context: context,
-                              title: 'Transaction saved',
-                              message: 'You can make payment in your transactions page later.',
-                              onClose: (){
-                                changePage(context,2);
-                                Navigator.pushNamed(context,'/dashboard');
-                              }
+                    return Tooltip(
+                      message: 'helllo fish',
+                      child: CustomButton(
+                        data: "Pay Later",
+                        isLoading: assetsProvider.isSavingReservation,
+                        textColor: Constants.whiteColor,
+                        color: Constants.innerBorderColor,
+                        onPressed: () async{
+                          if(!formKey.currentState.validate()){
+                            return;
+                          }
+                          double amount = double.parse(amountTextEditingController.text);
+                          ExpressInterestResponseModel response = await Provider.of<AssetsProvider>(context, listen: false).payLater(
+                            assetId : widget.asset.id,
+                            units :  int.parse(unitQuantityTextEditingController.text),
+                            amount : amount
                           );
-                        }
-                      },
+                          if(response.error == null){
+                            showSimpleModalDialog(
+                                context: context,
+                                title: 'Transaction saved',
+                                message: 'You can make payment in your transactions page later.',
+                                onClose: (){
+                                  changePage(context,2);
+                                  Navigator.pushNamed(context,'/dashboard');
+                                }
+                            );
+                          }
+                        },
+                      ),
                     );
                   },
                 ),

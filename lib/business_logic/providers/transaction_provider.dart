@@ -61,4 +61,16 @@ class TransactionProvider extends ChangeNotifier{
     }
     portfolioAmount = currencyValue;
   }
+
+  void updateTransaction({String reservationId, double units, double amount}) {
+    var reservoirIndex = reservoir.indexWhere((trxn) => trxn.id == reservationId);
+    if(reservoirIndex >= 0){
+      reservoir[reservoirIndex]..amount = amount
+        ..unitsExpressed = units;
+
+      recentTransactions = reservoir.getRange(0, 5).toList();
+      transactions = reservoir.getRange(0, reservoir.length).toList();
+      notifyListeners();
+    }
+  }
 }
