@@ -70,6 +70,31 @@ class InvestmentRepository{
     }
   }
 
+  Future<ResponseModel> updateInterest({String reservationId, int units, double amount}) async {
+    try{
+      Response response =  await http.patch(
+          Uri.parse('${baseUrl}reservations/edit-reservation/$reservationId'),
+          headers: <String, String>{
+            'Content-Type': 'application/json',
+            'Authorization': appLocalStorage.getToken(),
+          },
+          body: convert.jsonEncode({'units': units, 'amount' : amount})
+      ).timeout(const Duration(seconds: 60), onTimeout: () {
+        throw TimeoutException(
+            'The connection has timed out, Please try again!');
+      });
+      var jsonResponse = convert.jsonDecode(response.body);
+      print(jsonResponse);
+      return ResponseModel.fromJson(jsonResponse);
+    } on Exception catch (exception) {
+      String response = exception is IOException
+          ? "You are not connected to internet"
+          : 'The connection has timed out, Please try again!';
+      return ResponseModel()..error = ErrorResponse(message: response)
+        ..status = 'Failed';
+    }
+  }
+
   Future<ExpressInterestResponseModel> expressInterest({String assetId, int units, double amount}) async {
     try{
     Response response =  await http.post(

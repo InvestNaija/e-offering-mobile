@@ -29,7 +29,7 @@ class UpdateInterestScreen extends StatefulWidget {
 
 class _UpdateInterestScreenState extends State<UpdateInterestScreen> with DialogMixins, ApplicationMixin{
   TextEditingController unitQuantityTextEditingController = TextEditingController();
-  TextEditingController amountTextEditingController = TextEditingController();
+  TextEditingController amountTextEditingController;
 
   bool makeSpecifiedUnitReadOnly = false;
   bool makeEstimatedAmountReadOnly = false;
@@ -42,6 +42,7 @@ class _UpdateInterestScreenState extends State<UpdateInterestScreen> with Dialog
     makeSpecifiedUnitReadOnly = widget.transaction.asset.sharePrice == 0;
     makeEstimatedAmountReadOnly = widget.transaction.asset.sharePrice != 0;
     unitQuantityTextEditingController.text = '0' ;
+    amountTextEditingController = TextEditingController(text: widget.transaction.amount.toString());
     Provider.of<CustomerProvider>(context, listen: false).getCustomerDetailsSilently();
   }
 
@@ -127,63 +128,17 @@ class _UpdateInterestScreenState extends State<UpdateInterestScreen> with Dialog
                       color: Constants.primaryColor,
                       onPressed: () async{
                         if(!formKey.currentState.validate()) return;
-
-                        bool hasCscs = await customerProvider.hasCscs();
-                        if(!hasCscs){
-                          showCscsDialog();
-                          return;
-                        }
-                        bool hasNuban = await customerProvider.hasNuban();
-                        if(!hasNuban){
-                          showBankDetailDialog();
-                          return;
-                        }
-                        String assetId = widget.transaction.asset.id;
                         int unit = int.parse(unitQuantityTextEditingController.text);
                         double amount = double.parse(amountTextEditingController.text);
-                        var expressInterestResponse = await assetsProvider.payNow(assetId : assetId, units : unit, amount: amount);
-                        if(expressInterestResponse.error != null){
-                          showSnackBar('Unable to express interest', expressInterestResponse.error.message);
-                          return;
-                        }
-                        var response = await paymentProvider.getPaymentUrl(reservationId: expressInterestResponse.data.reservation.id, gateway: 'flutterwave');
-                        if(response.error != null){
-                          showSnackBar('Payment Error', response.error.message);
-                          return;
-                        }
-                        Navigator.pushNamed(context, '/payment-web', arguments: response.data.authorizationUrl);
-                      },
-                    );
-                  },
-                ),
-                const SizedBox(height: 20,),
-                Consumer<AssetsProvider>(
-                  builder: (context, assetsProvider, child) {
-                    return CustomButton(
-                      data: "Pay Later",
-                      isLoading: assetsProvider.isSavingReservation,
-                      textColor: Constants.whiteColor,
-                      color: Constants.innerBorderColor,
-                      onPressed: () async{
-                        if(!formKey.currentState.validate()){
-                          return;
-                        }
-                        double amount = double.parse(amountTextEditingController.text);
-                        ExpressInterestResponseModel response = await Provider.of<AssetsProvider>(context, listen: false).payLater(
-                          assetId : widget.transaction.asset.id,
-                          units :  int.parse(unitQuantityTextEditingController.text),
-                          amount : amount
+                        var response = await assetsProvider.updateReservation(
+                            reservationId : widget.transaction.id,
+                            units : unit,
+                            amount: amount,
                         );
-                        if(response.error == null){
-                          showSimpleModalDialog(
-                              context: context,
-                              title: 'Transaction saved',
-                              message: 'You can make payment in your transactions page later.',
-                              onClose: (){
-                                changePage(context,2);
-                                Navigator.pushNamed(context,'/dashboard');
-                              }
-                          );
+                        if(response.error != null){
+                          showSnackBar('Unable to express interest', response.error.message);
+                        }else{
+                          showSnackBar('Update', response.message);
                         }
                       },
                     );
