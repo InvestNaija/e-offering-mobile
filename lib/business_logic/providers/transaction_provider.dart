@@ -11,6 +11,8 @@ class TransactionProvider extends ChangeNotifier{
   List<TransactionResponseModel> recentTransactions = [];
   List<TransactionResponseModel> transactions = [];
   List<TransactionResponseModel> reservoir = [];
+  bool hasError = false;
+  String errorMessage = '';
 
   Future<bool> refreshTransactions() async{
     loadingRecentTransaction = true;
@@ -38,13 +40,21 @@ class TransactionProvider extends ChangeNotifier{
     try{
       TransactionListResponseModel transactionsResponse = await TransactionRepository().getTransactions();
       if(transactionsResponse.error == null){
+        hasError = false;
+        errorMessage = '';
         var filteredAssets = transactionsResponse.data.where((element) => element.asset.type == 'ipo').toList();
         recentTransactions = filteredAssets.reversed.toList().getRange(0, 5).toList();
         transactions = filteredAssets.reversed.toList();
         reservoir = filteredAssets.reversed.toList();
         calculateCumulativeEIpoInvestmentAmount(filteredAssets);
+      }else{
+        hasError = true;
+        errorMessage = transactionsResponse.error.message;
       }
-    }catch(exception){}
+    }catch(exception){
+      hasError = true;
+      errorMessage = 'An error occurred';
+    }
     loadingRecentTransaction = false;
     notifyListeners();
   }

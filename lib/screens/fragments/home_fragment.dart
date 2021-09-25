@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:invest_naija/business_logic/data/response/shares_response_model.dart';
+import 'package:invest_naija/business_logic/data/response/transaction_response_model.dart';
 import 'package:invest_naija/business_logic/providers/bank_provider.dart';
 import 'package:invest_naija/business_logic/providers/customer_provider.dart';
 import 'package:invest_naija/business_logic/providers/transaction_provider.dart';
@@ -124,37 +125,6 @@ class _HomeFragmentState extends State<HomeFragment> with ApplicationMixin{
                 ],
               ),
               const SizedBox(height: 25,),
-              // Padding(
-              //   padding: const EdgeInsets.symmetric(horizontal: 22),
-              //   child: Column(
-              //     crossAxisAlignment: CrossAxisAlignment.start,
-              //     children: [
-              //       Row(
-              //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //         children: [
-              //           OptionCard(
-              //             title: "Go to Investments",
-              //             imageAssetUrl: "assets/images/graph.svg",
-              //             onTap: () => Provider.of<CustomerProvider>(context, listen: false).changePage(1),
-              //           ),
-              //           OptionCard(
-              //             title: "Check Wallet",
-              //             imageAssetUrl: "assets/images/briefcase.svg",
-              //             onTap: () => Provider.of<CustomerProvider>(context, listen: false).changePage(3),
-              //           ),
-              //         ],
-              //       ),
-              //       const SizedBox(height: 25,),
-              //       const Text('Trending Shares',
-              //         style: TextStyle(
-              //             color: Constants.blackColor,
-              //             fontSize: 15,
-              //             fontWeight: FontWeight.bold),
-              //       ),
-              //       const SizedBox(height: 12,),
-              //     ],
-              //   ),
-              // ),
               Padding(
                 padding: const EdgeInsets.only(left: 20),
                 child: SizedBox(
@@ -226,10 +196,15 @@ class _HomeFragmentState extends State<HomeFragment> with ApplicationMixin{
                         NoTransactions() : Column(
                           children: List.generate(
                               transactionsProvider.loadingRecentTransaction ? 5 : transactionsProvider.recentTransactions.length,
-                                  (index) => transactionsProvider.loadingRecentTransaction ? LoadingTransactionRow() : TransactionRow(
+                                  (index) => transactionsProvider.loadingRecentTransaction ?
+                                  LoadingTransactionRow() :
+                                  TransactionRow(
                                       transaction: transactionsProvider.recentTransactions[index],
                                       onTap: (){
                                         Navigator.pushNamed(context, '/transaction-summary', arguments: transactionsProvider.recentTransactions[index]);
+                                      },
+                                      onEdit:(TransactionResponseModel transaction){
+                                        Navigator.pushNamed(context, '/update-interest', arguments: transaction);
                                       },
                                   )
                           ),

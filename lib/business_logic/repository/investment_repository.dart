@@ -9,10 +9,35 @@ import 'package:invest_naija/business_logic/data/response/express_interest_respo
 import 'package:invest_naija/business_logic/data/response/response_model.dart';
 import 'dart:convert' as convert;
 import 'package:invest_naija/business_logic/data/response/shares_list_response_model.dart';
+import 'package:invest_naija/business_logic/data/response/zannibal_response.dart';
 import 'api_util.dart';
 import 'local/local_storage.dart';
 
 class InvestmentRepository{
+
+  Future<ZannibalResponse> getSharePrice() async {
+
+    try{
+      Response response =  await http.get(
+        Uri.parse('https://mds.zanibal.com/mds/rest/api/v1/research/get-security-overview/symbol?x=NSE&s=MTNN'),
+        headers: {
+          'Authorization':'Basic Y2hhcGVsaGlsbDpDQGhhcGVsaGlsbDIwMjA='
+        }
+      ).timeout(const Duration(seconds: 60), onTimeout: () {
+        throw TimeoutException(
+            'The connection has timed out, Please try again!');
+      });
+      var jsonResponse = convert.jsonDecode(response.body);
+      return ZannibalResponse.fromJson(jsonResponse)
+      ..status = 'success';
+    } on Exception catch (exception) {
+      String response = exception is IOException
+          ? "You are not connected to internet"
+          : 'The connection has timed out, Please try again!';
+      return ZannibalResponse()..error = ErrorResponse(message: response)
+        ..status = 'Failed';
+    }
+  }
 
   Future<ResponseModel> getEIpoShares() async {
 

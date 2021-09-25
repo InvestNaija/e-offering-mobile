@@ -56,15 +56,16 @@ class TransactionRow extends StatelessWidget {
                     fontWeight: FontWeight.w500),
               ),
               PopupMenuButton(
-                  icon: Icon(Icons.more_vert_outlined),
-                  onSelected: (value){
-                    if(value == 2){
-                      onTap();
-                    }else{
-                      onEdit(transaction);
-                    }
-                  },
-                  itemBuilder: (context) => [
+                icon: Icon(Icons.more_vert_outlined),
+                onSelected: (value){
+                  if(value == 2){
+                    onTap();
+                  }else{
+                    onEdit(transaction);
+                  }
+                },
+                itemBuilder: (context) => this.transaction.status == 'paid' ? [] :
+                  [
                     PopupMenuItem(
                       child: Text("Edit"),
                       value: 1,
@@ -72,9 +73,9 @@ class TransactionRow extends StatelessWidget {
                     PopupMenuItem(
                       child: Text("Make Payment"),
                       value: 2,
-                    )
-                  ]
-              )
+                    ),
+                ],
+              ),
             ],
           ),
           const SizedBox(height: 11,),
