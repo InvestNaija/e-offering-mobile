@@ -14,6 +14,8 @@ import 'package:invest_naija/business_logic/repository/local/local_storage.dart'
 class AssetsProvider extends ChangeNotifier{
 
   bool isLoading = false;
+  bool hasError = false;
+  String errorMessage = '';
 
   bool isLoadingTrendingShares = true;
   List<SharesResponseModel> trendingAssets = [];
@@ -30,6 +32,8 @@ class AssetsProvider extends ChangeNotifier{
 
   void refreshPopularAssets(){
     isLoadingTrendingShares = true;
+    hasError = false;
+    errorMessage = '';
     notifyListeners();
     getPopularAssets();
   }
@@ -44,8 +48,14 @@ class AssetsProvider extends ChangeNotifier{
      SharesListResponseModel assets = await InvestmentRepository().getPopularAssets();
      if(assets.error == null && assets.status.toLowerCase() == 'success'){
        trendingAssets = assets.data.where((asset) => asset.type == 'ipo').toList();
+     }else{
+       hasError = true;
+       errorMessage = assets.error.message;
      }
-   }catch(exception){}
+   }catch(exception){
+     hasError = true;
+     errorMessage = 'An unknown error occurred';
+   }
    isLoadingTrendingShares = false;
    notifyListeners();
   }

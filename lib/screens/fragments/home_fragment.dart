@@ -16,9 +16,7 @@ import 'package:invest_naija/components/trending_share_card.dart';
 import 'package:invest_naija/mixins/application_mixin.dart';
 import 'package:invest_naija/utils/formatter_util.dart';
 import 'package:provider/provider.dart';
-
 import '../../constants.dart';
-import '../transaction_summary_screen.dart';
 
 class HomeFragment extends StatefulWidget {
   @override
@@ -126,28 +124,39 @@ class _HomeFragmentState extends State<HomeFragment> with ApplicationMixin{
                 ],
               ),
               const SizedBox(height: 25,),
-              Padding(
-                padding: const EdgeInsets.only(left: 20),
-                child: SizedBox(
-                  height: 133,
-                  child: Consumer<AssetsProvider>(
-                    builder: (context, trendingShares, child) {
-                      return ListView.builder(
+              Consumer<AssetsProvider>(
+                builder: (context, assetsProvider, child) {
+                  return assetsProvider.hasError ? Container(
+                    width: double.infinity,
+                    color: Constants.whiteColor,
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: Column(
+                      children: [
+                        Text(assetsProvider.errorMessage ?? 'An error occurred'),
+                        Text('Please pull down to refresh!!'),
+                      ],
+                    ),
+                  ) :
+                  Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: SizedBox(
+                        height: 133,
+                        child: ListView.builder(
                           scrollDirection: Axis.horizontal,
-                          itemCount: trendingShares.isLoadingTrendingShares ? 5 : trendingShares.trendingAssets?.length ?? 0,
+                          itemCount: assetsProvider.isLoadingTrendingShares ? 5 : assetsProvider.trendingAssets?.length ?? 0,
                           itemBuilder: (context, index){
-                            return trendingShares.isLoadingTrendingShares ? LoadingTrendingShareCard() :
+                            return assetsProvider.isLoadingTrendingShares ? LoadingTrendingShareCard() :
                             TrendingShareCard(
-                              asset: trendingShares.trendingAssets[index],
+                              asset: assetsProvider.trendingAssets[index],
                               onTapped: (SharesResponseModel asset){
                                 Navigator.pushNamed(context, '/ipo-detail', arguments: asset);
                               },
                             );
                           },
-                      );
-                    },
                   ),
-                ),
+                      ),
+                    );
+                },
               ),
               const SizedBox(height: 25,),
               Padding(

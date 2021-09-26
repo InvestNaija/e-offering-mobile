@@ -119,17 +119,15 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins {
                         onPressed: () async{
                           if(!_formKey.currentState.validate()) return;
                           LoginResponseModel loginResponse = await Provider.of<LoginProvider>(context, listen: false).login(
-                              email : emailController.text,
-                              password: passwordController.text
+                              email : emailController.text.trim(),
+                              password: passwordController.text.trim()
                           );
                           if(loginResponse.error == null){
-                            clearTextFields();
                             Navigator.of(context).pushNamed('/dashboard');
+
                           }else if(loginResponse.code == 411 || loginResponse.error.message.toLowerCase().contains('please verify your account to proceed.')){
-                            Navigator.of(context).push(
-                                MaterialPageRoute(builder: (context) => OtpScreen(
-                                  email: emailController.text,
-                                )));
+                            Navigator.of(context).pushNamed('/otp', arguments: emailController.text.trim());
+
                           }else{
                             showSimpleModalDialog(context: context, title: 'Login Error', message: loginResponse.error.message);
                           }

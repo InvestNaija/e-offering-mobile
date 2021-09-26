@@ -116,6 +116,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_gifimage",
+      "rootUri": "file:///Users/Oeshiett/flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_gifimage-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "flutter_html",
       "rootUri": "file:///Users/Oeshiett/flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_html-2.1.2",
       "packageUri": "lib/",
@@ -512,7 +518,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-09-26T09:18:58.431023Z",
+  "generated": "2021-09-26T10:28:42.567855Z",
   "generator": "pub",
   "generatorVersion": "2.13.4"
 }
