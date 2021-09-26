@@ -28,6 +28,7 @@ import 'business_logic/providers/assets_provider.dart';
 import 'screens/create_cscs_account_screen.dart';
 import 'screens/e-ipo_details_screen.dart';
 import 'screens/enter_cscs_number.dart';
+import 'screens/onboarding_screen/onboardingscreen.dart';
 import 'screens/overall_container_screen.dart';
 import 'screens/payment_web_screen.dart';
 import 'screens/transaction_summary_screen.dart';
@@ -100,7 +101,7 @@ class _MyAppState extends State<MyApp> with DialogMixins, ApplicationMixin{
             return MaterialPageRoute(builder: (_) => SplashScreen());
           }
           if (settings.name == '/on-boarding') {
-            return MaterialPageRoute(builder: (_) => WalkThroughScreen());
+            return MaterialPageRoute(builder: (_) => OnBoardingScreen());
           }
           if (settings.name == '/login') {
             return MaterialPageRoute(builder: (_) => LoginScreen());

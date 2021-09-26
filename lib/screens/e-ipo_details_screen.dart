@@ -5,10 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:intl/intl.dart';
 import 'package:invest_naija/business_logic/data/response/shares_response_model.dart';
+import 'package:invest_naija/business_logic/providers/assets_provider.dart';
 import 'package:invest_naija/components/custom_button.dart';
 import 'package:invest_naija/components/custom_checkbox.dart';
 import 'package:invest_naija/components/custom_lead_icon.dart';
 import 'package:invest_naija/utils/formatter_util.dart';
+import 'package:provider/provider.dart';
 
 import '../constants.dart';
 
@@ -22,6 +24,15 @@ class EIpoDetailsScreen extends StatefulWidget {
 
 class _EIpoDetailsScreenState extends State<EIpoDetailsScreen> {
   bool hasAcceptedTermsAndConditions = false;
+
+  @override
+  void initState() {
+    super.initState();
+    var response = Provider.of<AssetsProvider>(context, listen: false).getSharePrice();
+    response.then((zannibalResponse) => {
+      print(zannibalResponse.lastPrice)
+    });
+  }
   
   @override
   Widget build(BuildContext context) {

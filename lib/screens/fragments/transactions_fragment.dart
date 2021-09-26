@@ -7,6 +7,7 @@ import 'package:invest_naija/business_logic/providers/transaction_provider.dart'
 import 'package:invest_naija/components/custom_button.dart';
 import 'package:invest_naija/components/custom_checkbox.dart';
 import 'package:invest_naija/components/filter_checkbox.dart';
+import 'package:invest_naija/components/transaction_error.dart';
 import 'package:invest_naija/components/transaction_row.dart';
 import 'package:provider/provider.dart';
 
@@ -30,61 +31,64 @@ class _TransactionsFragmentState extends State<TransactionsFragment> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          const SizedBox(height: 10,),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 22.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text("Transactions", style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700, color: Constants.blackColor),),
-                GestureDetector(
-                  onTap: ()=> _showCourseFilterModal(),
-                  child: SvgPicture.asset("assets/images/filter.svg"),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 35,),
-          Expanded(
-            child: ClipRRect(
-              borderRadius: BorderRadius.only(topLeft: Radius.circular(20)),
-              child: Card(
-                margin: EdgeInsets.zero,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(22.0),
-                  child: Consumer<TransactionProvider>(
-                    builder: (context, transactionsProvider, child) {
-                      return RefreshIndicator(
-                        onRefresh: ()=> transactionsProvider.refreshTransactions(),
-                        child: ListView.builder(
-                          itemCount: transactionsProvider.loadingRecentTransaction ? 10 : transactionsProvider.transactions.length,
-                          itemBuilder: (context, index){
-                          return transactionsProvider.loadingRecentTransaction ?
-                          LoadingTransactionRow():
-                          TransactionRow(
-                            transaction: transactionsProvider.transactions[index],
-                            onTap:(){
-                               Navigator.pushNamed(context, '/transaction-summary', arguments: transactionsProvider.transactions[index]);
-                            },
-                            onEdit:(TransactionResponseModel transaction){
-                              Navigator.pushNamed(context, '/update-interest', arguments: transaction);
-                            },
-                          );
-                        },),
-                      );
-                    },
-                  ),
+    return RefreshIndicator(
+      onRefresh: ()=> _transactionProvider.refreshTransactions(),
+      child: SingleChildScrollView(
+        physics: AlwaysScrollableScrollPhysics(),
+        child: Container(
+          height: MediaQuery.of(context).size.height - 100,
+          child: Column(
+            children: [
+              const SizedBox(height: 10,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 22.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text("Transactions", style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700, color: Constants.blackColor),),
+                    GestureDetector(
+                      onTap: ()=> _showCourseFilterModal(),
+                      child: SvgPicture.asset("assets/images/filter.svg"),
+                    ),
+                  ],
                 ),
               ),
-            ),
-          )
-        ],
+              const SizedBox(height: 35,),
+              Expanded(
+                child: Card(
+                  margin: EdgeInsets.zero,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(22.0),
+                    child: Consumer<TransactionProvider>(
+                      builder: (context, transactionsProvider, child) {
+                        return transactionsProvider.hasError ?
+                        TransactionError(message: transactionsProvider.errorMessage,) :
+                        ListView.builder(
+                          itemCount: transactionsProvider.loadingRecentTransaction ? 10 : transactionsProvider.transactions.length,
+                          itemBuilder: (context, index){
+                            return transactionsProvider.loadingRecentTransaction ?
+                            LoadingTransactionRow():
+                            TransactionRow(
+                              transaction: transactionsProvider.transactions[index],
+                              onTap:(){
+                                Navigator.pushNamed(context, '/transaction-summary', arguments: transactionsProvider.transactions[index]);
+                              },
+                              onEdit:(TransactionResponseModel transaction){
+                                Navigator.pushNamed(context, '/update-interest', arguments: transaction);
+                              },
+                            );
+                          },);
+                      },
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }

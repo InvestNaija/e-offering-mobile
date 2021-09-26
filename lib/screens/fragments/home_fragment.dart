@@ -10,6 +10,7 @@ import 'package:invest_naija/business_logic/providers/wallet_provider.dart';
 import 'package:invest_naija/components/custom_clipping.dart';
 import 'package:invest_naija/components/dashboard_detail_card.dart';
 import 'package:invest_naija/components/no_transactions.dart';
+import 'package:invest_naija/components/transaction_error.dart';
 import 'package:invest_naija/components/transaction_row.dart';
 import 'package:invest_naija/components/trending_share_card.dart';
 import 'package:invest_naija/mixins/application_mixin.dart';
@@ -192,7 +193,8 @@ class _HomeFragmentState extends State<HomeFragment> with ApplicationMixin{
                     padding: const EdgeInsets.all(22.0),
                     child: Consumer<TransactionProvider>(
                       builder: (context, transactionsProvider, child) {
-                        return transactionsProvider.recentTransactions.length == 0 && !transactionsProvider.loadingRecentTransaction ?
+                        return transactionsProvider.hasError ? TransactionError(message: transactionsProvider.errorMessage,) :
+                          transactionsProvider.recentTransactions.length == 0 && !transactionsProvider.loadingRecentTransaction ?
                         NoTransactions() : Column(
                           children: List.generate(
                               transactionsProvider.loadingRecentTransaction ? 5 : transactionsProvider.recentTransactions.length,

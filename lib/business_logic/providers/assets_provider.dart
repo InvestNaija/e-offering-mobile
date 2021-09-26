@@ -7,6 +7,7 @@ import 'package:invest_naija/business_logic/data/response/express_interest_respo
 import 'package:invest_naija/business_logic/data/response/response_model.dart';
 import 'package:invest_naija/business_logic/data/response/shares_list_response_model.dart';
 import 'package:invest_naija/business_logic/data/response/shares_response_model.dart';
+import 'package:invest_naija/business_logic/data/response/zannibal_response.dart';
 import 'package:invest_naija/business_logic/repository/investment_repository.dart';
 import 'package:invest_naija/business_logic/repository/local/local_storage.dart';
 
@@ -125,6 +126,14 @@ class AssetsProvider extends ChangeNotifier{
     notifyListeners();
 
     return response;
+  }
+
+
+  Future<ZannibalResponse> getSharePrice() async {
+    ZannibalResponse zannibalResponse = await InvestmentRepository().getSharePrice();
+    print('this it the juice------------');
+    print(zannibalResponse.lastPrice);
+    return zannibalResponse;
   }
 
   Future<ResponseModel> createCscsAccount({String citizen, String city, String country, String maidenName, String postalCode}) async {
