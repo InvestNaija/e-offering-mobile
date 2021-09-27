@@ -61,7 +61,25 @@ class _EIpoDetailsScreenState extends State<EIpoDetailsScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(widget.asset.name ?? '', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: Constants.blackColor),),
-                    Text("$minAmount - $maxAmount", style: TextStyle(fontSize: 10, fontFamily: 'RobotoMono', fontWeight: FontWeight.w700, color: Constants.neutralColor),),
+                    Row(
+                      children: [
+                        const Text("Current market price : ", style: TextStyle(fontSize: 12, color: Constants.blackColor),),
+                        Consumer<AssetsProvider>(
+                          builder: (BuildContext context, assetsProvider, Widget child) {
+                            return Text(
+                              assetsProvider.isFetchingCurrentSharePrice ?
+                              'Fetching price' : formatCurrency.format(assetsProvider.currentSharePrice),
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontFamily: 'RobotoMono',
+                                fontWeight: FontWeight.w400,
+                                color: Constants.blackColor,
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ],
@@ -100,7 +118,7 @@ class _EIpoDetailsScreenState extends State<EIpoDetailsScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text("Current share price", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.blackColor),),
+                          const Text("Current market price", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.blackColor),),
                           Consumer<AssetsProvider>(
                             builder: (BuildContext context, assetsProvider, Widget child) {
                              return Text(
@@ -139,8 +157,8 @@ class _EIpoDetailsScreenState extends State<EIpoDetailsScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text("Available shares", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.blackColor),),
-                          Text(maxAmount, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Constants.blackColor),),
+                          const Text("Minimum Order", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.blackColor),),
+                          Text(minAmount, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Constants.blackColor),),
                         ],
                       ),
                       const SizedBox(height: 15,),
