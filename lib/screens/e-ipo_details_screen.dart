@@ -213,7 +213,7 @@ class _EIpoDetailsScreenState extends State<EIpoDetailsScreen> {
                               color: Constants.neutralColor, fontSize: 12),
                         ),
                         TextSpan(
-                            text: 'Terms and Conditions',
+                            text: 'Prospectus',
                             style: const TextStyle(
                                 color: Constants.primaryColor, fontSize: 12),
                             recognizer: TapGestureRecognizer()
