@@ -36,7 +36,7 @@ class _TransactionsFragmentState extends State<TransactionsFragment> {
       child: SingleChildScrollView(
         physics: AlwaysScrollableScrollPhysics(),
         child: Container(
-          height: MediaQuery.of(context).size.height - 100,
+          height: MediaQuery.of(context).size.height - 85,
           child: Column(
             children: [
               const SizedBox(height: 10,),

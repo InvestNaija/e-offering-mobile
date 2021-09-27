@@ -4,11 +4,11 @@ import 'package:invest_naija/business_logic/data/response/login_response_model.d
 import 'package:invest_naija/business_logic/providers/customer_provider.dart';
 import 'package:invest_naija/business_logic/providers/login_provider.dart';
 import 'package:invest_naija/components/custom_button.dart';
+import 'package:invest_naija/components/custom_lead_icon.dart';
 import 'package:invest_naija/components/custom_password_field.dart';
 import 'package:invest_naija/components/custom_textfield.dart';
 import 'package:invest_naija/mixins/dialog_mixin.dart';
 import 'package:invest_naija/screens/forgot_password_screen.dart';
-import 'package:invest_naija/screens/otp_screen.dart';
 import 'package:invest_naija/utils/formatter_util.dart';
 import 'package:provider/provider.dart';
 import '../constants.dart';
@@ -51,9 +51,7 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
         body: Stack(
           children: [
             Container(
-              decoration: BoxDecoration(
-                color: Constants.whiteColor,
-              ),
+              padding: EdgeInsets.only(left: 31, right: 31, top: 32),
               child: Column(
                 children: [
                   SafeArea(
@@ -61,6 +59,7 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
                       height: 0,
                     ),
                   ),
+                  CustomLeadIcon(),
                   Container(
                       alignment: Alignment.center,
                       padding: const EdgeInsets.symmetric(
@@ -79,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
               ),
             ),
             Positioned(
-              top: 100,
+              top: 130,
               left: 0,
               right: 0,
               child: Container(

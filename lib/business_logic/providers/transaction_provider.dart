@@ -43,7 +43,7 @@ class TransactionProvider extends ChangeNotifier{
         hasError = false;
         errorMessage = '';
         var filteredAssets = transactionsResponse.data.where((element) => element.asset.type == 'ipo').toList();
-        recentTransactions = filteredAssets.reversed.toList().getRange(0, 5).toList();
+        recentTransactions = filteredAssets.reversed.toList().take(5).toList();
         transactions = filteredAssets.reversed.toList();
         reservoir = filteredAssets.reversed.toList();
         calculateCumulativeEIpoInvestmentAmount(filteredAssets);
@@ -52,6 +52,7 @@ class TransactionProvider extends ChangeNotifier{
         errorMessage = transactionsResponse.error.message;
       }
     }catch(exception){
+      print(exception.toString());
       hasError = true;
       errorMessage = 'An error occurred';
     }
