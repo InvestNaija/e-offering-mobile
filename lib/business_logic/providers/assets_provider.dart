@@ -21,6 +21,8 @@ class AssetsProvider extends ChangeNotifier{
   List<SharesResponseModel> trendingAssets = [];
 
   bool isLoadingEIpoAssets = true;
+  bool eIpoHasError = false;
+  String eIpoErrorMessage = '';
   List<SharesResponseModel> eIpoAssets = [];
 
   String verifiedName;
@@ -65,12 +67,27 @@ class AssetsProvider extends ChangeNotifier{
    notifyListeners();
   }
 
+  void refreshEIpoAssets(){
+    isLoadingEIpoAssets = true;
+    eIpoHasError = false;
+    eIpoErrorMessage = '';
+    notifyListeners();
+    getEIpoAssets();
+  }
+
   void getEIpoAssets() async{
-    SharesListResponseModel assets = await InvestmentRepository().getEIpoShares();
-    if(assets.status.toLowerCase() == 'success') {
-      eIpoAssets = assets.data.where((asset) => asset.type == 'ipo').toList();
-    }else{
-      eIpoAssets = [];
+    try{
+      SharesListResponseModel assets = await InvestmentRepository().getEIpoShares();
+      if(assets.status.toLowerCase() == 'success') {
+        eIpoAssets = assets.data.where((asset) => asset.type == 'ipo').toList();
+      }else{
+        eIpoAssets = [];
+        eIpoHasError = true;
+        eIpoErrorMessage = assets.error.message;
+      }
+    }catch(ex){
+      eIpoHasError = true;
+      eIpoErrorMessage = 'An unknown error occurred';
     }
     isLoadingEIpoAssets = false;
     notifyListeners();
