@@ -28,9 +28,8 @@ class _EIpoDetailsScreenState extends State<EIpoDetailsScreen> {
   @override
   void initState() {
     super.initState();
-    var response = Provider.of<AssetsProvider>(context, listen: false).getSharePrice();
-    response.then((zannibalResponse) => {
-      print(zannibalResponse.lastPrice)
+    WidgetsBinding.instance.addPostFrameCallback((_) => {
+       Provider.of<AssetsProvider>(context, listen: false).getSharePrice()
     });
   }
   
@@ -98,13 +97,34 @@ class _EIpoDetailsScreenState extends State<EIpoDetailsScreen> {
                       const SizedBox(height: 4,),
                       Text(sharePrice, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Constants.blackColor),),
                       const SizedBox(height: 7,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text("Current share price", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.blackColor),),
+                          Consumer<AssetsProvider>(
+                            builder: (BuildContext context, assetsProvider, Widget child) {
+                             return Text(
+                               assetsProvider.isFetchingCurrentSharePrice ?
+                               'Fetching price' : formatCurrency.format(assetsProvider.currentSharePrice),
+                               style: TextStyle(
+                                  fontSize: 12,
+                                  fontFamily: 'RobotoMono',
+                                  fontWeight: FontWeight.w400,
+                                  color: Constants.blackColor,
+                              ),
+                            );
+                           },
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 7,),
                       Divider(),
                       const SizedBox(height: 10,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text("Application Status", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.blackColor),),
-                          Text(widget.asset.openForPurchase ? 'Open' : 'Closed', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.successColor),),
+                          Text(widget.asset.openForPurchase ? 'Open' : 'Closed', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Constants.successColor),),
                         ],
                       ),
                       SizedBox(height: 12,),
@@ -112,23 +132,15 @@ class _EIpoDetailsScreenState extends State<EIpoDetailsScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Text("Offering Type", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.blackColor),),
-                          Text(widget.asset.type == 'ipo' ? 'Public Offer' : widget.asset.type, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.blackColor),),
+                          Text(widget.asset.type == 'ipo' ? 'Public Offer' : widget.asset.type, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Constants.blackColor),),
                         ],
                       ),
-                      // const SizedBox(height: 12,),
-                      // Row(
-                      //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //   children: [
-                      //     const Text("Minimum Price", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.blackColor),),
-                      //     Text(minAmount, style: TextStyle(fontSize: 12, fontFamily: 'RobotoMono', fontWeight: FontWeight.w600, color: Constants.blackColor),),
-                      //   ],
-                      // ),
                       SizedBox(height: 12,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Text("Available shares", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.blackColor),),
-                          Text(maxAmount, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.blackColor),),
+                          Text(maxAmount, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Constants.blackColor),),
                         ],
                       ),
                       const SizedBox(height: 15,),

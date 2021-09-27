@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Constants {
-  static const Color primaryColor = Color.fromARGB(255,220, 103,47);
+  static const Color primaryColor = Color(0xFF002B43);
   static const Color secondaryColor = Color.fromARGB(255, 234,234,234);
   static const Color pink65 = Color.fromARGB(180, 240, 105, 105);
   static const Color blackColor = Color.fromARGB(255, 4, 4, 21);

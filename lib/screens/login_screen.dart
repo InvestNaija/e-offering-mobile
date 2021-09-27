@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gifimage/flutter_gifimage.dart';
 import 'package:invest_naija/business_logic/data/response/login_response_model.dart';
 import 'package:invest_naija/business_logic/providers/customer_provider.dart';
 import 'package:invest_naija/business_logic/providers/login_provider.dart';
@@ -18,12 +19,14 @@ class LoginScreen extends StatefulWidget {
   _LoginScreenState createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> with DialogMixins {
+class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProviderStateMixin  {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController emailController;
   TextEditingController passwordController;
   FocusNode passwordFocusNode;
   FocusNode emailFocusNode;
+
+  GifController controller;
 
   @override
   void initState() {
@@ -32,6 +35,10 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins {
     passwordController = TextEditingController();
     passwordFocusNode = FocusNode();
     emailFocusNode = FocusNode();
+    controller = GifController(
+      vsync: this,
+      duration: Duration(seconds: 2),
+    )..repeat(reverse: true, max: 18, min: 0);
   }
 
   @override
@@ -41,131 +48,166 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins {
         return Future.value(false);
       },
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 31, vertical: 32),
-            child: Form(
-              key: _formKey,
+        body: Stack(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: Constants.whiteColor,
+              ),
               child: Column(
                 children: [
-                  const SizedBox(height: 60,),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Consumer<CustomerProvider>(
-                      builder: (context, customerProvider, child) {
-                        return  Text(
-                            customerProvider.user != null && customerProvider.user.firstName != null?
-                            "Welcome back ${FormatterUtil.formatName(customerProvider.user.firstName.toLowerCase())}!" : "Welcome to InvestNaija",
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w600,
-                                color: Constants.fontColor2));
-                      },
+                  SafeArea(
+                    child: SizedBox(
+                      height: 0,
                     ),
                   ),
-                  const SizedBox(height: 3,),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text("Login to your account",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 28,
-                            fontWeight: FontWeight.bold,
-                            color: Constants.blackColor)),
-                  ),
-                  const SizedBox(height: 44,),
-                  CustomTextField(
-                    label: "Email",
-                    controller: emailController,
-                    focusNode: emailFocusNode,
-                    keyboardType: TextInputType.emailAddress,
-                    regexPattern: r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$",
-                    regexHint: 'Enter a valid email address',
-                    onEditingComplete: (){
-                      FocusScope.of(context).requestFocus(passwordFocusNode);
-                      //emailFocusNode.requestFocus();
-                    },
-                  ),
-                  const SizedBox(height: 25,),
-                  CustomPasswordField(
-                    label: "Password",
-                    controller: passwordController,
-                    onEditingComplete: (){},
-                    focusNode: passwordFocusNode,
-                  ),
-                  const SizedBox(height: 25,),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: GestureDetector(
-                      onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => ForgotPasswordScreen())),
-                      child: Text("Forgot Password?",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
-                              color: Constants.errorAlertColor)),
-                    ),
-                  ),
-                  const SizedBox(height: 32,),
-                  Consumer<LoginProvider>(
-                    builder: (context, loginProvider, child) {
-                      return  CustomButton(
-                        data: "Login to your account",
-                        isLoading: loginProvider.isLoading,
-                        textColor: Constants.whiteColor,
-                        color: Constants.primaryColor,
-                        onPressed: () async{
-                          if(!_formKey.currentState.validate()) return;
-                          LoginResponseModel loginResponse = await Provider.of<LoginProvider>(context, listen: false).login(
-                              email : emailController.text.trim(),
-                              password: passwordController.text.trim()
-                          );
-                          if(loginResponse.error == null){
-                            Navigator.of(context).pushNamed('/dashboard');
-
-                          }else if(loginResponse.code == 411 || loginResponse.error.message.toLowerCase().contains('please verify your account to proceed.')){
-                            Navigator.of(context).pushNamed('/otp', arguments: emailController.text.trim());
-
-                          }else{
-                            showSimpleModalDialog(context: context, title: 'Login Error', message: loginResponse.error.message);
-                          }
-                        },
-                      );
-                    },
-                  ),
-                  const SizedBox(height: 27,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "Don’t have an account yet?",
-                        style: TextStyle(
-                            color: Constants.fontColor2,
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400),
+                  Container(
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
                       ),
-                      const SizedBox(width: 5,),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) => EnterBvnScreen()));
-                        },
-                        child: const Text(
-                          "Sign up",
-                          style: TextStyle(
-                              color: Constants.primaryColor,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold),
+                      child: GifImage(
+                        controller: controller,
+                        image: AssetImage('assets/images/logo_animated.gif',
                         ),
-                      ),
-                    ],
-                  )
+                        height: 160,
+                      )),
+                  SizedBox(
+                    height: 100,
+                  ),
                 ],
               ),
             ),
-          ),
+            Positioned(
+              top: 100,
+              left: 0,
+              right: 0,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 31, vertical: 50),
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      const SizedBox(height: 60,),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Consumer<CustomerProvider>(
+                          builder: (context, customerProvider, child) {
+                            return  Text(
+                                customerProvider.user != null && customerProvider.user.firstName != null?
+                                "Welcome back ${FormatterUtil.formatName(customerProvider.user.firstName.toLowerCase())}!" : "Welcome to InvestNaija",
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600,
+                                    color: Constants.fontColor2));
+                          },
+                        ),
+                      ),
+                      const SizedBox(height: 3,),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text("Login to your account",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold,
+                                color: Constants.blackColor)),
+                      ),
+                      const SizedBox(height: 44,),
+                      CustomTextField(
+                        label: "Email",
+                        controller: emailController,
+                        focusNode: emailFocusNode,
+                        keyboardType: TextInputType.emailAddress,
+                        regexPattern: r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$",
+                        regexHint: 'Enter a valid email address',
+                        onEditingComplete: (){
+                          FocusScope.of(context).requestFocus(passwordFocusNode);
+                          //emailFocusNode.requestFocus();
+                        },
+                      ),
+                      const SizedBox(height: 25,),
+                      CustomPasswordField(
+                        label: "Password",
+                        controller: passwordController,
+                        onEditingComplete: (){},
+                        focusNode: passwordFocusNode,
+                      ),
+                      const SizedBox(height: 25,),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: GestureDetector(
+                          onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => ForgotPasswordScreen())),
+                          child: Text("Forgot Password?",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w600,
+                                  color: Constants.errorAlertColor)),
+                        ),
+                      ),
+                      const SizedBox(height: 32,),
+                      Consumer<LoginProvider>(
+                        builder: (context, loginProvider, child) {
+                          return  CustomButton(
+                            data: "Login to your account",
+                            isLoading: loginProvider.isLoading,
+                            textColor: Constants.whiteColor,
+                            color: Constants.primaryColor,
+                            onPressed: () async{
+                              if(!_formKey.currentState.validate()) return;
+                              LoginResponseModel loginResponse = await Provider.of<LoginProvider>(context, listen: false).login(
+                                  email : emailController.text.trim(),
+                                  password: passwordController.text.trim()
+                              );
+                              if(loginResponse.error == null){
+                                Navigator.of(context).pushNamed('/dashboard');
+
+                              }else if(loginResponse.code == 411 || loginResponse.error.message.toLowerCase().contains('please verify your account to proceed.')){
+                                Navigator.of(context).pushNamed('/otp', arguments: emailController.text.trim());
+
+                              }else{
+                                showSimpleModalDialog(context: context, title: 'Login Error', message: loginResponse.error.message);
+                              }
+                            },
+                          );
+                        },
+                      ),
+                      const SizedBox(height: 27,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            "Don’t have an account yet?",
+                            style: TextStyle(
+                                color: Constants.fontColor2,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          const SizedBox(width: 5,),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                  MaterialPageRoute(builder: (context) => EnterBvnScreen()));
+                            },
+                            child: const Text(
+                              "Sign up",
+                              style: TextStyle(
+                                  color: Constants.primaryColor,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );

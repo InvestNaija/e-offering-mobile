@@ -38,10 +38,19 @@ class TransactionRow extends StatelessWidget {
                             fontSize: 15,
                             fontWeight: FontWeight.bold),
                       ),
+                      SizedBox(height: 5,),
                       Text(
                         transaction.asset.name,
                         style: const TextStyle(
                             color: Constants.gray4Color,
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: 5,),
+                      Text(
+                        DateFormat("MMMM d y - H:m").format(DateTime.parse(transaction.createdAt)),
+                        style: const TextStyle(
+                            color: Constants.blackColor,
                             fontSize: 10,
                             fontWeight: FontWeight.bold),
                       ),

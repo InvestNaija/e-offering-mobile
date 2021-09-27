@@ -91,7 +91,7 @@ class _HomeFragmentState extends State<HomeFragment> with ApplicationMixin{
                         ),
                         const SizedBox(height: 23,),
                         const Text(
-                          "Buy Shares,",
+                          "Buy Offerings,",
                           style: TextStyle(
                               color: Constants.whiteColor,
                               fontSize: 15,
@@ -99,7 +99,7 @@ class _HomeFragmentState extends State<HomeFragment> with ApplicationMixin{
                         ),
                         const SizedBox(height: 5,),
                         const Text(
-                          "Express interests in hundreds of Nigerian and\nInternational Stocks, and be notified when they\nare available for purchase. ",
+                          "Buy offerings, and be notified when they are\navailable for purchase",
                           style: TextStyle(
                               color: Constants.neutralColor,
                               fontSize: 11,

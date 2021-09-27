@@ -30,6 +30,11 @@ class AssetsProvider extends ChangeNotifier{
   bool isSavingReservation = false;
   bool isMakingReservation = false;
 
+  bool isFetchingCurrentSharePrice = false;
+  bool currentSharePriceHasError = false;
+  double currentSharePrice = 0;
+
+
   void refreshPopularAssets(){
     isLoadingTrendingShares = true;
     hasError = false;
@@ -140,9 +145,18 @@ class AssetsProvider extends ChangeNotifier{
 
 
   Future<ZannibalResponse> getSharePrice() async {
+    isFetchingCurrentSharePrice = true;
+    currentSharePriceHasError = false;
+    notifyListeners();
+
     ZannibalResponse zannibalResponse = await InvestmentRepository().getSharePrice();
-    print('this it the juice------------');
-    print(zannibalResponse.lastPrice);
+    isFetchingCurrentSharePrice = false;
+    if(zannibalResponse.status == 'success'){
+        currentSharePrice = zannibalResponse.lastPrice;
+    }else{
+        currentSharePriceHasError = true;
+    }
+    notifyListeners();
     return zannibalResponse;
   }
 
