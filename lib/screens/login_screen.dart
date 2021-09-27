@@ -51,14 +51,9 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
         body: Stack(
           children: [
             Container(
-              padding: EdgeInsets.only(left: 31, right: 31, top: 32),
+              padding: EdgeInsets.only(left: 31, right: 31, top: 60),
               child: Column(
                 children: [
-                  SafeArea(
-                    child: SizedBox(
-                      height: 0,
-                    ),
-                  ),
                   CustomLeadIcon(),
                   Container(
                       alignment: Alignment.center,

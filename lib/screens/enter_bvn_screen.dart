@@ -27,7 +27,7 @@ class _EnterBvnScreenState extends State<EnterBvnScreen> with DialogMixins{
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 31, vertical: 32),
+          padding: EdgeInsets.only(left: 31, right: 31, top: 60),
           child: Column(
             children: [
               const SizedBox(height: 15,),

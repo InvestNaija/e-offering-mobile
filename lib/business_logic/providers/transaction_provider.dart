@@ -62,7 +62,8 @@ class TransactionProvider extends ChangeNotifier{
 
   void calculateCumulativeEIpoInvestmentAmount(List<TransactionResponseModel> transactions){
     Map<String, double> currencyValue = Map();
-    for(TransactionResponseModel transaction in transactions){
+    var paidTransactions = transactions.where((transaction) => transaction.status.toLowerCase() == 'paid').toList();
+    for(TransactionResponseModel transaction in paidTransactions){
       String currency = transaction.asset.currency;
       if(!currencyValue.containsKey(currency)){
         currencyValue[currency] = transaction.amount;
