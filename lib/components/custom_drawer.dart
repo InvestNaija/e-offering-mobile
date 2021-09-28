@@ -85,16 +85,16 @@ class CustomDrawer extends StatelessWidget with ApplicationMixin{
                       fontWeight: FontWeight.w500)),
               onTap: ()=> changePage(context, 2),
             ),
-            // ListTile(
-            //   leading: SvgPicture.asset("assets/images/wallet.svg",
-            //       width: 25, height: 25),
-            //   title: const Text('My wallet',
-            //       style: const TextStyle(
-            //           color: Constants.whiteColor,
-            //           fontSize: 15,
-            //           fontWeight: FontWeight.w500)),
-            //   onTap: ()=> changePage(context, 3),
-            // ),
+            ListTile(
+              leading: SvgPicture.asset("assets/images/wallet.svg",
+                  width: 25, height: 25),
+              title: const Text('FAQ',
+                  style: const TextStyle(
+                      color: Constants.whiteColor,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500)),
+              onTap: ()=> changePage(context, 3),
+            ),
             ListTile(
               leading: SvgPicture.asset("assets/images/settings.svg",
                   width: 25, height: 25),
@@ -103,7 +103,7 @@ class CustomDrawer extends StatelessWidget with ApplicationMixin{
                       color: Constants.whiteColor,
                       fontSize: 15,
                       fontWeight: FontWeight.w500)),
-              onTap: ()=> changePage(context, 3),
+              onTap: ()=> changePage(context, 4),
             ),
             ListTile(
               leading: SvgPicture.asset("assets/images/logout.svg", width: 25, height: 25),

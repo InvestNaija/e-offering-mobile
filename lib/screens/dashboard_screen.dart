@@ -7,6 +7,7 @@ import 'package:invest_naija/constants.dart';
 import 'package:invest_naija/mixins/application_mixin.dart';
 import 'package:invest_naija/mixins/dialog_mixin.dart';
 import 'package:invest_naija/screens/fragments/account_setting_fragment.dart';
+import 'package:invest_naija/screens/fragments/faq_fragment.dart';
 import 'package:invest_naija/screens/fragments/home_fragment.dart';
 import 'package:invest_naija/screens/fragments/transactions_fragment.dart';
 import 'package:provider/provider.dart';
@@ -66,6 +67,7 @@ class _DashboardScreenState extends State<DashboardScreen> with DialogMixins, Ap
                 HomeFragment(),
                 InvestmentPlansFragment(),
                 TransactionsFragment(),
+                FaqFragment(),
                 AccountSettingFragment()
               ],
             ),

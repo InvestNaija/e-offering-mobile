@@ -26,11 +26,12 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen> {
   String amount;
   String totalPrice;
   String estimatedUnits;
+  NumberFormat formatCurrency;
 
   @override
   void initState() {
     super.initState();
-    NumberFormat formatCurrency = NumberFormat.simpleCurrency(locale: Platform.localeName, name: widget.transaction.asset.currency);
+    formatCurrency = NumberFormat.simpleCurrency(locale: Platform.localeName, name: widget.transaction.asset.currency);
     amount = widget.transaction.asset.sharePrice == 0 ? 'Pending price discovery' : formatCurrency.format(widget.transaction.asset.sharePrice);
     double calcNumber = widget.transaction.asset.sharePrice == 0 ? 1 : widget.transaction.asset.sharePrice;
     totalPrice =  formatCurrency.format(widget.transaction.unitsExpressed * calcNumber);
@@ -122,7 +123,7 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text("Total", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.neutralColor),),
-                          Text(totalPrice, style: moneyStyle,),
+                          Text(formatCurrency.format(widget.transaction.amount.toString), style: moneyStyle,),
                         ],
                       ),
                       SizedBox(height: 14,),
