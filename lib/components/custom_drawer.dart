@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:invest_naija/business_logic/providers/login_provider.dart';
 import 'package:invest_naija/mixins/application_mixin.dart';
-import 'package:invest_naija/screens/login_screen.dart';
 import 'package:invest_naija/utils/formatter_util.dart';
 import 'package:provider/provider.dart';
 
@@ -18,9 +17,9 @@ class CustomDrawer extends StatelessWidget with ApplicationMixin{
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        padding: EdgeInsets.only(top: 76, bottom: 52),
         color: Constants.navyBlueColor,
-        child: Column(
+        padding: EdgeInsets.only(top: 50),
+        child: ListView(
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.only(left: 10),
@@ -116,7 +115,7 @@ class CustomDrawer extends StatelessWidget with ApplicationMixin{
                 }
               },
             ),
-            const Spacer(),
+            SizedBox(height: 40,),
             Padding(
               padding: EdgeInsets.only(right: 50, left: 20),
               child: Container(
