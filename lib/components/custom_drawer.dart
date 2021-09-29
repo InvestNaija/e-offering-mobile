@@ -4,6 +4,7 @@ import 'package:invest_naija/business_logic/providers/login_provider.dart';
 import 'package:invest_naija/mixins/application_mixin.dart';
 import 'package:invest_naija/utils/formatter_util.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constants.dart';
 
@@ -128,7 +129,20 @@ class CustomDrawer extends StatelessWidget with ApplicationMixin{
                   children: [
                     Text('Expert support available to you 24/7', style: TextStyle(color: Constants.whiteColor),),
                     SizedBox(height: 5,),
-                    Text('via mail', style: TextStyle(color: Constants.navyBlueColor),),
+                    GestureDetector(
+                        onTap: (){
+                          print('this is it');
+                          final Uri emailLaunchUri = Uri(
+                            scheme: 'mailto',
+                            path: 'communication@chapelhilldenham.com',
+                            query: encodeQueryParameters(<String, String>{
+                              'subject': ''
+                            }),
+                          );
+                          launch(emailLaunchUri.toString());
+                        },
+                        child: Text('via mail', style: TextStyle(color: Constants.navyBlueColor),)
+                    ),
                     SizedBox(height: 5,),
                     RichText(text: TextSpan(
                         text: 'or call',
@@ -151,5 +165,10 @@ class CustomDrawer extends StatelessWidget with ApplicationMixin{
         ),
       ),
     );
+  }
+  String encodeQueryParameters(Map<String, String> params) {
+    return params.entries
+        .map((e) => '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+        .join('&');
   }
 }

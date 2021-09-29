@@ -132,6 +132,7 @@ Referenced Strings:
   ACTION_ARGUMENT_SELECTION_END_INT
   ACTION_ARGUMENT_SELECTION_START_INT
   ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE
+  ACTIVITY_NOT_FOUND
   AD
   AE
   AES
@@ -913,6 +914,7 @@ Referenced Strings:
   MetadataUtil
   Metal
   MeteringMode
+  MethodCallHandlerImpl
   MinorVersion
   MissingPermission
   Model
@@ -937,6 +939,7 @@ Referenced Strings:
   NONE
   NOTE
   NOT_READY
+  NO_ACTIVITY
   NO_EXCEEDS_CAPABILITIES
   NO_TARGET
   NO_UNSUPPORTED_DRM
@@ -961,6 +964,7 @@ Referenced Strings:
   O:
   OECF
   OFF_SCREEN_PRERASTER
+  OK
   OM
   OMX.Exynos.AAC.Decoder
   OMX.Exynos.AVC.Decoder
@@ -1455,6 +1459,7 @@ Referenced Strings:
   UZ
   UnknownNullness
   Url
+  UrlLauncherPlugin
   UserComment
   Util
   V0:
@@ -1591,6 +1596,7 @@ Referenced Strings:
   android.intent.action.CONFIGURATION_C...
   android.intent.action.GET_CONTENT
   android.intent.action.RUN
+  android.intent.action.VIEW
   android.intent.extra.ALLOW_MULTIPLE
   android.intent.extra.USE_FRONT_CAMERA
   android.intent.extra.durationLimit
@@ -1765,6 +1771,7 @@ Referenced Strings:
   camera_closing
   canGoBack
   canGoForward
+  canLaunch
   cancel
   cannotCreateFile
   caption
@@ -1800,6 +1807,7 @@ Referenced Strings:
   clipboard
   close
   closeCaptureSession
+  closeWebView
   cmn
   code
   codePoint
@@ -1808,6 +1816,7 @@ Referenced Strings:
   codecs
   collection
   color
+  com.android.browser.headers
   com.android.capture.fps
   com.android.okhttp.internal.http.Http...
   com.android.okhttp.internal.http.Http...
@@ -1974,6 +1983,8 @@ Referenced Strings:
   emergency
   enable
   enableAudio
+  enableDomStorage
+  enableJavaScript
   enableSuggestions
   enable_state_restoration
   enabled
@@ -2325,6 +2336,7 @@ Referenced Strings:
   landscapeRight
   lang
   languages
+  launch
   lavender
   lavenderblush
   lawngreen
@@ -2598,6 +2610,7 @@ Referenced Strings:
   plugins.flutter.io/image_picker
   plugins.flutter.io/path_provider
   plugins.flutter.io/shared_preferences
+  plugins.flutter.io/url_launcher
   plugins.flutter.io/webview
   plugins.flutter.io/webview_
   plum
@@ -2928,6 +2941,7 @@ Referenced Strings:
   urn:mpeg:mpegB:cicp:ChannelConfiguration
   urn:scte:scte35:2014:bin
   urn:tva:metadata:cs:AudioPurposeCS:2007
+  useWebView
   userAgent
   username
   usesHybridComposition
@@ -3076,6 +3090,7 @@ Marking attr:android_endX:-1 used because its prefix matches string pool constan
 Marking attr:android_endY:-1 used because its prefix matches string pool constant android
 Marking attr:android_tileMode:-1 used because its prefix matches string pool constant android
 Marking attr:android_offset:-1 used because its prefix matches string pool constant android
+Marking drawable:launch_background:2130968577 used because its prefix matches string pool constant launch
 Marking id:line1:2131034159 used because its prefix matches string pool constant line
 Marking id:line3:2131034160 used because its prefix matches string pool constant line
 Resource Reference Graph:
