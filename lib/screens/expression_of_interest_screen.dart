@@ -150,7 +150,7 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                           showSnackBar('Payment Error', response.error.message);
                           return;
                         }
-                        Navigator.pushNamed(context, '/payment-web', arguments: response.data.authorizationUrl);
+                        Navigator.pushNamed(context, '/payment-web', arguments: PaymentWebScreenArguments(response.data.authorizationUrl, widget.asset));
                       },
                     );
                   },

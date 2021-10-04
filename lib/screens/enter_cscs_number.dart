@@ -75,6 +75,7 @@ class _EnterCscsNumberState extends State<EnterCscsNumber> with DialogMixins {
                   label: "CSCS Number",
                   controller: _cscsNumberTextEditingController,
                   counterText: assetProvider.verifiedName,
+                  keyboardType: TextInputType.number,
                   onChange: (value) async{
                     var response = await assetProvider.verifyCscs(cscsNo: _cscsNumberTextEditingController.text);
                     if(response.status.toLowerCase() != 'success'){

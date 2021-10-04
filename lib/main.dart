@@ -85,7 +85,7 @@ class _MyAppState extends State<MyApp> with DialogMixins, ApplicationMixin{
       context: context,
       onTimeExpired: () {
         if (userIsInsideApp) {
-         // showInactivityAlert(this.context);
+         showInactivityAlert(this.context);
         }
       },
       child: MaterialApp(
@@ -129,8 +129,8 @@ class _MyAppState extends State<MyApp> with DialogMixins, ApplicationMixin{
             return MaterialPageRoute(builder: (_) => CreateCscsAccountScreen());
           }
           if (settings.name == '/payment-web') {
-            String paymentUrl = settings.arguments as String;
-            return MaterialPageRoute(builder: (_) => PaymentWebScreen(paymentUrl));
+            PaymentWebScreenArguments paymentWebScreenArguments = settings.arguments as PaymentWebScreenArguments;
+            return MaterialPageRoute(builder: (_) => PaymentWebScreen(paymentWebScreenArguments));
           }
           if (settings.name == '/transaction-summary') {
             TransactionResponseModel transaction = settings.arguments as TransactionResponseModel;

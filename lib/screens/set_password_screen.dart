@@ -135,7 +135,6 @@ class _SetPasswordScreenState extends State<SetPasswordScreen> with DialogMixins
                   const SizedBox(height: 25,),
                   CustomTextField(
                     label: "Email",
-                    readOnly: widget.email != null ? widget.email.isNotEmpty ? true  : false : false,
                     controller: emailTextEditController,
                     keyboardType : TextInputType.emailAddress
                   ),

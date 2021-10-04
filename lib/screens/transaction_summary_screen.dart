@@ -123,7 +123,7 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text("Total", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.neutralColor),),
-                          Text(formatCurrency.format(widget.transaction.amount.toString), style: moneyStyle,),
+                          Text(formatCurrency.format(widget.transaction.amount), style: moneyStyle,),
                         ],
                       ),
                       SizedBox(height: 14,),
@@ -165,8 +165,7 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen> {
                   onPressed: () async {
                     PaymentUrlResponse response = await paymentProvider.getPaymentUrl(reservationId: widget.transaction.id, gateway: 'flutterwave');
                     if(response.error == null){
-                      await Navigator.pushNamed(context, '/payment-web', arguments: response.data.authorizationUrl);
-                      transactionProvider.refreshTransactions();
+                      await Navigator.pushNamed(context, '/payment-web', arguments: PaymentWebScreenArguments(response.data.authorizationUrl, widget.transaction.asset));
                     }else{
                       final snackBar = SnackBar(
                           content: Container(

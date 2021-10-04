@@ -35,7 +35,12 @@ class CustomButton extends StatelessWidget {
             constraints: BoxConstraints(maxHeight: 45, minHeight: 45),
             width: double.infinity,
             child: this.isLoading
-                ? DualRingSpinner()
+                ? Center(
+                  child: SizedBox(
+                   height: 25,
+                  width: 25,
+                  child: CircularProgressIndicator()),
+                )
                 : Center(
                         child: Text(
                         this.data,

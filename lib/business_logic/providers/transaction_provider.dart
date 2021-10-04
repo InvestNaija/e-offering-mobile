@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:invest_naija/business_logic/data/response/shares_response_model.dart';
 import 'package:invest_naija/business_logic/data/response/transaction_list_response_model.dart';
 import 'package:invest_naija/business_logic/data/response/transaction_response_model.dart';
 import 'package:invest_naija/business_logic/repository/transactions_repository.dart';
@@ -80,8 +81,18 @@ class TransactionProvider extends ChangeNotifier{
       reservoir[reservoirIndex]..amount = amount
         ..unitsExpressed = units;
 
-      recentTransactions = reservoir.getRange(0, 5).toList();
-      transactions = reservoir.getRange(0, reservoir.length).toList();
+      recentTransactions = reservoir.take(5).toList();
+      transactions = reservoir.take(reservoir.length).toList();
+      notifyListeners();
+    }
+  }
+
+  void updateTransactionAsPaid(SharesResponseModel asset) {
+    var reservoirIndex = reservoir.indexWhere((trxn) => trxn.asset.id == asset.id);
+    if(reservoirIndex >= 0){
+      reservoir[reservoirIndex].status = 'paid';
+      recentTransactions = reservoir.take(5).toList();
+      transactions = reservoir.take(reservoir.length).toList();
       notifyListeners();
     }
   }
