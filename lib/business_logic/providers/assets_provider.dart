@@ -122,6 +122,7 @@ class AssetsProvider extends ChangeNotifier{
   }
 
   Future<ExpressInterestResponseModel> expressInterest({String assetId, int units, double amount}) async{
+    print(amount);
     ExpressInterestResponseModel expressInterestResponse = await InvestmentRepository()
          .expressInterest(assetId: assetId, units: units, amount: amount);
     return expressInterestResponse;

@@ -132,11 +132,11 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                           showCscsDialog();
                           return;
                         }
-                        bool hasNuban = await customerProvider.hasNuban();
-                        if(!hasNuban){
-                          showBankDetailDialog();
-                          return;
-                        }
+                        // bool hasNuban = await customerProvider.hasNuban();
+                        // if(!hasNuban){
+                        //   showBankDetailDialog();
+                        //   return;
+                        // }
                         String assetId = widget.asset.id;
                         int unit = int.parse(unitQuantityTextEditingController.text);
                         double amount = double.parse(amountTextEditingController.text);
@@ -145,12 +145,21 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                           showSnackBar('Unable to express interest', expressInterestResponse.error.message);
                           return;
                         }
-                        var response = await paymentProvider.getPaymentUrl(reservationId: expressInterestResponse.data.reservation.id, gateway: 'flutterwave');
+                        var response = await paymentProvider.getPaymentUrl(
+                            reservationId: expressInterestResponse.data.reservation.id,
+                            gateway: 'flutterwave',
+                            currency: widget.asset.currency
+                        );
                         if(response.error != null){
                           showSnackBar('Payment Error', response.error.message);
                           return;
                         }
-                        Navigator.pushNamed(context, '/payment-web', arguments: PaymentWebScreenArguments(response.data.authorizationUrl, widget.asset));
+                        print('response.data.authorizationUrl ===> ${response.data.authorizationUrl}');
+
+                        bool isSuccessful = await Navigator.pushNamed(context, '/payment-web', arguments: PaymentWebScreenArguments(response.data.authorizationUrl, widget.asset)) as bool;
+                        if(isSuccessful == true){
+                          Navigator.popUntil(context, ModalRoute.withName('/dashboard'),);
+                        }
                       },
                     );
                   },

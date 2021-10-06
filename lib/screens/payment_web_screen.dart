@@ -46,14 +46,17 @@ class _PaymentWebScreenState extends State<PaymentWebScreen> with ApplicationMix
             },
             onProgress: (int progress) {},
             navigationDelegate: (NavigationRequest request) async{
+              print(request.url);
               if (request.url.contains('cancelled')) {
+                print('entered cancelled ----->');
                 Navigator.pop(context, false);
-              }else if(request.url.contains('success?status=successful')){
-                await Future.delayed(Duration(milliseconds: 500));
-                changePage(context, 2);
+              }else if(request.url.contains('https://e-offering.netlify.com/dashboard/transactions')){
+                print(request.url);
+                print('entered success ----->');
+                changePage(context, 2, shouldPop: false);
                 await Future.delayed(Duration(seconds: 1));
                 var asset = widget.paymentWebScreenArguments.asset;
-                Provider.of<TransactionProvider>(context).updateTransactionAsPaid(asset);
+                Provider.of<TransactionProvider>(context, listen: false).refreshTransactions();
                 Navigator.pop(context, true);
               }
               return NavigationDecision.navigate;

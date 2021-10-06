@@ -41,6 +41,7 @@ class BankProvider extends ChangeNotifier{
       bankAccountVerified = true;
       verifiedAccountName = verifyBankAccountResponseModel.data.accountName;
     }else{
+      bankAccountVerified = false;
       verifiedAccountName = 'No account found';
     }
 

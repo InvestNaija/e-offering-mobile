@@ -165,7 +165,10 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen> {
                   onPressed: () async {
                     PaymentUrlResponse response = await paymentProvider.getPaymentUrl(reservationId: widget.transaction.id, gateway: 'flutterwave');
                     if(response.error == null){
-                      await Navigator.pushNamed(context, '/payment-web', arguments: PaymentWebScreenArguments(response.data.authorizationUrl, widget.transaction.asset));
+                      bool isSuccessful = await Navigator.pushNamed(context, '/payment-web', arguments: PaymentWebScreenArguments(response.data.authorizationUrl, widget.transaction.asset)) as bool;
+                      if(isSuccessful == true){
+                        Navigator.pop(context);
+                      }
                     }else{
                       final snackBar = SnackBar(
                           content: Container(

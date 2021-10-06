@@ -10,6 +10,7 @@ import 'local/local_storage.dart';
 
 class TransactionRepository{
   Future<TransactionListResponseModel> getTransactions() async {
+    print('Authorization ${appLocalStorage.getToken()}');
     try{
     Response response =  await http.get(
       Uri.parse('${baseUrl}reservations/my-reservations'),

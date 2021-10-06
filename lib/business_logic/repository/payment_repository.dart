@@ -38,7 +38,7 @@ class PaymentRepository{
     }
   }
 
-  Future<PaymentUrlResponse> getPaymentUrl({String reservationId, String gateway}) async {
+  Future<PaymentUrlResponse> getPaymentUrl({String reservationId, String gateway, String currency}) async {
     try {
       Response response = await http.post(
           Uri.parse('${baseUrl}reservations/make-payment'),
@@ -48,7 +48,9 @@ class PaymentRepository{
           },
           body: convert.jsonEncode(
               { "reservationId": reservationId,
-                "gateway": gateway
+                "gateway": gateway,
+                "currency": currency,
+                "reinvest" : false
               })
       ).timeout(const Duration(seconds: 60), onTimeout: () {
         throw TimeoutException(

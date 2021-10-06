@@ -3,6 +3,8 @@ import 'package:invest_naija/business_logic/data/response/response_model.dart';
 class VerifyBankAccountResponseModel extends ResponseModel{
   BankDetailResponseModel data;
 
+  VerifyBankAccountResponseModel();
+
   VerifyBankAccountResponseModel.fromJson(Map<String, dynamic> json) : super.fromJson(json){
     data = json["data"] == null ? null : BankDetailResponseModel.fromJson(json["data"]);
   }

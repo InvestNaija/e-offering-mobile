@@ -88,12 +88,21 @@ class TransactionProvider extends ChangeNotifier{
   }
 
   void updateTransactionAsPaid(SharesResponseModel asset) {
-    var reservoirIndex = reservoir.indexWhere((trxn) => trxn.asset.id == asset.id);
-    if(reservoirIndex >= 0){
-      reservoir[reservoirIndex].status = 'paid';
-      recentTransactions = reservoir.take(5).toList();
-      transactions = reservoir.take(reservoir.length).toList();
-      notifyListeners();
+    try{
+      var reservoirIndex = reservoir.indexWhere((trxn) => trxn.asset.id == asset.id);
+      if(reservoirIndex >= 0){
+        print('resevior index ===> $reservoirIndex');
+        print(reservoir[reservoirIndex].status);
+        reservoir[reservoirIndex].status = 'paid';
+        recentTransactions = reservoir.take(5).toList();
+        transactions = reservoir.take(reservoir.length).toList();
+        notifyListeners();
+
+      }else{
+        print('resevior index ===> $reservoirIndex');
+      }
+    }catch(ex){
+      print(ex);
     }
   }
 }

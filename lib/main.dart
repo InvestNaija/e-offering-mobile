@@ -108,7 +108,9 @@ class _MyAppState extends State<MyApp> with DialogMixins, ApplicationMixin{
             return MaterialPageRoute(builder: (_) => LoginScreen());
           }
           if (settings.name == '/dashboard') {
-            return MaterialPageRoute(builder: (_) => DashboardScreen());
+            return MaterialPageRoute(
+                settings: RouteSettings(name: "/dashboard"),
+                builder: (_) => DashboardScreen());
           }
           if (settings.name == '/enter-cscs') {
             bool navigateBack = settings.arguments as bool;

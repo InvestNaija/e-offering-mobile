@@ -115,6 +115,13 @@ class _EnterBankInformationScreenState extends State<EnterBankInformationScreen>
                     textColor: Constants.whiteColor,
                     color: Constants.primaryColor,
                     onPressed: () async {
+
+                      if(!bankProvider.bankAccountVerified){
+                        final snackBar = SnackBar(content: Text('Bank account not valid!'));
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        return;
+                      }
+
                       ResponseModel responseModel = await bankProvider.updateBankDetail(
                         bankAccountName: accountNameTextEditController.text,
                         bankCode: bankProvider.selectedBank.code,

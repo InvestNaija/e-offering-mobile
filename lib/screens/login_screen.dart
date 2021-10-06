@@ -213,6 +213,7 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
 
   @override
   void dispose() {
+    controller.dispose();
     super.dispose();
   }
 }

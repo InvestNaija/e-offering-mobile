@@ -45,6 +45,7 @@ class UtilityRepository{
         throw TimeoutException(
             'The connection has timed out, Please try again!');
       });
+      print('===> ${response.body}');
       var jsonResponse = convert.jsonDecode(response.body);
       return VerifyBankAccountResponseModel.fromJson(jsonResponse);
     } on Exception catch (exception) {
