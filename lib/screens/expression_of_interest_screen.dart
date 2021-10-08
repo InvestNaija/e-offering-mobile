@@ -132,11 +132,11 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                           showCscsDialog();
                           return;
                         }
-                        // bool hasNuban = await customerProvider.hasNuban();
-                        // if(!hasNuban){
-                        //   showBankDetailDialog();
-                        //   return;
-                        // }
+                        bool hasNuban = await customerProvider.hasNuban();
+                        if(!hasNuban){
+                          showBankDetailDialog();
+                          return;
+                        }
                         String assetId = widget.asset.id;
                         int unit = int.parse(unitQuantityTextEditingController.text);
                         double amount = double.parse(amountTextEditingController.text);

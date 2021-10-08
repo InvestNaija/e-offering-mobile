@@ -50,6 +50,11 @@ class _PaymentWebScreenState extends State<PaymentWebScreen> with ApplicationMix
               if (request.url.contains('cancelled')) {
                 print('entered cancelled ----->');
                 Navigator.pop(context, false);
+
+              }else if(request.url.contains('success?status=successful')){
+                final snackBar = SnackBar(content: Text('Payment successful, you will be redirected back'));
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
               }else if(request.url.contains('https://e-offering.netlify.com/dashboard/transactions')){
                 print(request.url);
                 print('entered success ----->');

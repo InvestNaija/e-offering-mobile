@@ -54,6 +54,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> with Dialog
                 CustomTextField(
                   label: "Email",
                   controller: emailController,
+                  keyboardType: TextInputType.emailAddress,
                   regexPattern: r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$",
                   regexHint: 'Enter a valid email address',
                 ),

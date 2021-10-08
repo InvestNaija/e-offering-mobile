@@ -61,7 +61,7 @@ class OverallContainerState extends State<OverallContainer> {
     if (_timer != null && _timer.isActive) {
       _timer.cancel();
     }
-    _timer = Timer(const Duration(seconds: 60), _logOutUser);
+    _timer = Timer(const Duration(minutes: 5), _logOutUser);
   }
 
   void _logOutUser() {
