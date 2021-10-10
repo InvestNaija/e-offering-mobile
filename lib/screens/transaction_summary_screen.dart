@@ -9,6 +9,7 @@ import 'package:invest_naija/business_logic/providers/payment_provider.dart';
 import 'package:invest_naija/business_logic/providers/transaction_provider.dart';
 import 'package:invest_naija/components/custom_button.dart';
 import 'package:invest_naija/components/custom_lead_icon.dart';
+import 'package:invest_naija/mixins/dialog_mixin.dart';
 import 'package:provider/provider.dart';
 
 import '../constants.dart';
@@ -22,7 +23,7 @@ class TransactionSummaryScreen extends StatefulWidget {
   _TransactionSummaryScreenState createState() => _TransactionSummaryScreenState();
 }
 
-class _TransactionSummaryScreenState extends State<TransactionSummaryScreen> {
+class _TransactionSummaryScreenState extends State<TransactionSummaryScreen>  with DialogMixins{
   String amount;
   String totalPrice;
   String estimatedUnits;
@@ -163,6 +164,19 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen> {
                   textColor: Constants.whiteColor,
                   color: Constants.primaryColor,
                   onPressed: () async {
+                    print('whatsa pp');
+                    bool hasCscs = await customerProvider.hasCscs();
+                    print(hasCscs);
+                    if(!hasCscs){
+                      showCscsDialog();
+                      return;
+                    }
+                    bool hasNuban = await customerProvider.hasNuban();
+                    if(!hasNuban){
+                      showBankDetailDialog();
+                      return;
+                    }
+
                     PaymentUrlResponse response = await paymentProvider.getPaymentUrl(reservationId: widget.transaction.id, gateway: 'flutterwave');
                     if(response.error == null){
                       bool isSuccessful = await Navigator.pushNamed(context, '/payment-web', arguments: PaymentWebScreenArguments(response.data.authorizationUrl, widget.transaction.asset)) as bool;
@@ -192,5 +206,121 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen> {
         ),
       ),
     );
+  }
+
+  void showCreateCscsModal(){
+    showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('A CSCS account number would be created for you', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: const <Widget>[
+                Text('Your CSCS number is mandatory/required to complete your application', style: TextStyle(fontSize: 14)),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Proceed', style: TextStyle(color: Constants.blackColor),),
+              onPressed: () {
+                Navigator.popAndPushNamed(context, '/create-cscs', arguments: true);
+              },
+            ),
+            TextButton(
+              child: const Text('Cancel', style: TextStyle(color: Constants.yellowColor)),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void showCscsDialog(){
+    showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Cscs Information', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: const <Widget>[
+                Text('To make payment for this asset, you should have a CSCS Number. Do you have a CSCS Number?', style: TextStyle(fontSize: 14,)),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Yes', style: TextStyle(color: Constants.blackColor),),
+              onPressed: () {
+                Navigator.popAndPushNamed(context, '/enter-cscs', arguments: true);
+              },
+            ),
+            TextButton(
+              child: const Text('No, I don\'t', style: TextStyle(color: Constants.yellowColor)),
+              onPressed: () {
+                Navigator.of(context).pop();
+                showCreateCscsModal();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void showBankDetailDialog(){
+    showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Bank Information'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: const <Widget>[
+                Text('Please update your Bank detail to continue'),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Update Bank Detail', style: TextStyle(color: Constants.blackColor),),
+              onPressed: () {
+                Navigator.popAndPushNamed(context, '/enter-bank-detail', arguments: true);
+              },
+            ),
+            TextButton(
+              child: const Text('Cancel', style: TextStyle(color: Constants.blackColor)),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void showSnackBar(String title, String msg){
+    final snackBar = SnackBar(
+      content: Container(
+        height: 70,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(title, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
+            SizedBox(height: 15,),
+            Text(msg),
+          ],
+        ),
+      ),);
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

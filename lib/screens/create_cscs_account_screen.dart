@@ -129,6 +129,7 @@ class _CreateCscsAccountScreenState extends State<CreateCscsAccountScreen> with 
                         if(!formKey.currentState.validate()) return;
 
                         bool hasNuban = await Provider.of<CustomerProvider>(context, listen: false).hasNuban();
+                        print(hasNuban);
                         if(!hasNuban){
                           showDialog<void>(
                             context: context,
