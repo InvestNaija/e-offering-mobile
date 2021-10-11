@@ -228,33 +228,35 @@ class _SetPasswordScreenState extends State<SetPasswordScreen> with DialogMixins
                       if(!_formKey.currentState.validate()) return;
                       if(!hasAcceptedTermsAndConditions) return;
 
-                      RegisterRequestModel registerRequestModel = RegisterRequestModel(
-                          loading : true,
-                          firstName : widget.firstName,
-                          lastName : widget.lastName,
-                          middleName : widget.middleName,
-                          dob : FormatterUtil.formatDate(widget.dob),
-                          gender : widget.gender,
-                          phone : phoneTextEditController.text,
-                          address : addressTextEditController.text,
-                          email : emailTextEditController.text,
-                          nin : widget.nin,
-                          mothersMaidenName : motherMaidenTextEditController.text,
-                          password : passwordTextEditController.text,
-                          bvn : bvnTextEditController.text,
-                          placeOfBirth : placeOfBirthTextEditController.text
+                      showEmailNotice(emailTextEditController.text, () async{
+                            RegisterRequestModel registerRequestModel = RegisterRequestModel(
+                                loading : true,
+                                firstName : widget.firstName,
+                                lastName : widget.lastName,
+                                middleName : widget.middleName,
+                                dob : FormatterUtil.formatDate(widget.dob),
+                                gender : widget.gender,
+                                phone : phoneTextEditController.text,
+                                address : addressTextEditController.text,
+                                email : emailTextEditController.text,
+                                nin : widget.nin,
+                                mothersMaidenName : motherMaidenTextEditController.text,
+                                password : passwordTextEditController.text,
+                                bvn : bvnTextEditController.text,
+                                placeOfBirth : placeOfBirthTextEditController.text
+                            );
+                            RegisterResponseModel registerResponseModel = await Provider.of<RegisterProvider>(context, listen: false).registerUser(registerRequestModel);
+                            if(registerResponseModel.error == null ){
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => OtpScreen(
+                                    email: registerResponseModel.data.email,
+                                    phoneNumber: registerResponseModel.data.phone,
+                                  )));
+                            }else{
+                              showSimpleModalDialog(context: context, title: 'Registration error', message: registerResponseModel.error.message);
+                            }
+                          }
                       );
-
-                      RegisterResponseModel registerResponseModel = await Provider.of<RegisterProvider>(context, listen: false).registerUser(registerRequestModel);
-                      if(registerResponseModel.error == null ){
-                         Navigator.of(context).push(MaterialPageRoute(
-                             builder: (context) => OtpScreen(
-                               email: registerResponseModel.data.email,
-                               phoneNumber: registerResponseModel.data.phone,
-                             )));
-                      }else{
-                        showSimpleModalDialog(context: context, title: 'Registration error', message: registerResponseModel.error.message);
-                      }
                     },
                   );
                 },
@@ -290,6 +292,40 @@ class _SetPasswordScreenState extends State<SetPasswordScreen> with DialogMixins
           ),
         ),
       ),
+    );
+  }
+
+  void showEmailNotice(String email, Function accept){
+    showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Notice', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text('The email address $email will be used as your email', style: TextStyle(fontSize: 14,)),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Proceed', style: TextStyle(color: Constants.blackColor),),
+              onPressed: () {
+                Navigator.of(context).pop();
+                accept();
+              },
+            ),
+            TextButton(
+              child: const Text('No, let me change', style: TextStyle(color: Constants.yellowColor)),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_gifimage/flutter_gifimage.dart';
 import 'package:invest_naija/business_logic/data/response/login_response_model.dart';
 import 'package:invest_naija/business_logic/providers/customer_provider.dart';
@@ -48,6 +49,7 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
         return Future.value(false);
       },
       child: Scaffold(
+        resizeToAvoidBottomInset: true,
         body: Stack(
           children: [
             Container(
@@ -125,7 +127,9 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
                       CustomPasswordField(
                         label: "Password",
                         controller: passwordController,
-                        onEditingComplete: (){},
+                        onEditingComplete: (){
+                          SystemChannels.textInput.invokeMethod('TextInput.hide');
+                        },
                         focusNode: passwordFocusNode,
                       ),
                       const SizedBox(height: 25,),
