@@ -11,6 +11,7 @@ class CustomButton extends StatelessWidget {
   final String icon;
   final bool isLoading;
   final Color disabledColor;
+  final FocusNode focusNode;
 
   CustomButton(
       {this.data,
@@ -19,11 +20,15 @@ class CustomButton extends StatelessWidget {
       this.onPressed,
       this.icon,
       this.isLoading = false,
-      this.disabledColor});
+      this.disabledColor,
+      this.focusNode
+      }
+  );
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
+      focusNode: this.focusNode ?? FocusNode(),
         style: TextButton.styleFrom(
           backgroundColor: this.color,
           shape: new RoundedRectangleBorder(

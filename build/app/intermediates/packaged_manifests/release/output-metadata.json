@@ -15,7 +15,7 @@
           "value": "x86_64"
         }
       ],
-      "versionCode": 4004,
+      "versionCode": 4006,
       "versionName": "1.0.0",
       "outputFile": "x86_64/AndroidManifest.xml"
     },
@@ -27,7 +27,7 @@
           "value": "armeabi-v7a"
         }
       ],
-      "versionCode": 1004,
+      "versionCode": 1006,
       "versionName": "1.0.0",
       "outputFile": "armeabi-v7a/AndroidManifest.xml"
     },
@@ -39,7 +39,7 @@
           "value": "arm64-v8a"
         }
       ],
-      "versionCode": 2004,
+      "versionCode": 2006,
       "versionName": "1.0.0",
       "outputFile": "arm64-v8a/AndroidManifest.xml"
     }

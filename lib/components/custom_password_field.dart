@@ -51,7 +51,9 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
           }
         },
         onEditingComplete: (){
-
+            if(widget.onEditingComplete != null){
+              widget.onEditingComplete();
+            }
         },
         onTap: () => widget.onTap == null ? null : widget.onTap(),
         style: TextStyle(color: Constants.leadColor),

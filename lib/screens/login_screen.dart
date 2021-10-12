@@ -26,6 +26,7 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
   TextEditingController passwordController;
   FocusNode passwordFocusNode;
   FocusNode emailFocusNode;
+  FocusNode loginButtonFocusNode;
 
   GifController controller;
 
@@ -36,6 +37,7 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
     passwordController = TextEditingController();
     passwordFocusNode = FocusNode();
     emailFocusNode = FocusNode();
+    loginButtonFocusNode = FocusNode();
     controller = GifController(
       vsync: this,
       duration: Duration(seconds: 2),
@@ -50,41 +52,30 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
       },
       child: Scaffold(
         resizeToAvoidBottomInset: true,
-        body: Stack(
-          children: [
-            Container(
-              padding: EdgeInsets.only(left: 31, right: 31, top: 60),
-              child: Column(
-                children: [
-                  CustomLeadIcon(),
-                  Container(
-                      alignment: Alignment.center,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 16,
-                      ),
-                      child: GifImage(
-                        controller: controller,
-                        image: AssetImage('assets/images/logo_animated.gif',
-                        ),
-                        height: 160,
-                      )),
-                  SizedBox(
-                    height: 100,
-                  ),
-                ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 31, top: 60),
+                child: CustomLeadIcon(),
               ),
-            ),
-            Positioned(
-              top: 130,
-              left: 0,
-              right: 0,
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 31, vertical: 50),
+              Container(
+                  alignment: Alignment.center,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                  ),
+                  child: GifImage(
+                    controller: controller,
+                    image: AssetImage('assets/images/logo_animated.gif',
+                    ),
+                    height: 160,
+                  )),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 31),
                 child: Form(
                   key: _formKey,
                   child: Column(
                     children: [
-                      const SizedBox(height: 60,),
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Consumer<CustomerProvider>(
@@ -128,7 +119,8 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
                         label: "Password",
                         controller: passwordController,
                         onEditingComplete: (){
-                          SystemChannels.textInput.invokeMethod('TextInput.hide');
+                          print('this is it');
+                          FocusScope.of(context).requestFocus(loginButtonFocusNode);
                         },
                         focusNode: passwordFocusNode,
                       ),
@@ -151,6 +143,7 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
                         builder: (context, loginProvider, child) {
                           return  CustomButton(
                             data: "Login to your account",
+                            focusNode: loginButtonFocusNode,
                             isLoading: loginProvider.isLoading,
                             textColor: Constants.whiteColor,
                             color: Constants.primaryColor,
@@ -204,8 +197,8 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
                   ),
                 ),
               ),
-            )
-          ],
+            ],
+          ),
         ),
       ),
     );
