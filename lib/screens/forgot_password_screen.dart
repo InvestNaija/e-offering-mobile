@@ -45,7 +45,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> with Dialog
                 const Align(
                   alignment: Alignment.centerLeft,
                   child: const Text(
-                      "Please enter your registered email address, to receive a 5- digit code to reset your password ",
+                      "Please enter your registered email address.",
                       textAlign: TextAlign.left,
                       style:
                       const TextStyle(fontSize: 12, color: Constants.neutralColor)),
