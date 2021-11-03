@@ -8,6 +8,7 @@ import 'package:invest_naija/components/custom_checkbox.dart';
 import 'package:invest_naija/components/custom_lead_icon.dart';
 import 'package:invest_naija/components/custom_password_field.dart';
 import 'package:invest_naija/components/custom_textfield.dart';
+import 'package:invest_naija/components/password_eligibility_component.dart';
 import 'package:invest_naija/mixins/dialog_mixin.dart';
 import 'package:invest_naija/screens/login_screen.dart';
 import 'package:invest_naija/screens/otp_screen.dart';
@@ -179,7 +180,17 @@ class _SetPasswordScreenState extends State<SetPasswordScreen> with DialogMixins
                     focusNode: confirmPasswordFocusNode,
                   ),
                 ],
-              )),
+              ),
+              ),
+              SizedBox(height: 20,),
+              ValueListenableBuilder(
+                builder: (BuildContext context, TextEditingValue value, Widget child) {
+                  return PasswordEligibilityComponent(
+                    password: value.text,
+                  );
+                },
+                valueListenable: passwordTextEditController,
+              ),
               const SizedBox(height: 25,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -226,7 +237,30 @@ class _SetPasswordScreenState extends State<SetPasswordScreen> with DialogMixins
                     color: Constants.primaryColor,
                     onPressed: () async {
                       if(!_formKey.currentState.validate()) return;
-                      if(!hasAcceptedTermsAndConditions) return;
+                      if(!hasAcceptedTermsAndConditions) {
+                        showSnackBar(context: context, body: 'Accept terms and condition.');
+                        return;
+                      }
+                      if(!passwordTextEditController.text.contains(new RegExp(r'[A-Z]'))){
+                        showSnackBar(context: context, body: 'Password must contain uppercase letter');
+                        return;
+                      }
+                      if(!passwordTextEditController.text.contains(new RegExp(r'[0-9]'))){
+                        showSnackBar(context: context, body: 'Password must contain a number');
+                        return;
+                      }
+                      if(!passwordTextEditController.text.contains(new RegExp(r'[a-z]'))){
+                        showSnackBar(context: context, body: 'Password must contain lowercase letter');
+                        return;
+                      }
+                      if(!passwordTextEditController.text.contains(new RegExp(r'[!@#$%^&*(),.?":{}|<>]'))){
+                        showSnackBar(context: context, body: 'Password must contain a special character');
+                        return;
+                      }
+                      if(passwordTextEditController.text.length < 8){
+                        showSnackBar(context: context, body: 'Password length must be greater or equal to 8');
+                        return;
+                      }
 
                       showEmailNotice(emailTextEditController.text, () async{
                             RegisterRequestModel registerRequestModel = RegisterRequestModel(
@@ -327,5 +361,10 @@ class _SetPasswordScreenState extends State<SetPasswordScreen> with DialogMixins
         );
       },
     );
+  }
+
+  showSnackBar({BuildContext context, String header, String body}){
+    final snackBar = SnackBar(content: Text(body));
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

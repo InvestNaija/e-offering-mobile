@@ -37,7 +37,7 @@ class _PaymentWebScreenState extends State<PaymentWebScreen> with ApplicationMix
         children: [
           WebView(
             initialUrl: widget.paymentWebScreenArguments.url,
-            javascriptMode: JavascriptMode.unrestricted,
+            javascriptMode: JavascriptMode.disabled,
             onPageFinished: (response) {
               setState(() {isLoading = false;});
             },

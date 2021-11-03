@@ -10772,12 +10772,12 @@ com.google.common.collect.Collections2:
     private static com.google.common.collect.ObjectCountHashMap counts(java.util.Collection)
     static synthetic boolean access$000(java.util.List,java.util.List)
 androidx.core.provider.SelfDestructiveThread$2
+androidx.loader.R$integer
 io.flutter.plugins.videoplayer.VideoPlayer:
     private static final java.lang.String FORMAT_SS
     private static final java.lang.String FORMAT_DASH
     private static final java.lang.String FORMAT_HLS
     private static final java.lang.String FORMAT_OTHER
-androidx.loader.R$integer
 androidx.core.graphics.TypefaceCompatApi26Impl
 androidx.core.view.DragStartHelper$2
 androidx.arch.core.util.Function
@@ -13239,7 +13239,6 @@ com.google.common.util.concurrent.GwtFuturesCatchingSpecialization:
 androidx.core.content.ContextCompat$Api26Impl
 com.google.common.collect.ArrayTable$Row
 com.google.common.collect.HashBiMap$EntryForKey
-kotlin.ranges.URangesKt___URangesKt
 com.google.android.exoplayer2.analytics.AnalyticsListener:
     public void onShuffleModeChanged(com.google.android.exoplayer2.analytics.AnalyticsListener$EventTime,boolean)
     public void onAudioSessionIdChanged(com.google.android.exoplayer2.analytics.AnalyticsListener$EventTime,int)
@@ -13297,6 +13296,7 @@ com.google.android.exoplayer2.analytics.AnalyticsListener:
     public static final int EVENT_PLAYER_RELEASED
     public static final int EVENT_AUDIO_CODEC_ERROR
     public static final int EVENT_VIDEO_CODEC_ERROR
+kotlin.ranges.URangesKt___URangesKt
 com.google.common.collect.Interners$InternerFunction
 com.google.android.exoplayer2.SimpleExoPlayer:
     protected void <init>(android.content.Context,com.google.android.exoplayer2.RenderersFactory,com.google.android.exoplayer2.trackselection.TrackSelector,com.google.android.exoplayer2.source.MediaSourceFactory,com.google.android.exoplayer2.LoadControl,com.google.android.exoplayer2.upstream.BandwidthMeter,com.google.android.exoplayer2.analytics.AnalyticsCollector,boolean,com.google.android.exoplayer2.util.Clock,android.os.Looper)
@@ -14855,8 +14855,8 @@ com.google.android.exoplayer2.source.UnrecognizedInputFormatException:
 com.google.android.exoplayer2.audio.Ac3Util$SyncFrameInfo:
     public final int streamType
 com.google.android.exoplayer2.upstream.DefaultLoadErrorHandlingPolicy:
-    public synthetic long getRetryDelayMsFor(int,long,java.io.IOException,int)
     public synthetic long getBlacklistDurationMsFor(int,long,java.io.IOException,int)
+    public synthetic long getRetryDelayMsFor(int,long,java.io.IOException,int)
 com.google.android.exoplayer2.Timeline:
     private static com.google.android.exoplayer2.Timeline fromBundle(android.os.Bundle)
     private static com.google.common.collect.ImmutableList fromBundleListRetriever(com.google.android.exoplayer2.Bundleable$Creator,android.os.IBinder)
@@ -15241,43 +15241,46 @@ com.google.android.exoplayer2.extractor.mp4.SefReader$DataReference:
     public final int dataType
 com.google.android.exoplayer2.trackselection.TrackSelectionParameters:
     public static final com.google.android.exoplayer2.trackselection.TrackSelectionParameters DEFAULT
+com.google.android.exoplayer2.-$$Lambda$ThumbRating$AKC_JpI1ZPlm6EFzvYW84DJrS_k
+com.google.android.exoplayer2.-$$Lambda$PercentageRating$gV1VuOc0syRaJALh6cdfjMjuj2Y
+com.google.android.exoplayer2.-$$Lambda$Timeline$Period$cb0Ll1d1tnVYwhQwGd9j2fWlJfI:
+    public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
+com.google.android.exoplayer2.-$$Lambda$HeartRating$vPIJW6ssYQujpVr4cEbnIbolVQo
+com.google.android.exoplayer2.-$$Lambda$MediaItem$ClippingProperties$JiWNJy3bsEXc0IA4v9vQKXzXw4Q:
+    public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
+com.google.android.exoplayer2.audio.-$$Lambda$AudioAttributes$Hsm865OCX9SfmXIbNUEMkp8KZVk:
+    public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
+com.google.android.exoplayer2.-$$Lambda$Timeline$4eWR_EQUMv6FYlKol3461jBhxV8:
+    public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
+com.google.android.exoplayer2.-$$Lambda$MediaItem$jV0pUJ-BLiCLPyDyDvfHo6BdOSE:
+    public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
+com.google.android.exoplayer2.-$$Lambda$StarRating$PFFEnOFJiYnmZMUGPr8Imzm26I8
+com.google.android.exoplayer2.-$$Lambda$MediaItem$LiveConfiguration$BU-8A0omnaqu9JdsySRxM9YKzHY:
+    public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
 com.google.android.exoplayer2.video.-$$Lambda$VideoSize$1ExUEZYOGg5lLjSnAHRAg3BoMH4:
     public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
 com.google.android.exoplayer2.-$$Lambda$ExoPlaybackException$KFOeU7ntqCoPsM8H3_a4aK4-9bw:
     public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
-com.google.android.exoplayer2.-$$Lambda$MediaItem$jV0pUJ-BLiCLPyDyDvfHo6BdOSE:
-    public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
-com.google.android.exoplayer2.-$$Lambda$PercentageRating$gV1VuOc0syRaJALh6cdfjMjuj2Y
-com.google.android.exoplayer2.source.ads.-$$Lambda$AdPlaybackState$v7MSQh9nkbSNgVVbdfE7aSUxQOQ:
-    public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
 com.google.android.exoplayer2.-$$Lambda$MediaMetadata$n4bc9ZFXKwAHBWPswIbYNYyZRds:
-    public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
-com.google.android.exoplayer2.-$$Lambda$Timeline$4eWR_EQUMv6FYlKol3461jBhxV8:
-    public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
-com.google.android.exoplayer2.audio.-$$Lambda$AudioAttributes$Hsm865OCX9SfmXIbNUEMkp8KZVk:
-    public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
-com.google.android.exoplayer2.-$$Lambda$ThumbRating$AKC_JpI1ZPlm6EFzvYW84DJrS_k
-com.google.android.exoplayer2.-$$Lambda$StarRating$PFFEnOFJiYnmZMUGPr8Imzm26I8
-com.google.android.exoplayer2.-$$Lambda$MediaItem$ClippingProperties$JiWNJy3bsEXc0IA4v9vQKXzXw4Q:
-    public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
-com.google.android.exoplayer2.-$$Lambda$PlaybackParameters$RwG_RMdOxdeY67Xihvdaau5AZEE:
     public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
 com.google.android.exoplayer2.-$$Lambda$Timeline$Window$DwPhLG2u8bNdNcFO2XKtY2D8gVM:
     public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
 com.google.android.exoplayer2.device.-$$Lambda$DeviceInfo$1doJg_XqbsvweuRfNOXY6F99cGs:
     public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
-com.google.android.exoplayer2.-$$Lambda$MediaItem$LiveConfiguration$BU-8A0omnaqu9JdsySRxM9YKzHY:
-    public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
 com.google.android.exoplayer2.source.ads.-$$Lambda$AdPlaybackState$AdGroup$C29-JxihoVs9-kyxHjAM5HCSTvU:
     public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
 com.google.android.exoplayer2.-$$Lambda$Player$PositionInfo$0Jai4hp00qCDar7e3Ewko-nPWjA:
     public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
-com.google.android.exoplayer2.-$$Lambda$HeartRating$vPIJW6ssYQujpVr4cEbnIbolVQo
-com.google.android.exoplayer2.-$$Lambda$Rating$S87uZHR0r4DpwOSwqteylD8fJ5w
-com.google.android.exoplayer2.-$$Lambda$Timeline$Period$cb0Ll1d1tnVYwhQwGd9j2fWlJfI:
+com.google.android.exoplayer2.-$$Lambda$PlaybackParameters$RwG_RMdOxdeY67Xihvdaau5AZEE:
     public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
+com.google.android.exoplayer2.source.ads.-$$Lambda$AdPlaybackState$v7MSQh9nkbSNgVVbdfE7aSUxQOQ:
+    public final com.google.android.exoplayer2.Bundleable fromBundle(android.os.Bundle)
+com.google.android.exoplayer2.-$$Lambda$Rating$S87uZHR0r4DpwOSwqteylD8fJ5w
 com.google.android.exoplayer2.Player$EventListener$-CC:
     public static void $default$onPlaybackStateChanged(com.google.android.exoplayer2.Player$EventListener,int)
+com.google.android.exoplayer2.analytics.AnalyticsListener$-CC
+com.google.android.exoplayer2.ExoPlayer$AudioOffloadListener$-CC:
+    public static void $default$onExperimentalSleepingForOffloadChanged(com.google.android.exoplayer2.ExoPlayer$AudioOffloadListener,boolean)
 com.google.android.exoplayer2.drm.DrmSessionEventListener$-CC:
     public static void $default$onDrmSessionAcquired(com.google.android.exoplayer2.drm.DrmSessionEventListener,int,com.google.android.exoplayer2.source.MediaSource$MediaPeriodId,int)
     public static void $default$onDrmKeysLoaded(com.google.android.exoplayer2.drm.DrmSessionEventListener,int,com.google.android.exoplayer2.source.MediaSource$MediaPeriodId)
@@ -15285,8 +15288,10 @@ com.google.android.exoplayer2.drm.DrmSessionEventListener$-CC:
     public static void $default$onDrmKeysRestored(com.google.android.exoplayer2.drm.DrmSessionEventListener,int,com.google.android.exoplayer2.source.MediaSource$MediaPeriodId)
     public static void $default$onDrmKeysRemoved(com.google.android.exoplayer2.drm.DrmSessionEventListener,int,com.google.android.exoplayer2.source.MediaSource$MediaPeriodId)
     public static void $default$onDrmSessionReleased(com.google.android.exoplayer2.drm.DrmSessionEventListener,int,com.google.android.exoplayer2.source.MediaSource$MediaPeriodId)
-com.google.android.exoplayer2.ExoPlayer$AudioOffloadListener$-CC:
-    public static void $default$onExperimentalSleepingForOffloadChanged(com.google.android.exoplayer2.ExoPlayer$AudioOffloadListener,boolean)
+io.flutter.plugin.platform.PlatformView$-CC
+com.google.android.exoplayer2.audio.AudioSink$Listener$-CC
+com.google.android.exoplayer2.source.MediaSourceEventListener$-CC
+androidx.lifecycle.DefaultLifecycleObserver$-CC
 com.google.android.exoplayer2.video.VideoRendererEventListener$-CC:
     public static void $default$onVideoEnabled(com.google.android.exoplayer2.video.VideoRendererEventListener,com.google.android.exoplayer2.decoder.DecoderCounters)
     public static void $default$onVideoDecoderInitialized(com.google.android.exoplayer2.video.VideoRendererEventListener,java.lang.String,long,long)
@@ -15298,7 +15303,13 @@ com.google.android.exoplayer2.video.VideoRendererEventListener$-CC:
     public static void $default$onVideoDecoderReleased(com.google.android.exoplayer2.video.VideoRendererEventListener,java.lang.String)
     public static void $default$onVideoDisabled(com.google.android.exoplayer2.video.VideoRendererEventListener,com.google.android.exoplayer2.decoder.DecoderCounters)
     public static void $default$onVideoCodecError(com.google.android.exoplayer2.video.VideoRendererEventListener,java.lang.Exception)
-com.google.android.exoplayer2.audio.AudioSink$Listener$-CC
+com.google.android.exoplayer2.drm.DrmSession$-CC:
+    public static boolean $default$playClearSamplesWithoutKeys(com.google.android.exoplayer2.drm.DrmSession)
+com.google.android.exoplayer2.upstream.LoadErrorHandlingPolicy$-CC:
+    public static long $default$getBlacklistDurationMsFor(com.google.android.exoplayer2.upstream.LoadErrorHandlingPolicy,int,long,java.io.IOException,int)
+    public static long $default$getBlacklistDurationMsFor(com.google.android.exoplayer2.upstream.LoadErrorHandlingPolicy,com.google.android.exoplayer2.upstream.LoadErrorHandlingPolicy$LoadErrorInfo)
+    public static long $default$getRetryDelayMsFor(com.google.android.exoplayer2.upstream.LoadErrorHandlingPolicy,int,long,java.io.IOException,int)
+    public static long $default$getRetryDelayMsFor(com.google.android.exoplayer2.upstream.LoadErrorHandlingPolicy,com.google.android.exoplayer2.upstream.LoadErrorHandlingPolicy$LoadErrorInfo)
 com.google.android.exoplayer2.audio.AudioRendererEventListener$-CC:
     public static void $default$onAudioEnabled(com.google.android.exoplayer2.audio.AudioRendererEventListener,com.google.android.exoplayer2.decoder.DecoderCounters)
     public static void $default$onAudioDecoderInitialized(com.google.android.exoplayer2.audio.AudioRendererEventListener,java.lang.String,long,long)
@@ -15310,14 +15321,3 @@ com.google.android.exoplayer2.audio.AudioRendererEventListener$-CC:
     public static void $default$onSkipSilenceEnabledChanged(com.google.android.exoplayer2.audio.AudioRendererEventListener,boolean)
     public static void $default$onAudioCodecError(com.google.android.exoplayer2.audio.AudioRendererEventListener,java.lang.Exception)
     public static void $default$onAudioSinkError(com.google.android.exoplayer2.audio.AudioRendererEventListener,java.lang.Exception)
-com.google.android.exoplayer2.upstream.LoadErrorHandlingPolicy$-CC:
-    public static long $default$getBlacklistDurationMsFor(com.google.android.exoplayer2.upstream.LoadErrorHandlingPolicy,int,long,java.io.IOException,int)
-    public static long $default$getBlacklistDurationMsFor(com.google.android.exoplayer2.upstream.LoadErrorHandlingPolicy,com.google.android.exoplayer2.upstream.LoadErrorHandlingPolicy$LoadErrorInfo)
-    public static long $default$getRetryDelayMsFor(com.google.android.exoplayer2.upstream.LoadErrorHandlingPolicy,int,long,java.io.IOException,int)
-    public static long $default$getRetryDelayMsFor(com.google.android.exoplayer2.upstream.LoadErrorHandlingPolicy,com.google.android.exoplayer2.upstream.LoadErrorHandlingPolicy$LoadErrorInfo)
-com.google.android.exoplayer2.source.MediaSourceEventListener$-CC
-com.google.android.exoplayer2.drm.DrmSession$-CC:
-    public static boolean $default$playClearSamplesWithoutKeys(com.google.android.exoplayer2.drm.DrmSession)
-com.google.android.exoplayer2.analytics.AnalyticsListener$-CC
-androidx.lifecycle.DefaultLifecycleObserver$-CC
-io.flutter.plugin.platform.PlatformView$-CC

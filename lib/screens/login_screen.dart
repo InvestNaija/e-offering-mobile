@@ -59,38 +59,47 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
                 padding: EdgeInsets.only(left: 31, top: 60),
                 child: CustomLeadIcon(),
               ),
+              SizedBox(height: 30,),
               Container(
                   alignment: Alignment.center,
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16,
                   ),
-                  child: GifImage(
-                    controller: controller,
-                    image: AssetImage('assets/images/logo_animated.gif',
-                    ),
-                    height: 160,
-                  )),
+                  child: Image.asset('assets/images/primary-bid-image.png')
+              ),
+              SizedBox(height: 30,),
+              // Container(
+              //     alignment: Alignment.center,
+              //     padding: const EdgeInsets.symmetric(
+              //       horizontal: 16,
+              //     ),
+              //     child: GifImage(
+              //       controller: controller,
+              //       image: AssetImage('assets/images/logo_animated.gif',
+              //       ),
+              //       height: 160,
+              //     )),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 31),
                 child: Form(
                   key: _formKey,
                   child: Column(
                     children: [
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Consumer<CustomerProvider>(
-                          builder: (context, customerProvider, child) {
-                            return  Text(
-                                customerProvider.user != null && customerProvider.user.firstName != null?
-                                "Welcome back ${FormatterUtil.formatName(customerProvider.user.firstName.toLowerCase())}!" : "Welcome to InvestNaija",
-                                textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600,
-                                    color: Constants.fontColor2));
-                          },
-                        ),
-                      ),
+                      // Align(
+                      //   alignment: Alignment.centerLeft,
+                      //   child: Consumer<CustomerProvider>(
+                      //     builder: (context, customerProvider, child) {
+                      //       return  Text(
+                      //           customerProvider.user != null && customerProvider.user.firstName != null?
+                      //           "Welcome back ${FormatterUtil.formatName(customerProvider.user.firstName.toLowerCase())}!" : "Welcome to InvestNaija",
+                      //           textAlign: TextAlign.center,
+                      //           style: const TextStyle(
+                      //               fontSize: 12,
+                      //               fontWeight: FontWeight.w600,
+                      //               color: Constants.fontColor2));
+                      //     },
+                      //   ),
+                      // ),
                       const SizedBox(height: 3,),
                       Align(
                         alignment: Alignment.centerLeft,
@@ -199,6 +208,13 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
               ),
             ],
           ),
+        ),
+        bottomNavigationBar: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Powered by", style: TextStyle(fontWeight: FontWeight.w600),),
+            Image.asset('assets/images/ngx-logo.png', width: 100, height: 100,),
+          ],
         ),
       ),
     );

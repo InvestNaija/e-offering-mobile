@@ -103,6 +103,8 @@ flutter:
      - assets/images/camera.svg
      - assets/images/upload-document.svg
      - assets/audio/camera-shutter.mp3
+     - assets/images/primary-bid-image.png
+     - assets/images/ngx-logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
