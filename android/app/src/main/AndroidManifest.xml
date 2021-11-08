@@ -2,7 +2,7 @@
     package="com.chapelhilldenham.invest_naija">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="Invest Naija e-Offerings"
+        android:label="PrimaryOffer"
         android:icon="@mipmap/ic_logo">
         <activity
             android:name=".MainActivity"

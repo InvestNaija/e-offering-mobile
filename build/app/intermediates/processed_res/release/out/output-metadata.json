@@ -15,7 +15,7 @@
           "value": "x86_64"
         }
       ],
-      "versionCode": 4009,
+      "versionCode": 4011,
       "versionName": "1.0.0",
       "outputFile": "resources-x86_64Release.ap_"
     },
@@ -27,7 +27,7 @@
           "value": "armeabi-v7a"
         }
       ],
-      "versionCode": 1009,
+      "versionCode": 1011,
       "versionName": "1.0.0",
       "outputFile": "resources-armeabi-v7aRelease.ap_"
     },
@@ -39,7 +39,7 @@
           "value": "arm64-v8a"
         }
       ],
-      "versionCode": 2009,
+      "versionCode": 2011,
       "versionName": "1.0.0",
       "outputFile": "resources-arm64-v8aRelease.ap_"
     }

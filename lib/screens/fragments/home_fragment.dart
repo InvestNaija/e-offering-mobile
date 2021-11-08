@@ -99,7 +99,7 @@ class _HomeFragmentState extends State<HomeFragment> with ApplicationMixin{
                         ),
                         const SizedBox(height: 5,),
                         const Text(
-                          "Buy offerings, and be notified when they are\navailable for purchase",
+                          "Unlock the stock market-Unrestricted access\nto buy Nigerian stocks",
                           style: TextStyle(
                               color: Constants.neutralColor,
                               fontSize: 11,

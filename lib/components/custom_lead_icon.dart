@@ -22,7 +22,7 @@ class CustomLeadIcon extends StatelessWidget {
             color: Constants.iconsColor,
           ),
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.of(context).maybePop();
           },
         ),
       ),

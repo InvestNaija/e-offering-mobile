@@ -145,7 +145,7 @@ class InvestmentRepository{
     }
   }
 
-  Future<CscsVerificationResponseModel> verifyCscs({String cscsNo}) async {
+  Future<CscsVerificationResponseModel> verifyCscs({String cscsNo, String chn}) async {
     try{
       Response response =  await http.post(
         Uri.parse('${baseUrl}mtn/customers/first-step'),
@@ -155,7 +155,7 @@ class InvestmentRepository{
         },
         body: convert.jsonEncode(
         { 'cscsNo': cscsNo,
-          'cscsNumber': '',
+          'chn': chn,
           'loading' : true,
         })
     ).timeout(const Duration(seconds: 60), onTimeout: () {

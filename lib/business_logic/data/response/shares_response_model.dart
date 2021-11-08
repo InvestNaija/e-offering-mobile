@@ -7,6 +7,7 @@ class SharesResponseModel {
  double anticipatedMinPrice;
  double sharePrice;
  int availableShares;
+ num minimumNoOfUnits;
  bool openForPurchase;
  String closingDate;
  int popularity;
@@ -31,5 +32,6 @@ class SharesResponseModel {
   currency = json['currency'];
   createdAt = json["createdAt"];
   updatedAt = json["updatedAt"];
+  minimumNoOfUnits = json["minimumNoOfUnits"];
  }
 }

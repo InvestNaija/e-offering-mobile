@@ -19,12 +19,14 @@ class EnterCscsNumber extends StatefulWidget {
 class _EnterCscsNumberState extends State<EnterCscsNumber> with DialogMixins {
 
   TextEditingController _cscsNumberTextEditingController;
+  TextEditingController _chNumberTextEditingController;
   AssetsProvider _assetsProvider;
 
   @override
   void initState() {
     super.initState();
     _cscsNumberTextEditingController = TextEditingController();
+    _chNumberTextEditingController = TextEditingController();
     _assetsProvider = Provider.of<AssetsProvider>(context, listen: false);
   }
 
@@ -74,13 +76,38 @@ class _EnterCscsNumberState extends State<EnterCscsNumber> with DialogMixins {
                 return CustomTextField(
                   label: "CSCS Number",
                   controller: _cscsNumberTextEditingController,
-                  counterText: assetProvider.verifiedName,
                   keyboardType: TextInputType.number,
                   onChange: (value) async{
-                    var response = await assetProvider.verifyCscs(cscsNo: _cscsNumberTextEditingController.text);
-                    if(response.status.toLowerCase() != 'success'){
-                      SnackBar snackBar = SnackBar(content: Text(response.error.message));
-                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    if(_cscsNumberTextEditingController.text.isEmpty || _chNumberTextEditingController.text.isEmpty){
+                      assetProvider.resetCscs();
+                    }else {
+                      var response = await assetProvider.verifyCscs(cscsNo: _cscsNumberTextEditingController.text);
+                      if (response.status.toLowerCase() != 'success') {
+                        SnackBar snackBar = SnackBar(content: Text(response.error.message));
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      }
+                    }
+                  },
+                );
+              },
+            ),
+            SizedBox(height: 15,),
+            Consumer<AssetsProvider>(
+              builder: (BuildContext context, assetProvider, Widget child) {
+                return CustomTextField(
+                  label: "Clearing House Number",
+                  controller: _chNumberTextEditingController,
+                  counterText: assetProvider.verifiedName,
+                  keyboardType: TextInputType.text,
+                  onChange: (value) async{
+                    if(_cscsNumberTextEditingController.text.isEmpty || _chNumberTextEditingController.text.isEmpty){
+                      assetProvider.resetCscs();
+                    }else {
+                      var response = await assetProvider.verifyCscs(cscsNo: _cscsNumberTextEditingController.text);
+                      if (response.status.toLowerCase() != 'success') {
+                        SnackBar snackBar = SnackBar(content: Text(response.error.message));
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      }
                     }
                   },
                 );

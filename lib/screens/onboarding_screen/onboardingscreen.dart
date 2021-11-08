@@ -29,13 +29,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
 
   Map<String, String> _contentMap = {
     'Unlock the Stock Market':
-        'Unrestricted access to express interest and buy Nigerian Stocks',
+        'Unlock the stock market-Unrestricted access to buy Nigerian stocks',
     'Financial Freedom':
-        'Unrestricted access to express interest and buy Nigerian Stocks',
+        'Unlock the stock market-Unrestricted access to buy Nigerian stocks',
     'Account Protection':
-        'Adipiscing elit. In urna turpis etiam lectus adipiscing ligula.',
+        'Unlock the stock market-Unrestricted access to buy Nigerian stocks',
     'Learning Made Easy':
-        'Unrestricted access to express interest and buy Nigerian Stocks',
+        'Unlock the stock market-Unrestricted access to buy Nigerian stocks',
   };
 
   @override
@@ -111,7 +111,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Spacer(),
-                  Image.asset('assets/images/logo_with_white_text.png'),
+                  SizedBox(height: 90,),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Image.asset('assets/images/logo_with_white_text.png',),
+                  ),
                   Spacer(
                     flex: 10,
                   ),

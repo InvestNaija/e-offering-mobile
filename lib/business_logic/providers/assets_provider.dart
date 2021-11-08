@@ -128,14 +128,21 @@ class AssetsProvider extends ChangeNotifier{
     return expressInterestResponse;
   }
 
-  Future<ResponseModel> verifyCscs({String cscsNo}) async {
+  Future<void> resetCscs() async {
+    verifiedName = "";
+    cscsVerified = false;
+    notifyListeners();
+  }
+
+  Future<ResponseModel> verifyCscs({String cscsNo, String chn}) async {
     isLoading = true;
     notifyListeners();
-    CscsVerificationResponseModel response = await InvestmentRepository().verifyCscs(cscsNo: cscsNo);
+    CscsVerificationResponseModel response = await InvestmentRepository().verifyCscs(cscsNo: cscsNo, chn : chn);
     if(response.status.toLowerCase() =='success'){
       verifiedName = response.data.cscsResponse;
       cscsVerified = true;
     }else{
+      verifiedName = "";
       cscsVerified = false;
     }
     isLoading = false;

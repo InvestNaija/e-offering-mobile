@@ -127,33 +127,33 @@ class CustomDrawer extends StatelessWidget with ApplicationMixin{
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Expert support available to you 24/7', style: TextStyle(color: Constants.whiteColor),),
+                    Text('Need Help?', style: TextStyle(color: Constants.whiteColor),),
                     SizedBox(height: 5,),
                     GestureDetector(
                         onTap: (){
                           print('this is it');
                           final Uri emailLaunchUri = Uri(
                             scheme: 'mailto',
-                            path: 'communication@chapelhilldenham.com',
+                            path: 'info@primaryofferng.com',
                             query: encodeQueryParameters(<String, String>{
                               'subject': ''
                             }),
                           );
                           launch(emailLaunchUri.toString());
                         },
-                        child: Text('via mail', style: TextStyle(color: Constants.navyBlueColor),)
+                        child: Text('Email us at \ninfo@primaryofferng.com', style: TextStyle(color: Constants.navyBlueColor),)
                     ),
                     SizedBox(height: 5,),
                     RichText(text: TextSpan(
-                        text: 'or call',
+                        text: 'or call ' ,
                         children: [
-                          TextSpan(text: '0700-INVESTNAIJA\n'),
-                          TextSpan(text: '(070046837862452)\n', style: TextStyle(fontSize: 12)),
-                          TextSpan(text: '\n'),
-                          TextSpan(text: 'OR\n'),
-                          TextSpan(text: '\n'),
-                          TextSpan(text: '0700-CHAPELHILL\n'),
-                          TextSpan(text: '(07002427354455)', style: TextStyle(fontSize: 12)),
+                           TextSpan(text: '070046837862452'),
+                          // TextSpan(text: '(070046837862452)\n', style: TextStyle(fontSize: 12)),
+                          // TextSpan(text: '\n'),
+                          // TextSpan(text: 'OR\n'),
+                          // TextSpan(text: '\n'),
+                          // TextSpan(text: '0700-CHAPELHILL\n'),
+                          // TextSpan(text: '(07002427354455)', style: TextStyle(fontSize: 12)),
                         ]
                     ),
                     )

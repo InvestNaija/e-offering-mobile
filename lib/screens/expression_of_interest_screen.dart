@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:invest_naija/business_logic/data/response/express_interest_response_model.dart';
 import 'package:invest_naija/business_logic/data/response/payment_url_response.dart';
@@ -7,11 +8,13 @@ import 'package:invest_naija/business_logic/providers/assets_provider.dart';
 import 'package:invest_naija/business_logic/providers/customer_provider.dart';
 import 'package:invest_naija/business_logic/providers/payment_provider.dart';
 import 'package:invest_naija/components/custom_button.dart';
+import 'package:invest_naija/components/custom_checkbox.dart';
 import 'package:invest_naija/components/custom_lead_icon.dart';
 import 'package:invest_naija/components/custom_textfield.dart';
 import 'package:invest_naija/mixins/application_mixin.dart';
 import 'package:invest_naija/mixins/dialog_mixin.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constants.dart';
 import 'payment_web_screen.dart';
@@ -33,6 +36,7 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
   bool makeSpecifiedUnitReadOnly = false;
   bool makeEstimatedAmountReadOnly = false;
   GlobalKey<FormState> formKey;
+  bool hasAcceptedTermsAndConditions = false;
 
   @override
   void initState() {
@@ -93,7 +97,7 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                 ),
                 const SizedBox(height: 25,),
                 CustomTextField(
-                  readOnly: makeSpecifiedUnitReadOnly,
+                  readOnly: false,
                   label: "Specified Units",
                   controller: unitQuantityTextEditingController,
                   keyboardType : TextInputType.number,
@@ -104,7 +108,7 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                 ),
                 const SizedBox(height: 25,),
                 CustomTextField(
-                  readOnly: makeEstimatedAmountReadOnly,
+                  readOnly: true,
                   label: "Amount",
                   controller: amountTextEditingController,
                   keyboardType: TextInputType.number,
@@ -116,6 +120,61 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                      }
                   },
                 ),
+                SizedBox(height: 10,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CustomCheckbox(
+                      onTap: (value){
+                        setState(() => hasAcceptedTermsAndConditions = value);
+                      },
+                      hasAcceptedTermsAndConditions: hasAcceptedTermsAndConditions,
+                    ),
+                    const SizedBox(width: 10,),
+                    Expanded(
+                      child: RichText(
+                        textAlign: TextAlign.left,
+                        text: TextSpan(children: <TextSpan>[
+                          const TextSpan(
+                            text:
+                            'I have read and accept the purchase conditions, and understand the ',
+                            style: const TextStyle(
+                                color: Constants.neutralColor, fontSize: 12),
+                          ),
+                          TextSpan(
+                              text: 'Shelf prospectus, ',
+                              style: const TextStyle(
+                                  color: Constants.primaryColor, fontSize: 12),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () async{
+                                  await launch('https://drive.google.com/file/d/1pJ5PK4x6k4CqL0Ey8XO2BMdwL6wULiS7/view');
+                                  //Navigator.pushNamed(context, '/payment-web', arguments: PaymentWebScreenArguments('', widget.asset));
+                                }),
+                          TextSpan(
+                              text: 'Pricing supplement',
+                              style: const TextStyle(
+                                  color: Constants.primaryColor, fontSize: 12),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () async{
+                                  await launch('https://drive.google.com/file/d/1b-i2lNQCjsuMKMZy6bfUZ3iVjapLLnU3/view?usp=sharing');
+                                  //Navigator.pushNamed(context, '/payment-web', arguments: PaymentWebScreenArguments('', widget.asset));
+                                }),
+                          TextSpan(
+                              text: ' and Term sheet',
+                              style: const TextStyle(
+                                  color: Constants.primaryColor, fontSize: 12),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () async{
+                                  await launch('https://drive.google.com/file/d/1nO-dAlpwrb3N_uDjJwbGJC5qellqMkQm/view');
+                                  //Navigator.pushNamed(context, '/payment-web', arguments: PaymentWebScreenArguments('', widget.asset));
+                                })
+                        ]),
+                      ),
+                    ),
+                    const SizedBox(width: 5,),
+                  ],
+                ),
                 const SizedBox(height: 40,),
                 Consumer3<AssetsProvider, CustomerProvider, PaymentProvider>(
                   builder: (context, assetsProvider, customerProvider, paymentProvider, child) {
@@ -125,7 +184,16 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                       textColor: Constants.whiteColor,
                       color: Constants.primaryColor,
                       onPressed: () async{
+                        if(!hasAcceptedTermsAndConditions){
+                          showSnackBar('Info', 'Condition not read/accepted');
+                          return;
+                        }
                         if(!formKey.currentState.validate()) return;
+                        print(unitQuantityTextEditingController.text);
+                        if(num.parse(unitQuantityTextEditingController.text) < widget.asset.minimumNoOfUnits){
+                          showSnackBar('Info', 'The minimum order is ${widget.asset.minimumNoOfUnits}');
+                          return;
+                        }
 
                         bool hasCscs = await customerProvider.hasCscs();
                         if(!hasCscs){

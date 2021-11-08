@@ -60,13 +60,13 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
                 child: CustomLeadIcon(),
               ),
               SizedBox(height: 30,),
-              Container(
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                  ),
-                  child: Image.asset('assets/images/primary-bid-image.png')
-              ),
+              // Container(
+              //     alignment: Alignment.center,
+              //     padding: const EdgeInsets.symmetric(
+              //       horizontal: 16,
+              //     ),
+              //     child: Image.asset('assets/images/primary-bid-image.png')
+              // ),
               SizedBox(height: 30,),
               // Container(
               //     alignment: Alignment.center,
@@ -115,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
                         label: "Email",
                         controller: emailController,
                         focusNode: emailFocusNode,
-                        keyboardType: TextInputType.emailAddress,
+                        keyboardType: TextInputType.text,
                         regexPattern: r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$",
                         regexHint: 'Enter a valid email address',
                         onEditingComplete: (){
@@ -193,7 +193,7 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
                                   MaterialPageRoute(builder: (context) => EnterBvnScreen()));
                             },
                             child: const Text(
-                              "Sign up",
+                              "Create one",
                               style: TextStyle(
                                   color: Constants.primaryColor,
                                   fontSize: 16,
@@ -212,7 +212,7 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
         bottomNavigationBar: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Powered by", style: TextStyle(fontWeight: FontWeight.w600),),
+            //Text("Powered by", style: TextStyle(fontWeight: FontWeight.w600),),
             Image.asset('assets/images/ngx-logo.png', width: 100, height: 100,),
           ],
         ),

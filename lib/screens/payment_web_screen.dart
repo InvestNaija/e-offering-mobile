@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:invest_naija/business_logic/data/response/shares_response_model.dart';
 import 'package:invest_naija/business_logic/providers/transaction_provider.dart';
@@ -37,7 +39,7 @@ class _PaymentWebScreenState extends State<PaymentWebScreen> with ApplicationMix
         children: [
           WebView(
             initialUrl: widget.paymentWebScreenArguments.url,
-            javascriptMode: JavascriptMode.disabled,
+            javascriptMode: JavascriptMode.unrestricted,
             onPageFinished: (response) {
               setState(() {isLoading = false;});
             },

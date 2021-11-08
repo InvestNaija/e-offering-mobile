@@ -71,7 +71,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/Oesh
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.6.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from /Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:5:9-49
+		ADDED from /Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:5:9-37
 	android:icon
 		ADDED from /Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:6:9-39
 activity#com.chapelhilldenham.invest_naija.MainActivity

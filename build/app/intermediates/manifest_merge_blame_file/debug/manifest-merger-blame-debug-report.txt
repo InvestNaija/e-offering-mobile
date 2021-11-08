@@ -1,7 +1,7 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.chapelhilldenham.invest_naija"
-4    android:versionCode="7"
+4    android:versionCode="12"
 5    android:versionName="1.0.0" >
 6
 7    <uses-sdk
@@ -31,8 +31,8 @@
 21        android:debuggable="true"
 22        android:icon="@mipmap/ic_logo"
 22-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:6:9-39
-23        android:label="Invest Naija e-Offerings" >
-23-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:5:9-49
+23        android:label="PrimaryOffer" >
+23-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:5:9-37
 24        <activity
 24-->/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:7:9-35:20
 25            android:name="com.chapelhilldenham.invest_naija.MainActivity"
