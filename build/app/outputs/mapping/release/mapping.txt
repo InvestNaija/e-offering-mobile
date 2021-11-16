@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 2.1.62
 # min_api: 21
-# pg_map_id: a01b91b
+# pg_map_id: 56f163d
 # common_typos_disable
 androidx.activity.Cancellable -> androidx.activity.a:
 androidx.activity.ComponentActivity -> androidx.activity.b:
@@ -186,10 +186,6 @@ androidx.core.content.ContextCompat -> a.c.a.a:
     int checkSelfPermission(android.content.Context,java.lang.String) -> a
     java.io.File[] getExternalCacheDirs(android.content.Context) -> b
     java.io.File[] getExternalFilesDirs(android.content.Context,java.lang.String) -> c
-androidx.core.content.ContextCompat$Api19Impl -> a.c.a.a$a:
-    java.io.File[] getExternalCacheDirs(android.content.Context) -> a
-    java.io.File[] getExternalFilesDirs(android.content.Context,java.lang.String) -> b
-    java.io.File[] getObbDirs(android.content.Context) -> c
 androidx.core.content.FileProvider -> a.c.a.b:
     java.io.File DEVICE_ROOT -> c
     androidx.core.content.FileProvider$PathStrategy mStrategy -> a
@@ -212,9 +208,8 @@ androidx.core.content.FileProvider$SimplePathStrategy -> a.c.a.b$b:
     android.net.Uri getUriForFile(java.io.File) -> b
     void addRoot(java.lang.String,java.io.File) -> c
 androidx.core.graphics.drawable.IconCompat -> androidx.core.graphics.drawable.IconCompat:
+    android.graphics.PorterDuff$Mode DEFAULT_TINT_MODE -> j
     java.lang.String mTintModeStr -> i
-    android.graphics.PorterDuff$Mode DEFAULT_TINT_MODE -> k
-    java.lang.String mString1 -> j
     android.graphics.PorterDuff$Mode mTintMode -> h
     android.os.Parcelable mParcelable -> d
     java.lang.Object mObj1 -> b
@@ -225,9 +220,11 @@ androidx.core.graphics.drawable.IconCompat -> androidx.core.graphics.drawable.Ic
     int mType -> a
     int getResId() -> a
     int getResId(android.graphics.drawable.Icon) -> b
-    void onPostParceling() -> c
-    void onPreParceling(boolean) -> d
-    java.lang.String typeToString(int) -> e
+    java.lang.String getResPackage() -> c
+    java.lang.String getResPackage(android.graphics.drawable.Icon) -> d
+    void onPostParceling() -> e
+    void onPreParceling(boolean) -> f
+    java.lang.String typeToString(int) -> g
 androidx.core.math.MathUtils -> a.c.b.a:
     float clamp(float,float,float) -> a
 androidx.exifinterface.media.ExifInterface -> a.d.a.a:
@@ -17315,378 +17312,16 @@ io.flutter.view.VsyncWaiter$1 -> io.flutter.view.e$a:
 io.flutter.view.VsyncWaiter$1$1 -> io.flutter.view.e$a$a:
     long val$cookie -> b
     io.flutter.view.VsyncWaiter$1 this$1 -> c
-kotlin.ExceptionsKt -> e.a:
-    void addSuppressed(java.lang.Throwable,java.lang.Throwable) -> a
-kotlin.ExceptionsKt__ExceptionsKt -> e.b:
-    void addSuppressed(java.lang.Throwable,java.lang.Throwable) -> a
-kotlin.KotlinNullPointerException -> e.c:
-kotlin.Pair -> e.d:
-    java.lang.Object first -> b
-    java.lang.Object second -> c
-    java.lang.Object component1() -> a
-    java.lang.Object component2() -> b
-    java.lang.Object getFirst() -> c
-    java.lang.Object getSecond() -> d
-kotlin.TuplesKt -> e.e:
-    kotlin.Pair to(java.lang.Object,java.lang.Object) -> a
-kotlin.UninitializedPropertyAccessException -> e.f:
-kotlin.Unit -> e.g:
-    kotlin.Unit INSTANCE -> a
-kotlin.collections.ArraysKt -> e.h.a:
-    char single(char[]) -> b
-    java.lang.Object singleOrNull(java.lang.Object[]) -> c
-kotlin.collections.ArraysKt__ArraysJVMKt -> e.h.b:
-kotlin.collections.ArraysKt__ArraysKt -> e.h.c:
-kotlin.collections.ArraysKt___ArraysJvmKt -> e.h.d:
-    java.util.List asList(java.lang.Object[]) -> a
-kotlin.collections.ArraysKt___ArraysKt -> e.h.e:
-    char single(char[]) -> b
-    java.lang.Object singleOrNull(java.lang.Object[]) -> c
-kotlin.collections.ArraysUtilJVM -> e.h.f:
-    java.util.List asList(java.lang.Object[]) -> a
-kotlin.collections.CollectionsKt -> e.h.g:
-    java.util.List emptyList() -> a
-    java.util.List listOf(java.lang.Object[]) -> b
-    void throwIndexOverflow() -> c
-    int collectionSizeOrDefault(java.lang.Iterable,int) -> d
-    java.lang.Object firstOrNull(java.util.List) -> e
-    java.lang.Object singleOrNull(java.util.List) -> f
-kotlin.collections.CollectionsKt__CollectionsJVMKt -> e.h.h:
-kotlin.collections.CollectionsKt__CollectionsKt -> e.h.i:
-    java.util.List emptyList() -> a
-    java.util.List listOf(java.lang.Object[]) -> b
-    void throwIndexOverflow() -> c
-kotlin.collections.CollectionsKt__IterablesKt -> e.h.j:
-    int collectionSizeOrDefault(java.lang.Iterable,int) -> d
-kotlin.collections.CollectionsKt__IteratorsJVMKt -> e.h.k:
-kotlin.collections.CollectionsKt__IteratorsKt -> e.h.l:
-kotlin.collections.CollectionsKt__MutableCollectionsJVMKt -> e.h.m:
-kotlin.collections.CollectionsKt__MutableCollectionsKt -> e.h.n:
-kotlin.collections.CollectionsKt__ReversedViewsKt -> e.h.o:
-kotlin.collections.CollectionsKt___CollectionsJvmKt -> e.h.p:
-kotlin.collections.CollectionsKt___CollectionsKt -> e.h.q:
-    java.lang.Object firstOrNull(java.util.List) -> e
-    java.lang.Object singleOrNull(java.util.List) -> f
-kotlin.collections.EmptyIterator -> e.h.r:
-    kotlin.collections.EmptyIterator INSTANCE -> b
-    java.lang.Void next() -> a
-    java.lang.Void previous() -> b
-kotlin.collections.EmptyList -> e.h.s:
-    kotlin.collections.EmptyList INSTANCE -> b
-    boolean contains(java.lang.Void) -> b
-    java.lang.Void get(int) -> c
-    int getSize() -> d
-    int indexOf(java.lang.Void) -> e
-    int lastIndexOf(java.lang.Void) -> f
-kotlin.collections.EmptyMap -> e.h.t:
-    kotlin.collections.EmptyMap INSTANCE -> b
-    boolean containsValue(java.lang.Void) -> a
-    java.lang.Void get(java.lang.Object) -> b
-    java.util.Set getEntries() -> c
-    java.util.Set getKeys() -> d
-    int getSize() -> e
-    java.util.Collection getValues() -> f
-kotlin.collections.EmptySet -> e.h.u:
-    kotlin.collections.EmptySet INSTANCE -> b
-    boolean contains(java.lang.Void) -> b
-    int getSize() -> c
-kotlin.collections.MapsKt -> e.h.v:
-    int mapCapacity(int) -> a
-    java.util.Map mapOf(kotlin.Pair[]) -> e
-    java.util.Map toMap(java.lang.Iterable) -> i
-kotlin.collections.MapsKt__MapWithDefaultKt -> e.h.w:
-kotlin.collections.MapsKt__MapsJVMKt -> e.h.x:
-    int mapCapacity(int) -> a
-    java.util.Map mapOf(kotlin.Pair) -> b
-    java.util.Map toSingletonMap(java.util.Map) -> c
-kotlin.collections.MapsKt__MapsKt -> e.h.y:
-    java.util.Map emptyMap() -> d
-    java.util.Map mapOf(kotlin.Pair[]) -> e
-    java.util.Map optimizeReadOnlyMap(java.util.Map) -> f
-    void putAll(java.util.Map,java.lang.Iterable) -> g
-    void putAll(java.util.Map,kotlin.Pair[]) -> h
-    java.util.Map toMap(java.lang.Iterable) -> i
-    java.util.Map toMap(java.lang.Iterable,java.util.Map) -> j
-    java.util.Map toMap(kotlin.Pair[],java.util.Map) -> k
-kotlin.collections.MapsKt___MapsKt -> e.h.z:
-kotlin.internal.PlatformImplementations -> e.i.a:
-    void addSuppressed(java.lang.Throwable,java.lang.Throwable) -> a
-kotlin.internal.PlatformImplementations$ReflectThrowable -> e.i.a$a:
-    java.lang.reflect.Method addSuppressed -> a
-kotlin.internal.PlatformImplementationsKt -> e.i.b:
-    kotlin.internal.PlatformImplementations IMPLEMENTATIONS -> a
-    int getJavaVersion() -> a
-kotlin.internal.jdk7.JDK7PlatformImplementations -> e.i.c.a:
-    void addSuppressed(java.lang.Throwable,java.lang.Throwable) -> a
-kotlin.io.CloseableKt -> e.j.a:
-    void closeFinally(java.io.Closeable,java.lang.Throwable) -> a
-kotlin.jvm.JvmClassMappingKt -> e.k.a:
-    java.lang.Class getJavaObjectType(kotlin.reflect.KClass) -> a
-kotlin.jvm.functions.Function0 -> e.k.b.a:
-kotlin.jvm.functions.Function1 -> e.k.b.l:
-kotlin.jvm.functions.Function10 -> e.k.b.b:
-kotlin.jvm.functions.Function11 -> e.k.b.c:
-kotlin.jvm.functions.Function12 -> e.k.b.d:
-kotlin.jvm.functions.Function13 -> e.k.b.e:
-kotlin.jvm.functions.Function14 -> e.k.b.f:
-kotlin.jvm.functions.Function15 -> e.k.b.g:
-kotlin.jvm.functions.Function16 -> e.k.b.h:
-kotlin.jvm.functions.Function17 -> e.k.b.i:
-kotlin.jvm.functions.Function18 -> e.k.b.j:
-kotlin.jvm.functions.Function19 -> e.k.b.k:
-kotlin.jvm.functions.Function2 -> e.k.b.p:
-kotlin.jvm.functions.Function20 -> e.k.b.m:
-kotlin.jvm.functions.Function21 -> e.k.b.n:
-kotlin.jvm.functions.Function22 -> e.k.b.o:
-kotlin.jvm.functions.Function3 -> e.k.b.q:
-kotlin.jvm.functions.Function4 -> e.k.b.r:
-kotlin.jvm.functions.Function5 -> e.k.b.s:
-kotlin.jvm.functions.Function6 -> e.k.b.t:
-kotlin.jvm.functions.Function7 -> e.k.b.u:
-kotlin.jvm.functions.Function8 -> e.k.b.v:
-kotlin.jvm.functions.Function9 -> e.k.b.w:
-kotlin.jvm.internal.ClassBasedDeclarationContainer -> e.k.c.a:
-    java.lang.Class getJClass() -> b
-kotlin.jvm.internal.ClassReference -> e.k.c.b:
-    java.util.Map FUNCTION_CLASSES -> b
-    kotlin.jvm.internal.ClassReference$Companion Companion -> f
-    java.util.HashMap classFqNames -> e
-    java.lang.Class jClass -> a
-    java.util.HashMap primitiveWrapperFqNames -> d
-    java.util.HashMap primitiveFqNames -> c
-    java.lang.String getQualifiedName() -> a
-    java.lang.Class getJClass() -> b
-    java.util.HashMap access$getClassFqNames$cp() -> c
-kotlin.jvm.internal.ClassReference$Companion -> e.k.c.b$a:
-    java.lang.String getClassQualifiedName(java.lang.Class) -> a
-kotlin.jvm.internal.CollectionToArray -> e.k.c.c:
-    java.lang.Object[] EMPTY -> a
-    java.lang.Object[] toArray(java.util.Collection) -> a
-    java.lang.Object[] toArray(java.util.Collection,java.lang.Object[]) -> b
-kotlin.jvm.internal.DefaultConstructorMarker -> e.k.c.d:
-kotlin.jvm.internal.Intrinsics -> e.k.c.e:
-    boolean areEqual(java.lang.Object,java.lang.Object) -> a
-    void checkExpressionValueIsNotNull(java.lang.Object,java.lang.String) -> b
-    void checkNotNull(java.lang.Object) -> c
-    void checkNotNullExpressionValue(java.lang.Object,java.lang.String) -> d
-    void checkNotNullParameter(java.lang.Object,java.lang.String) -> e
-    void checkParameterIsNotNull(java.lang.Object,java.lang.String) -> f
-    java.lang.String createParameterIsNullExceptionMessage(java.lang.String) -> g
-    java.lang.Throwable sanitizeStackTrace(java.lang.Throwable) -> h
-    java.lang.Throwable sanitizeStackTrace(java.lang.Throwable,java.lang.String) -> i
-    void throwJavaNpe() -> j
-    void throwNpe() -> k
-    void throwParameterIsNullIAE(java.lang.String) -> l
-    void throwParameterIsNullNPE(java.lang.String) -> m
-    void throwUninitializedProperty(java.lang.String) -> n
-    void throwUninitializedPropertyAccessException(java.lang.String) -> o
-kotlin.jvm.internal.Reflection -> e.k.c.f:
-    kotlin.reflect.KClass[] EMPTY_K_CLASS_ARRAY -> b
-    kotlin.jvm.internal.ReflectionFactory factory -> a
-    kotlin.reflect.KClass getOrCreateKotlinClass(java.lang.Class) -> a
-kotlin.jvm.internal.ReflectionFactory -> e.k.c.g:
-    kotlin.reflect.KClass getOrCreateKotlinClass(java.lang.Class) -> a
-kotlin.ranges.RangesKt -> e.l.a:
-    int coerceAtLeast(int,int) -> a
-    int coerceAtMost(int,int) -> b
-kotlin.ranges.RangesKt__RangesKt -> e.l.b:
-kotlin.ranges.RangesKt___RangesKt -> e.l.c:
-    int coerceAtLeast(int,int) -> a
-    int coerceAtMost(int,int) -> b
-kotlin.reflect.KClass -> e.m.a:
-    java.lang.String getQualifiedName() -> a
-kotlin.text.CharsKt__CharJVMKt -> e.n.a:
-kotlin.text.CharsKt__CharKt -> e.n.b:
-    boolean equals(char,char,boolean) -> a
-kotlin.text.StringsKt -> e.n.c:
-    boolean equals(java.lang.String,java.lang.String,boolean) -> a
-    int indexOf$default(java.lang.CharSequence,char,int,boolean,int,java.lang.Object) -> g
-    java.lang.String removePrefix(java.lang.String,java.lang.CharSequence) -> m
-    java.lang.String substringAfterLast$default(java.lang.String,char,java.lang.String,int,java.lang.Object) -> q
-kotlin.text.StringsKt__AppendableKt -> e.n.d:
-kotlin.text.StringsKt__IndentKt -> e.n.e:
-kotlin.text.StringsKt__RegexExtensionsJVMKt -> e.n.f:
-kotlin.text.StringsKt__RegexExtensionsKt -> e.n.g:
-kotlin.text.StringsKt__StringBuilderJVMKt -> e.n.h:
-kotlin.text.StringsKt__StringBuilderKt -> e.n.i:
-kotlin.text.StringsKt__StringNumberConversionsJVMKt -> e.n.j:
-kotlin.text.StringsKt__StringNumberConversionsKt -> e.n.k:
-kotlin.text.StringsKt__StringsJVMKt -> e.n.l:
-    boolean equals(java.lang.String,java.lang.String,boolean) -> a
-    boolean regionMatches(java.lang.String,int,java.lang.String,int,int,boolean) -> b
-    boolean startsWith(java.lang.String,java.lang.String,boolean) -> c
-    boolean startsWith$default(java.lang.String,java.lang.String,boolean,int,java.lang.Object) -> d
-kotlin.text.StringsKt__StringsKt -> e.n.m:
-    int getLastIndex(java.lang.CharSequence) -> e
-    int indexOf(java.lang.CharSequence,char,int,boolean) -> f
-    int indexOf$default(java.lang.CharSequence,char,int,boolean,int,java.lang.Object) -> g
-    int indexOfAny(java.lang.CharSequence,char[],int,boolean) -> h
-    int lastIndexOf(java.lang.CharSequence,char,int,boolean) -> i
-    int lastIndexOf$default(java.lang.CharSequence,char,int,boolean,int,java.lang.Object) -> j
-    int lastIndexOfAny(java.lang.CharSequence,char[],int,boolean) -> k
-    boolean regionMatchesImpl(java.lang.CharSequence,int,java.lang.CharSequence,int,int,boolean) -> l
-    java.lang.String removePrefix(java.lang.String,java.lang.CharSequence) -> m
-    boolean startsWith(java.lang.CharSequence,java.lang.CharSequence,boolean) -> n
-    boolean startsWith$default(java.lang.CharSequence,java.lang.CharSequence,boolean,int,java.lang.Object) -> o
-    java.lang.String substringAfterLast(java.lang.String,char,java.lang.String) -> p
-    java.lang.String substringAfterLast$default(java.lang.String,char,java.lang.String,int,java.lang.Object) -> q
-kotlin.text.StringsKt___StringsJvmKt -> e.n.n:
-kotlin.text.StringsKt___StringsKt -> e.n.o:
+kotlin.KotlinNullPointerException -> e.a:
+kotlin.jvm.internal.Intrinsics -> e.b.a.a:
+    void checkExpressionValueIsNotNull(java.lang.Object,java.lang.String) -> a
+    void checkNotNullParameter(java.lang.Object,java.lang.String) -> b
+    void checkParameterIsNotNull(java.lang.Object,java.lang.String) -> c
+    java.lang.String createParameterIsNullExceptionMessage(java.lang.String) -> d
+    java.lang.Throwable sanitizeStackTrace(java.lang.Throwable) -> e
+    java.lang.Throwable sanitizeStackTrace(java.lang.Throwable,java.lang.String) -> f
+    void throwNpe() -> g
+    void throwParameterIsNullIAE(java.lang.String) -> h
+    void throwParameterIsNullNPE(java.lang.String) -> i
 org.chromium.support_lib_boundary.util.BoundaryInterfaceReflectionUtil -> org.chromium.support_lib_boundary.a.a:
     java.lang.Object castToSuppLibClass(java.lang.Class,java.lang.reflect.InvocationHandler) -> a
-xyz.luan.audioplayers.AudioplayersPlugin -> f.a.a.a:
-    java.lang.Runnable positionUpdates -> e
-    java.util.Map mediaPlayers -> c
-    android.content.Context context -> b
-    android.os.Handler handler -> d
-    xyz.luan.audioplayers.AudioplayersPlugin$Companion Companion -> h
-    boolean seekFinish -> f
-    java.util.logging.Logger LOGGER -> g
-    io.flutter.plugin.common.MethodChannel channel -> a
-    boolean access$getSeekFinish$p(xyz.luan.audioplayers.AudioplayersPlugin) -> a
-    void access$setSeekFinish$p(xyz.luan.audioplayers.AudioplayersPlugin,boolean) -> b
-    void access$stopPositionUpdates(xyz.luan.audioplayers.AudioplayersPlugin) -> c
-    android.content.Context getApplicationContext() -> d
-    xyz.luan.audioplayers.Player getPlayer(java.lang.String,java.lang.String) -> e
-    void onAttachedToEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> f
-    void handleCompletion(xyz.luan.audioplayers.Player) -> g
-    void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> h
-    void handleDuration(xyz.luan.audioplayers.Player) -> i
-    void handleError(xyz.luan.audioplayers.Player,java.lang.String) -> j
-    void handleIsPlaying() -> k
-    void onDetachedFromEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> l
-    void handleMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> m
-    void handleSeekComplete() -> n
-    void startPositionUpdates() -> o
-    void stopPositionUpdates() -> p
-xyz.luan.audioplayers.AudioplayersPlugin$Companion -> f.a.a.a$a:
-    java.util.Map access$buildArguments(xyz.luan.audioplayers.AudioplayersPlugin$Companion,java.lang.String,java.lang.Object) -> a
-    java.lang.Exception access$error(xyz.luan.audioplayers.AudioplayersPlugin$Companion,java.lang.String) -> b
-    java.util.Map buildArguments(java.lang.String,java.lang.Object) -> c
-    java.lang.Exception error(java.lang.String) -> d
-xyz.luan.audioplayers.AudioplayersPlugin$UpdateCallback -> f.a.a.a$b:
-    java.lang.ref.WeakReference audioplayersPlugin -> e
-    java.lang.ref.WeakReference handler -> d
-    java.lang.ref.WeakReference channel -> c
-    java.lang.ref.WeakReference mediaPlayers -> b
-xyz.luan.audioplayers.ByteDataSource -> f.a.a.b:
-    byte[] data -> b
-xyz.luan.audioplayers.Player -> f.a.a.c:
-    xyz.luan.audioplayers.Player$Companion Companion -> a
-    void configAttributes(boolean,boolean,boolean) -> a
-    java.lang.Integer getCurrentPosition() -> b
-    java.lang.Integer getDuration() -> c
-    java.lang.String getPlayerId() -> d
-    boolean isActuallyPlaying() -> e
-    void pause() -> f
-    void play() -> g
-    void release() -> h
-    void seek(int) -> i
-    void setDataSource(android.media.MediaDataSource) -> j
-    void setPlayingRoute(java.lang.String) -> k
-    void setRate(double) -> l
-    void setReleaseMode(xyz.luan.audioplayers.ReleaseMode) -> m
-    void setUrl(java.lang.String,boolean) -> n
-    void setVolume(double) -> o
-    void stop() -> p
-xyz.luan.audioplayers.Player$Companion -> f.a.a.c$a:
-    boolean objectEquals(java.lang.Object,java.lang.Object) -> a
-xyz.luan.audioplayers.ReleaseMode -> f.a.a.d:
-    xyz.luan.audioplayers.ReleaseMode RELEASE -> b
-    xyz.luan.audioplayers.ReleaseMode LOOP -> c
-    xyz.luan.audioplayers.ReleaseMode[] $VALUES -> d
-xyz.luan.audioplayers.WrappedMediaPlayer -> f.a.a.e:
-    xyz.luan.audioplayers.ReleaseMode releaseMode -> l
-    boolean released -> n
-    boolean prepared -> o
-    boolean playing -> p
-    float rate -> h
-    boolean respectSilence -> i
-    boolean stayAwake -> j
-    boolean duckAudio -> k
-    java.lang.String playingRoute -> m
-    android.media.MediaDataSource dataSource -> f
-    android.media.AudioFocusRequest audioFocusRequest -> c
-    java.lang.String playerId -> s
-    android.media.MediaPlayer player -> d
-    xyz.luan.audioplayers.AudioplayersPlugin ref -> r
-    android.media.AudioManager$OnAudioFocusChangeListener audioFocusChangeListener -> b
-    double volume -> g
-    java.lang.String url -> e
-    int shouldSeekTo -> q
-    void configAttributes(boolean,boolean,boolean) -> a
-    java.lang.Integer getCurrentPosition() -> b
-    java.lang.Integer getDuration() -> c
-    java.lang.String getPlayerId() -> d
-    boolean isActuallyPlaying() -> e
-    void pause() -> f
-    void play() -> g
-    void release() -> h
-    void seek(int) -> i
-    void setDataSource(android.media.MediaDataSource) -> j
-    void setPlayingRoute(java.lang.String) -> k
-    void setRate(double) -> l
-    void setReleaseMode(xyz.luan.audioplayers.ReleaseMode) -> m
-    void setUrl(java.lang.String,boolean) -> n
-    void setVolume(double) -> o
-    void stop() -> p
-    void access$actuallyPlay(xyz.luan.audioplayers.WrappedMediaPlayer) -> q
-    void actuallyPlay() -> r
-    android.media.MediaPlayer createPlayer() -> s
-    android.media.AudioManager getAudioManager() -> t
-    android.media.MediaPlayer getOrCreatePlayer() -> u
-    void preparePlayer(android.media.MediaPlayer) -> v
-    void setAttributes(android.media.MediaPlayer) -> w
-xyz.luan.audioplayers.WrappedMediaPlayer$play$audioFocusRequest$1 -> f.a.a.e$a:
-    xyz.luan.audioplayers.WrappedMediaPlayer this$0 -> a
-xyz.luan.audioplayers.WrappedSoundPool -> f.a.a.f:
-    xyz.luan.audioplayers.WrappedSoundPool$Companion Companion -> o
-    java.lang.Integer soundId -> e
-    java.lang.Integer streamId -> f
-    java.util.Map soundIdToPlayer -> m
-    boolean looping -> i
-    java.lang.String playerId -> k
-    android.media.SoundPool soundPool -> l
-    java.util.Map urlToPlayers -> n
-    boolean loading -> j
-    float rate -> d
-    float volume -> c
-    boolean playing -> g
-    boolean paused -> h
-    java.lang.String url -> b
-    java.lang.Void getDuration() -> A
-    java.io.File loadTempFileFromNetwork(java.lang.String) -> B
-    int loopModeInteger() -> C
-    void start() -> D
-    java.lang.UnsupportedOperationException unsupportedOperation(java.lang.String) -> E
-    void configAttributes(boolean,boolean,boolean) -> a
-    java.lang.Integer getCurrentPosition() -> b
-    java.lang.Integer getDuration() -> c
-    java.lang.String getPlayerId() -> d
-    boolean isActuallyPlaying() -> e
-    void pause() -> f
-    void play() -> g
-    void release() -> h
-    void seek(int) -> i
-    void setDataSource(android.media.MediaDataSource) -> j
-    void setPlayingRoute(java.lang.String) -> k
-    void setRate(double) -> l
-    void setReleaseMode(xyz.luan.audioplayers.ReleaseMode) -> m
-    void setUrl(java.lang.String,boolean) -> n
-    void setVolume(double) -> o
-    void stop() -> p
-    boolean access$getPlaying$p(xyz.luan.audioplayers.WrappedSoundPool) -> q
-    java.lang.Integer access$getSoundId$p(xyz.luan.audioplayers.WrappedSoundPool) -> r
-    java.util.Map access$getSoundIdToPlayer$cp() -> s
-    java.lang.String access$getUrl$p(xyz.luan.audioplayers.WrappedSoundPool) -> t
-    java.util.Map access$getUrlToPlayers$cp() -> u
-    void access$setLoading$p(xyz.luan.audioplayers.WrappedSoundPool,boolean) -> v
-    void access$start(xyz.luan.audioplayers.WrappedSoundPool) -> w
-    byte[] downloadUrl(java.net.URL) -> x
-    java.lang.String getAudioPath(java.lang.String,boolean) -> y
-    java.lang.Void getCurrentPosition() -> z
-xyz.luan.audioplayers.WrappedSoundPool$Companion -> f.a.a.f$b:
-    android.media.SoundPool access$createSoundPool(xyz.luan.audioplayers.WrappedSoundPool$Companion) -> a
-    android.media.SoundPool createSoundPool() -> b
-xyz.luan.audioplayers.WrappedSoundPool$Companion$1 -> f.a.a.f$a:
-    xyz.luan.audioplayers.WrappedSoundPool$Companion$1 INSTANCE -> a

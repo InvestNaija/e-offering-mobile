@@ -16,12 +16,12 @@ import androidx.core.content.res.ResourcesCompat
 
 class SplashView(context: Context) : LinearLayout(context) {
 
-    private var add: ImageView
+    //private var add: ImageView
 
     init {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val view = inflater.inflate(R.layout.custom_splash_screen_layout, this, true)
-        add = view.findViewById(R.id.logo)
+        //add = view.findViewById(R.id.logo)
     }
 
 

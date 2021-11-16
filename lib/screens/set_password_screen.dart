@@ -129,8 +129,12 @@ class _SetPasswordScreenState extends State<SetPasswordScreen> with DialogMixins
                   ),
                   const SizedBox(height: 25,),
                   CustomTextField(
+                    label: "Place of Birth",
+                    controller: placeOfBirthTextEditController,
+                  ),
+                  const SizedBox(height: 25,),
+                  CustomTextField(
                     label: "Phone number",
-                    readOnly: widget.phone != null ? widget.phone.isNotEmpty ? true  : false : false,
                     controller: phoneTextEditController,
                   ),
                   const SizedBox(height: 25,),
@@ -148,18 +152,13 @@ class _SetPasswordScreenState extends State<SetPasswordScreen> with DialogMixins
                   ),
                   const SizedBox(height: 25,),
                   CustomTextField(
-                    label: "Mother Maiden Name",
-                    controller: motherMaidenTextEditController,
-                  ),
-                  const SizedBox(height: 25,),
-                  CustomTextField(
-                    label: "Place of Birth",
-                    controller: placeOfBirthTextEditController,
-                  ),
-                  const SizedBox(height: 25,),
-                  CustomTextField(
                     label: "Address",
                     controller: addressTextEditController,
+                  ),
+                  const SizedBox(height: 25,),
+                  CustomTextField(
+                    label: "Mother's Maiden Name",
+                    controller: motherMaidenTextEditController,
                   ),
                   const SizedBox(height: 25,),
                   CustomPasswordField(
@@ -209,7 +208,7 @@ class _SetPasswordScreenState extends State<SetPasswordScreen> with DialogMixins
                       text: TextSpan(children: <TextSpan>[
                         const TextSpan(
                           text:
-                              'I have read and accept the purchase conditions, and understand the ',
+                              'I have read and accepted the purchase conditions and understood the ',
                           style: const TextStyle(
                               color: Constants.neutralColor, fontSize: 12),
                         ),

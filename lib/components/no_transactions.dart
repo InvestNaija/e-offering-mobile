@@ -13,7 +13,7 @@ class NoTransactions extends StatelessWidget {
           SvgPicture.asset("assets/images/data-analyst.svg", height: 67, width: 88,),
           const SizedBox(height: 30,),
           const Text(
-            "Nothing to see here",
+            "No transactions yet",
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 18, color: Constants.blackColor, fontWeight: FontWeight.w600),
           ),

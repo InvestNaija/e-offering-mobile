@@ -79,6 +79,9 @@ class _TransactionsFragmentState extends State<TransactionsFragment> {
                               onEdit:(TransactionResponseModel transaction){
                                 Navigator.pushNamed(context, '/update-interest', arguments: transaction);
                               },
+                              onDelete:(TransactionResponseModel transaction){
+                                transactionsProvider.deleteTransaction(transaction);
+                              },
                             );
                           },);
                       },

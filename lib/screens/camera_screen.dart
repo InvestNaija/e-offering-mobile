@@ -1,6 +1,4 @@
 import 'dart:io';
-
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:invest_naija/constants.dart';
@@ -95,7 +93,6 @@ class _CameraAppState extends State<CameraScreen> {
                           shape: new RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(100.0)),
                         onPressed: () async{
-                          AudioCache().play("audio/camera-shutter.mp3");
                           try {
                             final path = join((await getTemporaryDirectory()).path, '${DateTime.now()}.png',);
                             XFile image = await controller.takePicture();

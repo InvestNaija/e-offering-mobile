@@ -10,9 +10,10 @@ import '../constants.dart';
 class TransactionRow extends StatelessWidget {
   final Function onTap;
   final Function(TransactionResponseModel transaction) onEdit;
+  final Function(TransactionResponseModel transaction) onDelete;
   final TransactionResponseModel transaction;
 
-  const TransactionRow({Key key, this.onTap, this.onEdit, this.transaction}) : super(key: key);
+  const TransactionRow({Key key, this.onTap, this.onEdit, this.transaction, this.onDelete}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,75 +27,85 @@ class TransactionRow extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Image.network(transaction.asset.image, height: 26, width: 26,),
-                  SizedBox(width: 15,),
+                  Image.network(
+                    transaction.asset.image,
+                    height: 26,
+                    width: 26,
+                  ),
+                  SizedBox(
+                    width: 15,
+                  ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(amount,
-                        style: const TextStyle(
-                            fontFamily: 'RobotoMono',
-                            color: Constants.blackColor,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold),
+                      Text(
+                        amount,
+                        style: const TextStyle(fontFamily: 'RobotoMono', color: Constants.blackColor, fontSize: 15, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 5,),
+                      SizedBox(
+                        height: 5,
+                      ),
                       Text(
                         transaction.asset.name,
-                        style: const TextStyle(
-                            color: Constants.gray4Color,
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold),
+                        style: const TextStyle(color: Constants.gray4Color, fontSize: 10, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 5,),
+                      SizedBox(
+                        height: 5,
+                      ),
                       Text(
                         DateFormat("MMMM d y - H:m").format(DateTime.parse(transaction.createdAt)),
-                        style: const TextStyle(
-                            color: Constants.blackColor,
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold),
+                        style: const TextStyle(color: Constants.blackColor, fontSize: 10, fontWeight: FontWeight.bold),
                       ),
-                    ],),
+                    ],
+                  ),
                 ],
               ),
               Spacer(),
-              Text(FormatterUtil.formatName(this.transaction.status),
-                style: TextStyle(
-                    color: this.transaction.paid ? Constants.greenColor : Constants.primaryColor,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500),
+              Text(
+                FormatterUtil.formatName(this.transaction.status),
+                style: TextStyle(color: this.transaction.paid ? Constants.greenColor : Constants.primaryColor, fontSize: 14, fontWeight: FontWeight.w500),
               ),
               PopupMenuButton(
                 icon: Icon(Icons.more_vert_outlined),
-                onSelected: (value){
-                  if(value == 2){
+                onSelected: (value) {
+                  if (value == 2) {
                     onTap();
-                  }else{
+                  }else if(value == 3){
+                    onDelete(transaction);
+                  } else {
                     onEdit(transaction);
                   }
                 },
-                itemBuilder: (context) => this.transaction.status == 'paid' ? [] :
-                  [
-                    PopupMenuItem(
-                      child: Text("Edit"),
-                      value: 1,
-                    ),
-                    PopupMenuItem(
-                      child: Text("Make Payment"),
-                      value: 2,
-                    ),
-                ],
+                itemBuilder: (context) => this.transaction.status == 'paid'
+                    ? []
+                    : [
+                        PopupMenuItem(
+                          child: Text("Edit"),
+                          value: 1,
+                        ),
+                        PopupMenuItem(
+                          child: Text("Make Payment"),
+                          value: 2,
+                        ),
+                        PopupMenuItem(
+                          child: Text("Delete"),
+                          value: 3,
+                        ),
+                      ],
               ),
             ],
           ),
-          const SizedBox(height: 11,),
-          const Divider(color: Constants.gray4Color,)
+          const SizedBox(
+            height: 11,
+          ),
+          const Divider(
+            color: Constants.gray4Color,
+          )
         ],
       ),
     );
   }
 }
-
 
 class LoadingTransactionRow extends StatelessWidget {
   @override

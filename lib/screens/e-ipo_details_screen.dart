@@ -290,7 +290,7 @@ class _EIpoDetailsScreenState extends State<EIpoDetailsScreen> {
                       text: TextSpan(children: <TextSpan>[
                         const TextSpan(
                           text:
-                          'I have read and accept the purchase conditions, and understand the ',
+                          'I have read and accepted the purchase conditions, and understand the ',
                           style: const TextStyle(
                               color: Constants.neutralColor, fontSize: 12),
                         ),

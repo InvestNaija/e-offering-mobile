@@ -117,7 +117,7 @@ class _DashboardDetailCardState extends State<DashboardDetailCard> {
                   setState(() {});
                 },
                 child: Text(
-                  "Hide Balance",
+                  shouldHideBalance ? "Show Balance" : "Hide Balance",
                   style: TextStyle(
                       color: Constants.gray6Color, fontSize: 12),
                 ),

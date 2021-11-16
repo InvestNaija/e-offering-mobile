@@ -52,17 +52,17 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> with Dialog
                         fontWeight: FontWeight.bold,
                         color: Constants.blackColor)),
               ),
-              const SizedBox(height: 13,),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: const Text(
-                    "Please complete the form below to update your password.",
-                    textAlign: TextAlign.left,
-                    style: const TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        color: Constants.neutralColor)),
-              ),
+              // const SizedBox(height: 13,),
+              // Align(
+              //   alignment: Alignment.centerLeft,
+              //   child: const Text(
+              //       "Please complete the form below to update your password.",
+              //       textAlign: TextAlign.left,
+              //       style: const TextStyle(
+              //           fontSize: 12,
+              //           fontWeight: FontWeight.w400,
+              //           color: Constants.neutralColor)),
+              // ),
               const SizedBox(height: 30,),
               CustomPasswordField(
                 label: "Old Password",
@@ -88,7 +88,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> with Dialog
               Consumer<CustomerProvider>(
                 builder: (context, customerProvider, child) {
                   return  CustomButton(
-                    data: "Update Password",
+                    data: "Change Password",
                     isLoading: customerProvider.isChangingPassword,
                     textColor: Constants.whiteColor,
                     color: Constants.primaryColor,

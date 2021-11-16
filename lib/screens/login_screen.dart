@@ -12,6 +12,7 @@ import 'package:invest_naija/mixins/dialog_mixin.dart';
 import 'package:invest_naija/screens/forgot_password_screen.dart';
 import 'package:invest_naija/utils/formatter_util.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../constants.dart';
 import 'enter_bvn_screen.dart';
 
@@ -201,7 +202,38 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
                             ),
                           ),
                         ],
-                      )
+                      ),
+                      SizedBox(height: 50,),
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        child:  Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text('Need Help?',),
+                            GestureDetector(
+                                onTap: (){
+                                  print('this is it');
+                                  final Uri emailLaunchUri = Uri(
+                                    scheme: 'mailto',
+                                    path: 'info@primaryofferng.com',
+                                    query: encodeQueryParameters(<String, String>{
+                                      'subject': ''
+                                    }),
+                                  );
+                                  launch(emailLaunchUri.toString());
+                                },
+                                child: Text('Email us at info@primaryofferng.com',)
+                            ),
+                            SizedBox(height: 5,),
+                            GestureDetector(
+                              onTap: () async{
+                                const url = "tel:070046837862452";
+                                await launch(url);
+                              },
+                                child: Text('or call 070046837862452',)),
+                          ],
+                        )
+                      ),
                     ],
                   ),
                 ),
@@ -219,6 +251,13 @@ class _LoginScreenState extends State<LoginScreen> with DialogMixins, TickerProv
       ),
     );
   }
+
+  String encodeQueryParameters(Map<String, String> params) {
+    return params.entries
+        .map((e) => '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+        .join('&');
+  }
+
   void clearTextFields(){
     emailController.clear();
     passwordController.clear();

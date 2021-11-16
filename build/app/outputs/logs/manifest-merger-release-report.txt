@@ -4,7 +4,6 @@ ADDED from /Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/Andro
 INJECTED from /Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:1:1-42:12
 INJECTED from /Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:1:1-42:12
 INJECTED from /Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:1:1-42:12
-MERGED from [:audioplayers] /Users/Oeshiett/Codehub /e-offering-mobile/build/audioplayers/intermediates/library_manifest/release/AndroidManifest.xml:2:1-9:12
 MERGED from [:image_picker] /Users/Oeshiett/Codehub /e-offering-mobile/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:2:1-19:12
 MERGED from [:camera] /Users/Oeshiett/Codehub /e-offering-mobile/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:2:1-10:12
 MERGED from [:flutter_plugin_android_lifecycle] /Users/Oeshiett/Codehub /e-offering-mobile/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/release/AndroidManifest.xml:2:1-7:12
@@ -14,7 +13,6 @@ MERGED from [:webview_flutter] /Users/Oeshiett/Codehub /e-offering-mobile/build/
 MERGED from [:url_launcher] /Users/Oeshiett/Codehub /e-offering-mobile/build/url_launcher/intermediates/library_manifest/release/AndroidManifest.xml:2:1-14:12
 MERGED from [:path_provider] /Users/Oeshiett/Codehub /e-offering-mobile/build/path_provider/intermediates/library_manifest/release/AndroidManifest.xml:2:1-7:12
 MERGED from [:wakelock] /Users/Oeshiett/Codehub /e-offering-mobile/build/wakelock/intermediates/library_manifest/release/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.core:core-ktx:1.6.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/4aa7d3b1199075332be38a770883fe79/jetified-core-ktx-1.6.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.exoplayer:exoplayer-hls:2.14.1] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/386ae10e840d8e4eb7e6a16c47e9e26a/jetified-exoplayer-hls-2.14.1/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.exoplayer:exoplayer-dash:2.14.1] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/a6c5cc3fb521acd2cea4411f7023ccb1/jetified-exoplayer-dash-2.14.1/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.14.1] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/89d38b165ef25ab2b5a1aa84ddf6a49a/jetified-exoplayer-smoothstreaming-2.14.1/AndroidManifest.xml:17:1-24:12
@@ -26,17 +24,16 @@ MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/Oeshiett/.gradle/caches/
 MERGED from [androidx.loader:loader:1.0.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/c51007774f4fd6d14ba4adbca0679a8a/loader-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.0.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/8add393c18bb8b0f40364f4f0122baed/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.customview:customview:1.0.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/f8347eebbb40a7a16c766592439b20a2/customview-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core:1.6.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.core:core:1.1.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/c25433a590f7a31e3ed68edc7c15d87d/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/9f9eeb4a2ce6b7f0e04914e9e53d43f8/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/51ee241fc071c840c1958154b88ad1d9/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/af8dbfafff109cbe2626d29a640ba8ef/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.14.1] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/013c3e58cf792ffe5f6ef66893e8dadf/jetified-exoplayer-extractor-2.14.1/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.exoplayer:exoplayer-common:2.14.1] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/034340f8a9b5dc0b86d5ba5443a7ff4a/jetified-exoplayer-common-2.14.1/AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/bf224960c448cf8df3cc05170c7e1480/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/e2012c2cdbc12a8f160bd51545cf11d1/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/88628293bc7e767651887d93442a767b/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/175f4d36784449670c627698e9607853/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/e8947babe14030ab36b6f95be15600ef/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
 INJECTED from /Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:1:1-42:12
 INJECTED from /Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:1:1-42:12
 INJECTED from /Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:1:1-42:12
@@ -64,12 +61,12 @@ MERGED from [:image_picker] /Users/Oeshiett/Codehub /e-offering-mobile/build/ima
 MERGED from [:image_picker] /Users/Oeshiett/Codehub /e-offering-mobile/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:7:5-17:19
 MERGED from [:url_launcher] /Users/Oeshiett/Codehub /e-offering-mobile/build/url_launcher/intermediates/library_manifest/release/AndroidManifest.xml:7:5-12:19
 MERGED from [:url_launcher] /Users/Oeshiett/Codehub /e-offering-mobile/build/url_launcher/intermediates/library_manifest/release/AndroidManifest.xml:7:5-12:19
-MERGED from [androidx.core:core:1.6.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/AndroidManifest.xml:24:5-89
-MERGED from [androidx.core:core:1.6.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/AndroidManifest.xml:24:5-89
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/bf224960c448cf8df3cc05170c7e1480/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/bf224960c448cf8df3cc05170c7e1480/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.core:core:1.1.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/88628293bc7e767651887d93442a767b/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/88628293bc7e767651887d93442a767b/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.6.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/AndroidManifest.xml:24:18-86
+		ADDED from [androidx.core:core:1.1.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/AndroidManifest.xml:24:18-86
 	android:label
 		ADDED from /Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml:5:9-37
 	android:icon
@@ -120,8 +117,6 @@ uses-sdk
 INJECTED from /Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml
-MERGED from [:audioplayers] /Users/Oeshiett/Codehub /e-offering-mobile/build/audioplayers/intermediates/library_manifest/release/AndroidManifest.xml:7:5-44
-MERGED from [:audioplayers] /Users/Oeshiett/Codehub /e-offering-mobile/build/audioplayers/intermediates/library_manifest/release/AndroidManifest.xml:7:5-44
 MERGED from [:image_picker] /Users/Oeshiett/Codehub /e-offering-mobile/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
 MERGED from [:image_picker] /Users/Oeshiett/Codehub /e-offering-mobile/build/image_picker/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
 MERGED from [:camera] /Users/Oeshiett/Codehub /e-offering-mobile/build/camera/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
@@ -140,8 +135,6 @@ MERGED from [:path_provider] /Users/Oeshiett/Codehub /e-offering-mobile/build/pa
 MERGED from [:path_provider] /Users/Oeshiett/Codehub /e-offering-mobile/build/path_provider/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
 MERGED from [:wakelock] /Users/Oeshiett/Codehub /e-offering-mobile/build/wakelock/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
 MERGED from [:wakelock] /Users/Oeshiett/Codehub /e-offering-mobile/build/wakelock/intermediates/library_manifest/release/AndroidManifest.xml:5:5-44
-MERGED from [androidx.core:core-ktx:1.6.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/4aa7d3b1199075332be38a770883fe79/jetified-core-ktx-1.6.0/AndroidManifest.xml:5:5-7:41
-MERGED from [androidx.core:core-ktx:1.6.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/4aa7d3b1199075332be38a770883fe79/jetified-core-ktx-1.6.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.exoplayer:exoplayer-hls:2.14.1] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/386ae10e840d8e4eb7e6a16c47e9e26a/jetified-exoplayer-hls-2.14.1/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-hls:2.14.1] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/386ae10e840d8e4eb7e6a16c47e9e26a/jetified-exoplayer-hls-2.14.1/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-dash:2.14.1] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/a6c5cc3fb521acd2cea4411f7023ccb1/jetified-exoplayer-dash-2.14.1/AndroidManifest.xml:20:5-22:41
@@ -164,8 +157,8 @@ MERGED from [androidx.activity:activity:1.0.0] /Users/Oeshiett/.gradle/caches/tr
 MERGED from [androidx.activity:activity:1.0.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/8add393c18bb8b0f40364f4f0122baed/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.0.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/f8347eebbb40a7a16c766592439b20a2/customview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/f8347eebbb40a7a16c766592439b20a2/customview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.6.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.6.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/c25433a590f7a31e3ed68edc7c15d87d/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/c25433a590f7a31e3ed68edc7c15d87d/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/9f9eeb4a2ce6b7f0e04914e9e53d43f8/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
@@ -178,14 +171,12 @@ MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.14.1] /Users/Oes
 MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.14.1] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/013c3e58cf792ffe5f6ef66893e8dadf/jetified-exoplayer-extractor-2.14.1/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-common:2.14.1] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/034340f8a9b5dc0b86d5ba5443a7ff4a/jetified-exoplayer-common-2.14.1/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-common:2.14.1] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/034340f8a9b5dc0b86d5ba5443a7ff4a/jetified-exoplayer-common-2.14.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/bf224960c448cf8df3cc05170c7e1480/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/bf224960c448cf8df3cc05170c7e1480/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/e2012c2cdbc12a8f160bd51545cf11d1/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/e2012c2cdbc12a8f160bd51545cf11d1/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/88628293bc7e767651887d93442a767b/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/88628293bc7e767651887d93442a767b/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/175f4d36784449670c627698e9607853/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/175f4d36784449670c627698e9607853/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/e8947babe14030ab36b6f95be15600ef/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/e8947babe14030ab36b6f95be15600ef/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
 INJECTED from /Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion

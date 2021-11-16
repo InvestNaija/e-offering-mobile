@@ -8,12 +8,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "audioplayers",
-      "rootUri": "file:///Users/Oeshiett/flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/audioplayers-0.19.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "boolean_selector",
       "rootUri": "file:///Users/Oeshiett/flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0",
       "packageUri": "lib/",
@@ -70,12 +64,6 @@
     {
       "name": "cross_file",
       "rootUri": "file:///Users/Oeshiett/flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/cross_file-0.3.1+4",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "crypto",
-      "rootUri": "file:///Users/Oeshiett/flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/crypto-3.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -470,12 +458,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "uuid",
-      "rootUri": "file:///Users/Oeshiett/flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/uuid-3.0.4",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "vector_math",
       "rootUri": "file:///Users/Oeshiett/flutter_2.2.3/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.0",
       "packageUri": "lib/",
@@ -551,10 +533,10 @@
       "name": "invest_naija",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.7"
+      "languageVersion": "2.11"
     }
   ],
-  "generated": "2021-11-08T18:45:15.790532Z",
+  "generated": "2021-11-12T12:13:50.900498Z",
   "generator": "pub",
   "generatorVersion": "2.13.4"
 }

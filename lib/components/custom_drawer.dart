@@ -42,13 +42,6 @@ class CustomDrawer extends StatelessWidget with ApplicationMixin{
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
                       ),
-                      const Text(
-                        'View profile',
-                        style: const TextStyle(
-                            color: Constants.whiteColor,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500),
-                      )
                     ],
                   ),
                 ],

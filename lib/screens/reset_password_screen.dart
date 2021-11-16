@@ -38,7 +38,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                    "Please setup a new password, we will require you to\nenter a new password and confirm your password",
+                    "Please set up a new password, we will require you to\nenter a new password and confirm your password",
                     textAlign: TextAlign.left,
                     style:
                     TextStyle(fontSize: 12, color: Constants.neutralColor)),
@@ -59,7 +59,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                 height: 32,
               ),
               CustomButton(
-                data: "Setup New Password",
+                data: "Set up New Password",
                 textColor: Constants.whiteColor,
                 color: Constants.primaryColor,
                 onPressed: () {

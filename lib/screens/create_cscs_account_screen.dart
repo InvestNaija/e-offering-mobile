@@ -140,7 +140,7 @@ class _CreateCscsAccountScreenState extends State<CreateCscsAccountScreen> with 
                                 content: SingleChildScrollView(
                                   child: ListBody(
                                     children: const <Widget>[
-                                      Text('Your bank information is needed to proceed'),
+                                      Text('Input bank details to proceed'),
                                     ],
                                   ),
                                 ),
@@ -151,12 +151,12 @@ class _CreateCscsAccountScreenState extends State<CreateCscsAccountScreen> with 
                                       Navigator.popAndPushNamed(context, '/enter-bank-detail', arguments: true);
                                     },
                                   ),
-                                  TextButton(
-                                    child: const Text('Cancel', style: TextStyle(color: Constants.blackColor)),
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                  ),
+                                  // TextButton(
+                                  //   child: const Text('Cancel', style: TextStyle(color: Constants.blackColor)),
+                                  //   onPressed: () {
+                                  //     Navigator.of(context).pop();
+                                  //   },
+                                  // ),
                                 ],
                               );
                             },

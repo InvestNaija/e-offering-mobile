@@ -5,7 +5,7 @@
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/xml_flutter_image_picker_file_paths.xml.flat",
@@ -17,15 +17,15 @@
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/layout_notification_template_part_time.xml.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/layout/notification_template_part_time.xml"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/layout/notification_template_part_time.xml"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable-xhdpi-v4/notification_bg_normal.9.png"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable-xhdpi-v4/notification_bg_normal.9.png"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable-mdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable-mdpi-v4/notification_bg_normal.9.png"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable-mdpi-v4/notification_bg_normal.9.png"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable-v21_logo.png.flat",
@@ -33,7 +33,7 @@
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable_notification_tile_bg.xml.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable/notification_tile_bg.xml"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable/notification_tile_bg.xml"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/mipmap-xxxhdpi_ic_launcher.png.flat",
@@ -41,27 +41,27 @@
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable-hdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable-hdpi-v4/notification_bg_normal.9.png"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable-hdpi-v4/notification_bg_normal.9.png"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable-v21_notification_action_background.xml.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable-v21/notification_action_background.xml"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable-v21/notification_action_background.xml"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/layout_notification_template_part_chronometer.xml.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/layout/notification_template_part_chronometer.xml"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/layout/notification_template_part_chronometer.xml"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/layout-v21_notification_template_custom_big.xml.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/layout-v21/notification_template_custom_big.xml"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/layout-v21/notification_template_custom_big.xml"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/mipmap-xhdpi_ic_launcher.png.flat",
@@ -73,7 +73,7 @@
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/layout-v21_notification_template_icon_group.xml.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/layout-v21/notification_template_icon_group.xml"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/layout-v21/notification_template_icon_group.xml"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/mipmap-xhdpi_ic_logo.png.flat",
@@ -89,19 +89,19 @@
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/layout-v21_notification_action_tombstone.xml.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/layout-v21/notification_action_tombstone.xml"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/layout-v21/notification_action_tombstone.xml"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable_notification_icon_background.xml.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable/notification_icon_background.xml"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable/notification_icon_background.xml"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable-mdpi-v4/notification_bg_normal_pressed.9.png"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable-mdpi-v4/notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/mipmap-mdpi_ic_logo.png.flat",
@@ -113,15 +113,15 @@
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable_notification_bg_low.xml.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable/notification_bg_low.xml"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable/notification_bg_low.xml"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/layout-v21_notification_action.xml.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/layout-v21/notification_action.xml"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/layout-v21/notification_action.xml"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/layout_custom_splash_screen_layout.xml.flat",
@@ -129,15 +129,15 @@
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable-mdpi-v4/notification_bg_low_normal.9.png"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable-mdpi-v4/notification_bg_low_normal.9.png"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable_notification_bg.xml.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable/notification_bg.xml"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable/notification_bg.xml"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/mipmap-xxxhdpi_ic_logo.png.flat",
@@ -145,7 +145,7 @@
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable-xhdpi-v4/notification_bg_low_normal.9.png"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable-xhdpi-v4/notification_bg_low_normal.9.png"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/mipmap-hdpi_ic_launcher.png.flat",
@@ -153,18 +153,18 @@
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable-mdpi-v4/notify_panel_notification_icon_bg.png"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable-mdpi-v4/notify_panel_notification_icon_bg.png"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png"
     },
     {
         "merged": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/res/merged/release/layout_custom_dialog.xml.flat",
-        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/44318f973e18fa59fe3957d8af199b21/core-1.6.0/res/layout/custom_dialog.xml"
+        "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/layout/custom_dialog.xml"
     }
 ]

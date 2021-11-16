@@ -148,14 +148,6 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen>  wi
                 ),
               ),),
               const SizedBox(height: 20,),
-              const Text(
-                "Note : You will be allotted the units you purchased for this shares in a few days.",
-                style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
-                    color: Constants.blackColor),
-              ),
-              const SizedBox(height: 33,),
               Consumer3<CustomerProvider, PaymentProvider, TransactionProvider>(
                builder: (context,customerProvider, paymentProvider,  transactionProvider, cachedWidget){
                 return CustomButton(
@@ -164,7 +156,6 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen>  wi
                   textColor: Constants.whiteColor,
                   color: Constants.primaryColor,
                   onPressed: () async {
-                    print('whatsa pp');
                     bool hasCscs = await customerProvider.hasCscs();
                     print(hasCscs);
                     if(!hasCscs){

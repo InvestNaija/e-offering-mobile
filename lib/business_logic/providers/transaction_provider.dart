@@ -105,4 +105,19 @@ class TransactionProvider extends ChangeNotifier{
       print(ex);
     }
   }
+
+  void deleteTransaction(TransactionResponseModel transaction) async{
+    recentTransactions.removeWhere((item) => item.id == transaction.id);
+    transactions.removeWhere((item) => item.id == transaction.id);
+    reservoir.removeWhere((item) => item.id == transaction.id);
+    notifyListeners();
+    var response = await TransactionRepository().deleteTransaction(transaction.id);
+    if(response.error != null){
+      recentTransactions.add(transaction);
+      transactions.add(transaction);
+      reservoir.add(transaction);
+      notifyListeners();
+    }
+
+  }
 }

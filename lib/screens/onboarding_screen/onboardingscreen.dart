@@ -28,8 +28,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
   int page = 0;
 
   Map<String, String> _contentMap = {
-    'Unlock the Stock Market':
-        'Unlock the stock market-Unrestricted access to buy Nigerian stocks',
+    'Unlock the Capital Markets':
+        'Get unrestricted access to new public offers',
     'Financial Freedom':
         'Unlock the stock market-Unrestricted access to buy Nigerian stocks',
     'Account Protection':
@@ -121,30 +121,24 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: FadeTransition(
-                      opacity: _animation,
-                      child: RichText(
-                        textAlign: TextAlign.center,
-                        text: TextSpan(
-                          text: _contentMap.keys.elementAt(page),
-                          style: theme.textTheme.headline6.copyWith(
-                              fontWeight: FontWeight.w700,
-                              color: Constants.whiteColor),
-                        ),
+                    child: RichText(
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                        text: _contentMap.keys.elementAt(0),
+                        style: theme.textTheme.headline6.copyWith(
+                            fontWeight: FontWeight.w700,
+                            color: Constants.whiteColor),
                       ),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(24, 18, 16, 24),
-                    child: FadeTransition(
-                      opacity: _animation,
-                      child: Text(
-                        _contentMap.values.elementAt(page),
-                        textAlign: TextAlign.center,
-                        style: theme.textTheme.subtitle1.copyWith(
-                            fontWeight: FontWeight.w500,
-                            color: Constants.whiteColor.withOpacity(0.5)),
-                      ),
+                    child: Text(
+                      _contentMap.values.elementAt(0),
+                      textAlign: TextAlign.center,
+                      style: theme.textTheme.subtitle1.copyWith(
+                          fontWeight: FontWeight.w500,
+                          color: Constants.whiteColor.withOpacity(0.5)),
                     ),
                   ),
                   Center(

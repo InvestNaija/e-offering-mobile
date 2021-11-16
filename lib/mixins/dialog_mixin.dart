@@ -306,7 +306,6 @@ class DialogMixins{
   }
 
   showWhyWeNeedYourBvnModalDialog({BuildContext context}){
-    List<String> menuItems = ["Full name", "Phone Number", "Date of Birth"];
     showModalBottomSheet(
         backgroundColor: Colors.transparent,
         context: context,
@@ -328,37 +327,10 @@ class DialogMixins{
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
                       color: Constants.blackColor)),
-              const SizedBox(height: 10,),
+              const SizedBox(height: 20,),
               const Text(
-                  "We only need to access some of your information:",
-                  style: const TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.normal,
-                      color: Constants.fontColor2)),
-              const SizedBox(height: 15,),
-              Container(
-                child: Column(
-                  children: menuItems.map((item) => SizedBox(
-                    height: 25,
-                    child: Row(children: [
-                      Container(
-                        color: Constants.greenColor,
-                        width: 5,
-                        height: 5,
-                      ),
-                      SizedBox(width: 10,),
-                      Text(item,
-                          style: const TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.normal,
-                              color: Constants.fontColor2))
-                    ],),
-                  )).toList(),
-                ),
-              ),
-              const SizedBox(height: 15,),
-              const Text(
-                  "Your BVN does not give us access to your bank account or transactions",
+                  "Your Bank Verification Number (BVN) is required for verification purposes only and ensures ease as well as safety of carrying out transactions on our platform. It is legally required as part of the Know Your Customer (KYC) process.\n\nPlease note that your BVN does NOT give us access to your Bank accounts.",
+                  textAlign: TextAlign.justify,
                   style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.normal,

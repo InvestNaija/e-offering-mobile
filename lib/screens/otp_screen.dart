@@ -61,7 +61,7 @@ class _OtpScreenState extends State<OtpScreen> with DialogMixins{
                   textAlign: TextAlign.left,
                   text: TextSpan(children: <TextSpan>[
                     const TextSpan(
-                      text: 'We’ve sent a 6 - Digit code to your email address ',
+                      text: 'A six-digit code has been sent to your email address ',
                       style: const TextStyle(
                           height: 1.5,
                           color: Constants.neutralColor,
@@ -121,7 +121,7 @@ class _OtpScreenState extends State<OtpScreen> with DialogMixins{
                         Navigator.of(context).push(
                             MaterialPageRoute(builder: (context) => SuccessfulScreen(
                                 header : 'Congratulations',
-                                body : 'You have successfully setup your account with us.',
+                                body : 'You have successfully set up your account with us.',
                                 buttonText : 'Go to login page',
                                 onButtonClicked : (){
                                   Navigator.of(context).push(

@@ -124,6 +124,19 @@ class _HomeFragmentState extends State<HomeFragment> with ApplicationMixin{
                 ],
               ),
               const SizedBox(height: 25,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 21,),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: const Text('Click here',
+                    style: const TextStyle(
+                        color: Constants.blackColor,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 5,),
               Consumer<AssetsProvider>(
                 builder: (context, assetsProvider, child) {
                   return assetsProvider.hasError ? Container(
@@ -217,6 +230,9 @@ class _HomeFragmentState extends State<HomeFragment> with ApplicationMixin{
                                       onEdit:(TransactionResponseModel transaction){
                                         Navigator.pushNamed(context, '/update-interest', arguments: transaction);
                                       },
+                                    onDelete:(TransactionResponseModel transaction){
+                                      transactionsProvider.deleteTransaction(transaction);
+                                    },
                                   )
                           ),
                         );
