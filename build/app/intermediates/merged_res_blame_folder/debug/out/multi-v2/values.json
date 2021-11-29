@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/Users/Oeshiett/Codehub/e-offering-mobile/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
-                    "source": "/Users/Oeshiett/Codehub /e-offering-mobile/android/app/src/main/res/values/styles.xml",
+                    "source": "/Users/Oeshiett/Codehub/e-offering-mobile/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

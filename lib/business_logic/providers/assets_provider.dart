@@ -185,7 +185,7 @@ class AssetsProvider extends ChangeNotifier{
     return zannibalResponse;
   }
 
-  Future<ResponseModel> createCscsAccount({String citizen, String city, String country, String maidenName, String postalCode}) async {
+  Future<ResponseModel> createCscsAccount({String citizen, String city, String country, String maidenName, String postalCode, String state, String brokerName, bool selectBroker, String lga}) async {
     isCreatingCscs = true;
     notifyListeners();
 
@@ -193,7 +193,12 @@ class AssetsProvider extends ChangeNotifier{
       citizen: citizen,
       city: city,
       country: country,
-      maidenName: maidenName
+      state: state,
+      postalCode: postalCode,
+      brokerName: brokerName,
+      selectBroker: selectBroker,
+      maidenName: maidenName,
+      lga:lga
     );
 
     isCreatingCscs = false;

@@ -9,6 +9,7 @@ class SharesResponseModel {
  int availableShares;
  num minimumNoOfUnits;
  bool openForPurchase;
+ String openingDate;
  String closingDate;
  int popularity;
  String image;
@@ -27,6 +28,7 @@ class SharesResponseModel {
   availableShares = json["availableShares"];
   openForPurchase = json["openForPurchase"];
   closingDate = json["closingDate"];
+  openingDate = json["openingDate"];
   popularity = json["popularity"];
   image = json["image"];
   currency = json['currency'];

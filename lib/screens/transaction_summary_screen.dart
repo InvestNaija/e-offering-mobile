@@ -36,7 +36,7 @@ class _TransactionSummaryScreenState extends State<TransactionSummaryScreen>  wi
     amount = widget.transaction.asset.sharePrice == 0 ? 'Pending price discovery' : formatCurrency.format(widget.transaction.asset.sharePrice);
     double calcNumber = widget.transaction.asset.sharePrice == 0 ? 1 : widget.transaction.asset.sharePrice;
     totalPrice =  formatCurrency.format(widget.transaction.unitsExpressed * calcNumber);
-    estimatedUnits = widget.transaction.asset.sharePrice == 0 ? 'Pending price discovery' :  formatCurrency.format(widget.transaction.amount/widget.transaction.asset.sharePrice);
+    estimatedUnits = widget.transaction.asset.sharePrice == 0 ? 'Pending price discovery' :  (widget.transaction.amount/widget.transaction.asset.sharePrice).toString();
   }
 
   @override

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:invest_naija/business_logic/data/response/express_interest_response_model.dart';
 import 'package:invest_naija/business_logic/data/response/payment_url_response.dart';
 import 'package:invest_naija/business_logic/data/response/shares_response_model.dart';
@@ -41,6 +42,8 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
   @override
   void initState() {
     super.initState();
+    print(widget.asset.openingDate);
+    print(widget.asset.closingDate);
     formKey = GlobalKey<FormState>();
     makeSpecifiedUnitReadOnly = widget.asset.sharePrice == 0;
     makeEstimatedAmountReadOnly = widget.asset.sharePrice != 0;
@@ -98,6 +101,9 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                 const SizedBox(height: 25,),
                 CustomTextField(
                   readOnly: false,
+                  inputFormatters: [
+                    FilteringTextInputFormatter.deny(RegExp(r'[.]'))
+                  ],
                   label: "Specified Units",
                   controller: unitQuantityTextEditingController,
                   keyboardType : TextInputType.number,

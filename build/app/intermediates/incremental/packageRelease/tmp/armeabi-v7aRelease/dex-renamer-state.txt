@@ -1,4 +1,4 @@
-#Tue Nov 16 11:49:44 WAT 2021
-base.0=/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+#Mon Nov 29 08:42:41 WAT 2021
+base.0=/Users/Oeshiett/Codehub/e-offering-mobile/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

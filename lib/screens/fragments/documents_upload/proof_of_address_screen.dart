@@ -133,7 +133,7 @@ class _ProofOfAddressScreenState extends State<ProofOfAddressScreen> with Dialog
             offstage: _selectedDocument != null && _selectedDocument['keyword'] == 'Utility Bill',
             child: CustomTextField(
               label: "Enter Identification Number",
-              keyboardType: TextInputType.number,
+              keyboardType: TextInputType.text,
               controller: _identificationNumberTEC,
             ),
           ),

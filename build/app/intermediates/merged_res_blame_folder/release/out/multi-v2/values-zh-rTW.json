@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Oeshiett/Codehub /e-offering-mobile/build/app/intermediates/incremental/mergeReleaseResources/merged.dir/values-zh-rTW/values-zh-rTW.xml",
+            "outputFile": "/Users/Oeshiett/Codehub/e-offering-mobile/build/app/intermediates/incremental/mergeReleaseResources/merged.dir/values-zh-rTW/values-zh-rTW.xml",
             "map": [
                 {
                     "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/values-zh-rTW/values-zh-rTW.xml",

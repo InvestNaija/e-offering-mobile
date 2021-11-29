@@ -197,7 +197,7 @@ class InvestmentRepository{
     }
   }
 
-  Future<ResponseModel> createCscsAccount({String citizen, String city, String country, String maidenName, String postalCode}) async {
+  Future<ResponseModel> createCscsAccount({String citizen, String city, String country, String maidenName, String postalCode, String state, String brokerName, bool selectBroker, String lga}) async {
     try{
     Response response =  await http.post(
         Uri.parse('${baseUrl}customers/create-cscs'),
@@ -210,14 +210,21 @@ class InvestmentRepository{
               'City': city,
               'Country' : country == "Nigeria" ? "NG" : citizen,
               'MaidenName' : maidenName,
-              'postalCode' : postalCode
-            })
+              'postalCode' : postalCode,
+              'State': state,
+              'brokerName': brokerName,
+              'selectBroker': selectBroker,
+              'LGA': lga
+            },
+        )
     ).timeout(const Duration(seconds: 60), onTimeout: () {
       throw TimeoutException(
           'The connection has timed out, Please try again!');
     });
     var jsonResponse = convert.jsonDecode(response.body);
-    return ExpressInterestResponseModel.fromJson(jsonResponse);
+    print('from create cscs');
+    print(jsonResponse);
+    return ResponseModel.fromJson(jsonResponse);
     } on Exception catch (exception) {
       String response = exception is IOException
           ? "You are not connected to internet"

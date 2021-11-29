@@ -130,7 +130,7 @@ class _ProofOfIdScreenState extends State<ProofOfIdScreen> with DialogMixins{
           const SizedBox(height: 20,),
           CustomTextField(
             label: "Enter Identification Number",
-            keyboardType: TextInputType.number,
+            keyboardType: TextInputType.text,
             controller: _identificationNumberTEC,
           ),
           const SizedBox(

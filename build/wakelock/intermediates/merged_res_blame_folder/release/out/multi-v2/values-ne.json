@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Oeshiett/Codehub /e-offering-mobile/build/wakelock/intermediates/res/merged/release/values-ne/values-ne.xml",
+            "outputFile": "/Users/Oeshiett/Codehub/e-offering-mobile/build/wakelock/intermediates/incremental/mergeReleaseResources/merged.dir/values-ne/values-ne.xml",
             "map": [
                 {
                     "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/values-ne/values-ne.xml",
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "outputFile": "/Users/Oeshiett/Codehub /e-offering-mobile/build/wakelock/intermediates/incremental/mergeReleaseResources/merged.dir/values-ne/values-ne.xml",
+            "outputFile": "/Users/Oeshiett/Codehub/e-offering-mobile/build/wakelock/intermediates/res/merged/release/values-ne/values-ne.xml",
             "map": [
                 {
                     "source": "/Users/Oeshiett/.gradle/caches/transforms-2/files-2.1/2d7cf3d26896fbdea41fbefd697f5584/core-1.1.0/res/values-ne/values-ne.xml",

@@ -15,7 +15,6 @@ import 'package:html/dom.dart' as dom;
 import 'package:url_launcher/url_launcher.dart';
 
 import '../constants.dart';
-import 'payment_web_screen.dart';
 
 class EIpoDetailsScreen extends StatefulWidget {
   final SharesResponseModel asset;
@@ -28,11 +27,25 @@ class EIpoDetailsScreen extends StatefulWidget {
 class _EIpoDetailsScreenState extends State<EIpoDetailsScreen> {
   bool hasAcceptedTermsAndConditions = false;
   BuildContext theContext;
+  bool shouldDisable = true;
+  String buttonText = "Subscribe";
 
   @override
   void initState() {
     super.initState();
     theContext = context;
+
+    if(DateTime.now().isBefore(DateTime.parse(widget.asset.openingDate))){
+      shouldDisable = true;
+      buttonText = 'Offer Not Open';
+    }
+    else if(DateTime.now().isAfter(DateTime.parse(widget.asset.closingDate))){
+      shouldDisable = true;
+      buttonText = 'Offer Closed';
+    }else{
+      shouldDisable = false;
+      buttonText = "Purchase";
+    }
     WidgetsBinding.instance.addPostFrameCallback((_) => {Provider.of<AssetsProvider>(context, listen: false).getSharePrice()});
   }
 
@@ -331,10 +344,10 @@ class _EIpoDetailsScreenState extends State<EIpoDetailsScreen> {
                 height: 25,
               ),
               CustomButton(
-                data: "Purchase",
+                data: buttonText,
                 textColor: Constants.whiteColor,
                 color: Constants.primaryColor,
-                onPressed: () {
+                onPressed: shouldDisable ? null : () {
                   if (!hasAcceptedTermsAndConditions) {
                     final snackBar = SnackBar(content: Text('Please accept the terms and condition'));
                     ScaffoldMessenger.of(context).showSnackBar(snackBar);

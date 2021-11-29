@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../constants.dart';
 
@@ -17,6 +18,7 @@ class CustomTextField extends StatelessWidget {
   final Function(String value) onChange;
   final VoidCallback onEditingComplete;
   final FocusNode focusNode;
+  List<TextInputFormatter> inputFormatters;
 
   CustomTextField({
     this.label = "",
@@ -32,12 +34,14 @@ class CustomTextField extends StatelessWidget {
     this.counterText = '',
     this.onEditingComplete,
     this.focusNode,
+    this.inputFormatters = const []
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: TextFormField(
+        inputFormatters: this.inputFormatters,
         keyboardType: this.keyboardType,
         focusNode: focusNode,
         readOnly: this.readOnly,

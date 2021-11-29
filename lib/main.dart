@@ -17,6 +17,7 @@ import 'package:provider/provider.dart';
 import 'business_logic/data/response/shares_response_model.dart';
 import 'business_logic/data/response/transaction_response_model.dart';
 import 'business_logic/providers/bank_provider.dart';
+import 'business_logic/providers/broker_provider.dart';
 import 'business_logic/providers/document_provider.dart';
 import 'business_logic/providers/login_provider.dart';
 import 'business_logic/providers/proof_of_address_document_provider.dart';
@@ -53,6 +54,7 @@ void main() async{
         ChangeNotifierProvider(create: (context) => ProofOfAddressDocumentProvider()),
         ChangeNotifierProvider(create: (context) => ProofOfIdDocumentProvider()),
         ChangeNotifierProvider(create: (context) => ProofOfSignatureDocumentProvider()),
+        ChangeNotifierProvider(create: (context) => BrokerProvider()),
       ],
       child: MyApp(),
     ),
@@ -85,7 +87,7 @@ class _MyAppState extends State<MyApp> with DialogMixins, ApplicationMixin{
       context: context,
       onTimeExpired: () {
         if (userIsInsideApp) {
-         showInactivityAlert(this.context);
+         //showInactivityAlert(this.context);
         }
       },
       child: MaterialApp(
@@ -98,6 +100,7 @@ class _MyAppState extends State<MyApp> with DialogMixins, ApplicationMixin{
           primarySwatch: Constants.primaryColorMaterial,
         ),
         onGenerateRoute: (settings) {
+          print(settings.name);
           if (settings.name == '/') {
             return MaterialPageRoute(builder: (_) => SplashScreen());
           }
