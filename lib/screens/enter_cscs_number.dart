@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invest_naija/business_logic/data/response/cscs_verification_response_model.dart';
 import 'package:invest_naija/business_logic/data/response/response_model.dart';
 import 'package:invest_naija/business_logic/providers/assets_provider.dart';
 import 'package:invest_naija/components/custom_button.dart';
@@ -126,7 +127,7 @@ class _EnterCscsNumberState extends State<EnterCscsNumber> with DialogMixins {
                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
                    return;
                  }
-                 ResponseModel responseModel = await assetProvider.uploadCscs(cscsNo: _cscsNumberTextEditingController.text);
+                 ResponseModel responseModel = await assetProvider.uploadCscs(cscsNo: _cscsNumberTextEditingController.text, chn: _chNumberTextEditingController.text,);
                  if(responseModel.error != null){
                    showSimpleModalDialog(context: context, title: 'Update Cscs error', message: responseModel.error.message);
                  }else{

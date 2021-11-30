@@ -49,6 +49,7 @@ class PaymentRepository{
           body: convert.jsonEncode(
               { "reservationId": reservationId,
                 "gateway": gateway,
+                "channel": "MOBILE",
                 "currency": currency,
                 "reinvest" : false
               })

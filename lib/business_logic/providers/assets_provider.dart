@@ -36,6 +36,8 @@ class AssetsProvider extends ChangeNotifier{
   bool currentSharePriceHasError = false;
   double currentSharePrice = 0;
 
+  CscsVerificationResponseModel cscsVerificationResponseModel;
+
 
   void refreshPopularAssets(){
     isLoadingTrendingShares = true;
@@ -134,11 +136,12 @@ class AssetsProvider extends ChangeNotifier{
     notifyListeners();
   }
 
-  Future<ResponseModel> verifyCscs({String cscsNo, String chn}) async {
+  Future<CscsVerificationResponseModel> verifyCscs({String cscsNo, String chn}) async {
     isLoading = true;
     notifyListeners();
     CscsVerificationResponseModel response = await InvestmentRepository().verifyCscs(cscsNo: cscsNo, chn : chn);
-    if(response.status.toLowerCase() =='success'){
+    cscsVerificationResponseModel = response;
+    if(response.status.toLowerCase() =='success' && response.data.cscsResponse != "CSCS/CHN Number combination is not valid"){
       verifiedName = response.data.cscsResponse;
       cscsVerified = true;
     }else{
@@ -150,10 +153,11 @@ class AssetsProvider extends ChangeNotifier{
     return response;
   }
 
-  Future<ResponseModel> uploadCscs({String cscsNo}) async {
+  Future<ResponseModel> uploadCscs({String cscsNo,String chn}) async {
     isLoading = true;
     notifyListeners();
-    CscsVerificationResponseModel response = await InvestmentRepository().uploadCscs(cscsNo: cscsNo);
+    print(cscsVerificationResponseModel.data.broker);
+    CscsVerificationResponseModel response = await InvestmentRepository().uploadCscs(cscsNo: cscsNo, chn: chn, brokerName: cscsVerificationResponseModel.data.broker);
     if(response.status =='success'){
       verifiedName = '';
       cscsVerified = false;

@@ -173,7 +173,7 @@ class InvestmentRepository{
     }
   }
 
-  Future<CscsVerificationResponseModel> uploadCscs({String cscsNo}) async {
+  Future<CscsVerificationResponseModel> uploadCscs({String cscsNo,String chn, String brokerName }) async {
     try{
       Response response =  await http.patch(
           Uri.parse('${baseUrl}verifications/cscs/no-verification'),
@@ -182,7 +182,12 @@ class InvestmentRepository{
             'Authorization': appLocalStorage.getToken(),
           },
           body: convert.jsonEncode(
-              { 'cscsNo': cscsNo,})
+              {
+                'cscsNo': cscsNo,
+                'chn': chn,
+                'brokerName': brokerName
+              },
+          )
       ).timeout(const Duration(seconds: 60), onTimeout: () {
         throw TimeoutException(
             'The connection has timed out, Please try again!');
