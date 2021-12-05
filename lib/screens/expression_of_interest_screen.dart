@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:invest_naija/business_logic/data/response/express_interest_response_model.dart';
-import 'package:invest_naija/business_logic/data/response/payment_url_response.dart';
 import 'package:invest_naija/business_logic/data/response/shares_response_model.dart';
 import 'package:invest_naija/business_logic/providers/assets_provider.dart';
 import 'package:invest_naija/business_logic/providers/customer_provider.dart';
@@ -38,16 +36,17 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
   bool makeEstimatedAmountReadOnly = false;
   GlobalKey<FormState> formKey;
   bool hasAcceptedTermsAndConditions = false;
+  String gateway;
 
   @override
   void initState() {
     super.initState();
+    gateway = "flutterwave";
     print(widget.asset.openingDate);
     print(widget.asset.closingDate);
     formKey = GlobalKey<FormState>();
     makeSpecifiedUnitReadOnly = widget.asset.sharePrice == 0;
     makeEstimatedAmountReadOnly = widget.asset.sharePrice != 0;
-    unitQuantityTextEditingController.text = '0' ;
     Provider.of<CustomerProvider>(context, listen: false).getCustomerDetailsSilently();
   }
 
@@ -104,7 +103,7 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                   inputFormatters: [
                     FilteringTextInputFormatter.deny(RegExp(r'[.]'))
                   ],
-                  label: "Specified Units",
+                  label: "Number of Units",
                   controller: unitQuantityTextEditingController,
                   keyboardType : TextInputType.number,
                   onChange: (value){
@@ -181,7 +180,29 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                     const SizedBox(width: 5,),
                   ],
                 ),
-                const SizedBox(height: 40,),
+                const SizedBox(height: 20,),
+                Row(
+                  children: [
+                    Text('Pay with Flutterwave'),
+                    Checkbox(
+                        activeColor: Constants.primaryColor,
+                        shape: CircleBorder(),
+                        value: gateway == 'flutterwave', onChanged: (bool){
+                      setState(() {
+                        gateway = 'flutterwave';
+                      });
+                    }),
+                  ],
+                ),
+                Container(
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: Colors.greenAccent,
+                  ),
+                  child: Text('To increase the size of your application, indicate the additional number of units and proceed to make payment. All payments made will be aggregated as one application under your profile. Payment limit is as defined by your Bank.', textAlign: TextAlign.justify,),
+                ),
+                const SizedBox(height: 10,),
                 Consumer3<AssetsProvider, CustomerProvider, PaymentProvider>(
                   builder: (context, assetsProvider, customerProvider, paymentProvider, child) {
                     return CustomButton(
@@ -221,7 +242,7 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
                         }
                         var response = await paymentProvider.getPaymentUrl(
                             reservationId: expressInterestResponse.data.reservation.id,
-                            gateway: 'flutterwave',
+                            gateway: this.gateway,
                             currency: widget.asset.currency
                         );
                         if(response.error != null){
@@ -292,19 +313,19 @@ class _ExpressionOfInterestScreenState extends State<ExpressionOfInterestScreen>
           content: SingleChildScrollView(
             child: ListBody(
               children: const <Widget>[
-                Text('Your CSCS number is mandatory/required to complete your application', style: TextStyle(fontSize: 14)),
+                Text('Do you want to proceed', style: TextStyle(fontSize: 14)),
               ],
             ),
           ),
           actions: <Widget>[
             TextButton(
-              child: const Text('Proceed', style: TextStyle(color: Constants.blackColor),),
+              child: const Text('Yes - Proceed', style: TextStyle(color: Constants.blackColor),),
               onPressed: () {
                 Navigator.popAndPushNamed(context, '/create-cscs', arguments: true);
               },
             ),
             TextButton(
-              child: const Text('Cancel', style: TextStyle(color: Constants.yellowColor)),
+              child: const Text('No - Cancel', style: TextStyle(color: Constants.yellowColor)),
               onPressed: () {
                 Navigator.of(context).pop();
               },

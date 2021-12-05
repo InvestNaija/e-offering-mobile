@@ -227,7 +227,7 @@ class _EIpoDetailsScreenState extends State<EIpoDetailsScreen> {
                               style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Constants.blackColor),
                             ),
                             Text(
-                              minAmount,
+                              widget.asset.minimumNoOfUnits.toString(),
                               style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Constants.blackColor),
                             ),
                           ],

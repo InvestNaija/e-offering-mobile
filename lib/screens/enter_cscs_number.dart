@@ -78,42 +78,46 @@ class _EnterCscsNumberState extends State<EnterCscsNumber> with DialogMixins {
                   label: "CSCS Number",
                   controller: _cscsNumberTextEditingController,
                   keyboardType: TextInputType.number,
-                  onChange: (value) async{
-                    if(_cscsNumberTextEditingController.text.isEmpty || _chNumberTextEditingController.text.isEmpty){
-                      assetProvider.resetCscs();
-                    }else {
-                      var response = await assetProvider.verifyCscs(cscsNo: _cscsNumberTextEditingController.text);
-                      if (response.status.toLowerCase() != 'success') {
-                        SnackBar snackBar = SnackBar(content: Text(response.error.message));
-                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                      }
-                    }
-                  },
-                );
-              },
-            ),
-            SizedBox(height: 15,),
-            Consumer<AssetsProvider>(
-              builder: (BuildContext context, assetProvider, Widget child) {
-                return CustomTextField(
-                  label: "Clearing House Number",
-                  controller: _chNumberTextEditingController,
                   counterText: assetProvider.verifiedName,
-                  keyboardType: TextInputType.text,
                   onChange: (value) async{
-                    if(_cscsNumberTextEditingController.text.isEmpty || _chNumberTextEditingController.text.isEmpty){
+                    if(_cscsNumberTextEditingController.text.isEmpty){
                       assetProvider.resetCscs();
                     }else {
                       var response = await assetProvider.verifyCscs(cscsNo: _cscsNumberTextEditingController.text);
                       if (response.status.toLowerCase() != 'success') {
                         SnackBar snackBar = SnackBar(content: Text(response.error.message));
                         ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      }else{
+                        print('this is it fr nao ${response.data.chn}');
+                        _chNumberTextEditingController.text = response.data.chn ?? "";
                       }
                     }
                   },
                 );
               },
             ),
+            // SizedBox(height: 15,),
+            // Consumer<AssetsProvider>(
+            //   builder: (BuildContext context, assetProvider, Widget child) {
+            //     return CustomTextField(
+            //       label: "Clearing House Number",
+            //       controller: _chNumberTextEditingController,
+            //       counterText: assetProvider.verifiedName,
+            //       keyboardType: TextInputType.text,
+            //       onChange: (value) async{
+            //         if(_cscsNumberTextEditingController.text.isEmpty || _chNumberTextEditingController.text.isEmpty){
+            //           assetProvider.resetCscs();
+            //         }else {
+            //           var response = await assetProvider.verifyCscs(cscsNo: _cscsNumberTextEditingController.text);
+            //           if (response.status.toLowerCase() != 'success') {
+            //             SnackBar snackBar = SnackBar(content: Text(response.error.message));
+            //             ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            //           }
+            //         }
+            //       },
+            //     );
+            //   },
+            // ),
             const SizedBox(height: 40,),
             Consumer<AssetsProvider>(builder: (context, assetProvider, widget) {
              return  CustomButton(
@@ -134,8 +138,8 @@ class _EnterCscsNumberState extends State<EnterCscsNumber> with DialogMixins {
                    _cscsNumberTextEditingController.clear();
                    showSimpleModalDialog(
                        context: context,
-                       title: 'Update Cscs info',
-                       message: responseModel.message,
+                       title: 'CSCS details updated',
+                       message: 'Proceed to make payment.',
                        onClose: (){
                          Navigator.pop(context);
                        }

@@ -59,7 +59,8 @@ class DialogMixins{
     final DateTime pickedDate = await showDatePicker(
         context: context,
         initialDate: DateTime.now(),
-        lastDate: DateTime.now(), firstDate: DateTime(1970),
+        lastDate: DateTime.now(),
+        firstDate: DateTime(1900),
         builder: (BuildContext context, Widget child) {
         return Theme(
           data: ThemeData.light().copyWith(

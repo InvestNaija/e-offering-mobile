@@ -97,7 +97,7 @@ class _UpdateInterestScreenState extends State<UpdateInterestScreen> with Dialog
                 const SizedBox(height: 25,),
                 CustomTextField(
                   readOnly: makeSpecifiedUnitReadOnly,
-                  label: "Specified Units",
+                  label: "Number of Units",
                   controller: unitQuantityTextEditingController,
                   keyboardType : TextInputType.number,
                   onChange: (value){

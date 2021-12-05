@@ -14,6 +14,7 @@ class CscsResponse{
   String cscsNo;
   String cscsResponse;
   String broker;
+  String chn;
 
   CscsResponse.fromJson(Map<String, dynamic> json){
     try{
@@ -21,11 +22,13 @@ class CscsResponse{
       cscsNo = json['cscsNo'];
       cscsResponse = json['cscsResponse']["accountName"];
       broker = json['cscsResponse']["broker"];
+      chn = json['cscsResponse']["chn"];
     }catch(ex){
       bvnResponse = '';
       cscsNo = '';
       cscsResponse = 'CSCS/CHN Number combination is not valid';
       broker = '';
+      chn = '';
     }
   }
 
